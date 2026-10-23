@@ -1,7 +1,5 @@
 # Diagramas del modelo conceptual
 
-Esta carpeta se inspira en `diagrams/` del repositorio [EDINT Censo de Vehículos](https://github.com/EDINT-Ontologia/edint-ontologia-censo-vehiculos/tree/main/diagrams).
-
 ## Finalidad
 Conservar los **materiales visuales de conceptualización y diseño** de la ontología, anteriores o complementarios a su formalización en RDF/RDFS.
 
