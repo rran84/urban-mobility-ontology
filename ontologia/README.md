@@ -1,7 +1,5 @@
 # Implementación de la ontología
 
-Esta carpeta contiene la **implementación formal de la ontología de movilidad urbana compartida**, siguiendo la función de `ontology/` en [EDINT Censo de Vehículos](https://github.com/EDINT-Ontologia/edint-ontologia-censo-vehiculos/tree/main/ontology).
-
 ## Finalidad
 Almacenar el modelo legible por máquinas: clases, jerarquías, propiedades, dominios, rangos y relaciones entre vehículos, agentes, reservas, servicios de movilidad, trayectos, tarifas y pagos.
 
