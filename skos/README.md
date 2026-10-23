@@ -1,6 +1,5 @@
 # Vocabularios controlados SKOS
 
-Esta carpeta contiene la **implementación de vocabularios controlados** de la práctica, equivalente a `kos/` en [EDINT Censo de Vehículos](https://github.com/EDINT-Ontologia/edint-ontologia-censo-vehiculos/tree/main/kos).
 
 ## Finalidad
 Representar mediante SKOS las categorías utilizadas por la ontología, separando los conceptos controlados de las clases RDF/RDFS.
