@@ -1,7 +1,5 @@
 # Recursos auxiliares
 
-Esta carpeta cumple la función de `resources/` del repositorio [EDINT Censo de Vehículos](https://github.com/EDINT-Ontologia/edint-ontologia-censo-vehiculos/tree/main/resources).
-
 ## Finalidad
 Almacenar **materiales auxiliares** utilizados para apoyar la presentación, explicación o publicación del proyecto y que no forman parte directamente de la implementación de la ontología.
 
