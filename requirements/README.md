@@ -1,11 +1,13 @@
 # Requisitos y consultas SPARQL
 
-Esta carpeta reúne los requisitos de la ontología, los usos previstos, las preguntas de competencia y las consultas SPARQL que permiten comprobar su cobertura con los datos RDF y vocabularios SKOS del proyecto.
+Esta carpeta contiene los requisitos, usos previstos y preguntas de competencia de la ontología, junto con las consultas SPARQL que los verifican.
 
-## Organización prevista
+## Organización
 
-- Documentación de requisitos y preguntas de competencia.
-- Consultas `.rq` o `.sparql` asociadas a las preguntas de competencia.
-- Correspondencia entre preguntas, consultas y clases o propiedades de las ontologías.
+- `requisitos.pdf`: documento de requisitos (cuando esté disponible).
+- `preguntas_competencia.md`: listado y correspondencia de preguntas de competencia (cuando esté disponible).
+- `consultas/`: **un archivo `.sparql` por cada consulta**, por ejemplo `PC01.sparql`, `PC02.sparql`, `PC03.sparql`, etc.
 
-Las consultas y documentos se incorporarán a medida que se revisen.
+Cada archivo SPARQL incluirá una única consulta, identificada por su pregunta de competencia, y usará los prefijos, clases y propiedades definidos en los archivos RDF/SKOS del proyecto.
+
+> Los archivos de consultas se añadirán conforme se revisen. Este README solo define la organización.
