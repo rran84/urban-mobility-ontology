@@ -1,6 +1,5 @@
 # Requisitos y consultas SPARQL
 
-Esta carpeta se inspira en `requirements/` de [EDINT Censo de Vehículos](https://github.com/EDINT-Ontologia/edint-ontologia-censo-vehiculos/tree/main/requirements), que reúne requisitos, preguntas de competencia y consultas SPARQL para verificarlas.
 
 ## Finalidad
 Documentar **qué debe representar la ontología, para qué usuarios y usos previstos se desarrolla y qué preguntas debe responder**. Las consultas SPARQL permiten comprobar esas preguntas sobre los datos RDF de ejemplo.
