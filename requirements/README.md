@@ -1,13 +1,27 @@
 # Requisitos y consultas SPARQL
 
-Esta carpeta contiene los requisitos, usos previstos y preguntas de competencia de la ontología, junto con las consultas SPARQL que los verifican.
+Esta carpeta se inspira en `requirements/` de [EDINT Censo de Vehículos](https://github.com/EDINT-Ontologia/edint-ontologia-censo-vehiculos/tree/main/requirements), que reúne requisitos, preguntas de competencia y consultas SPARQL para verificarlas.
 
-## Organización
+## Finalidad
+Documentar **qué debe representar la ontología, para qué usuarios y usos previstos se desarrolla y qué preguntas debe responder**. Las consultas SPARQL permiten comprobar esas preguntas sobre los datos RDF de ejemplo.
 
-- `requisitos.pdf`: documento de requisitos (cuando esté disponible).
-- `preguntas_competencia.md`: listado y correspondencia de preguntas de competencia (cuando esté disponible).
-- `consultas/`: **un archivo `.sparql` por cada consulta**, por ejemplo `PC01.sparql`, `PC02.sparql`, `PC03.sparql`, etc.
+## Contenido previsto
+- Documentación de requisitos de dominio, usuarios y usos previstos (`.md`, `.pdf`, `.tex`).
+- Listado de preguntas de competencia y correspondencia con clases y propiedades de la ontología.
+- Archivos `.sparql` o `.rq` individuales: **cada archivo contiene una sola consulta SPARQL**.
 
-Cada archivo SPARQL incluirá una única consulta, identificada por su pregunta de competencia, y usará los prefijos, clases y propiedades definidos en los archivos RDF/SKOS del proyecto.
+## Organización propuesta
+```text
+requirements/
+├── README.md
+├── requisitos.pdf
+├── preguntas_competencia.md
+├── PC01.sparql
+├── PC02.sparql
+└── ...
+```
 
-> Los archivos de consultas se añadirán conforme se revisen. Este README solo define la organización.
+Cada consulta debe identificar la pregunta de competencia a la que responde, emplear los prefijos y términos del modelo de [`../ontologia/`](../ontologia/) y ser comprobable con los datos de [`../ejemplos/`](../ejemplos/). Los nombres anteriores son ejemplos de organización, no archivos existentes.
+
+## Buenas prácticas
+Mantener trazabilidad entre requisito, pregunta de competencia, consulta SPARQL y elementos de la ontología; actualizar las consultas cuando cambie el modelo.
