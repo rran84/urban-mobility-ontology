@@ -1,27 +1,39 @@
-# Descripción de la ontología
+# Descripción de la ontología (WIDOCO)
 
-Esta carpeta está destinada a la **documentación generada con Widoco** para presentar y explorar la ontología de movilidad urbana compartida.
+Esta carpeta contiene la **documentación HTML generada automáticamente con WIDOCO** a partir de la implementación RDF/RDFS de la ontología de movilidad urbana compartida, junto con el diagrama obtenido.
 
-## Finalidad
+## Herramienta
 
-Reunir en un mismo lugar la descripción completa de la ontología y el diagrama obtenido durante su desarrollo. La documentación generada con Widoco permite consultar las clases, propiedades, jerarquías y relaciones del modelo.
+La documentación se genera mediante una llamada al ejecutable Java **`widoco-<version>-jar-with-dependencies.jar`**, descargado de los [releases del repositorio oficial de WIDOCO](https://github.com/dgarijo/Widoco/releases/latest). No es necesario guardar el JAR dentro de este repositorio: basta con documentar cómo se utiliza.
 
-## Contenido previsto
+## Generación de la documentación
 
-- `index-es.html` (o `index.html`): página principal de la documentación generada con Widoco.
-- Archivos y subcarpetas auxiliares generados por Widoco (hojas de estilo, scripts, imágenes y secciones). Conservar sus rutas relativas para que la documentación funcione correctamente.
-- Diagrama final de la ontología (por ejemplo, `diagrama_ontologia.svg` o `.png`), si se incluye entre los resultados.
-- Otros archivos exportados por Widoco que sean necesarios para visualizar la documentación completa.
+Ejemplo ejecutado desde la raíz del repositorio, suponiendo que el JAR descargado está disponible en el directorio actual:
+
+```bash
+java -jar widoco-<version>-jar-with-dependencies.jar \
+  -ontFile ontologia_movilidad.ttl \
+  -outFolder descripcion \
+  -getOntologyMetadata \
+  -lang es \
+  -rewriteAll
+```
+
+**Sustituir** `<version>` por la versión real del JAR descargado. Si el RDF definitivo se guarda en `ontologia/`, actualizar la ruta de `-ontFile` en consecuencia. Ejecutar `-rewriteAll` con cuidado: reemplaza archivos generados previamente en la carpeta de salida.
+
+## Contenido
+
+- Páginas HTML de documentación generadas por WIDOCO.
+- Hojas de estilo, scripts, imágenes y otros recursos auxiliares necesarios para su visualización.
+- Diagrama de la ontología obtenido durante el desarrollo o incorporado a la documentación.
+
+La salida puede contener nombres y subcarpetas adicionales según la versión y las opciones de WIDOCO. Mantener la estructura generada para no romper los enlaces internos.
 
 ## Relación con otras carpetas
 
-- [`../ontologia/`](../ontologia/): implementación RDF/RDFS de la ontología.
+- [`../ontologia/`](../ontologia/): implementación formal de la ontología.
 - [`../skos/`](../skos/): vocabularios controlados.
-- [`../diagramas/`](../diagramas/): fuentes editables y otras versiones de los diagramas conceptuales.
-- [`../documentacion/`](../documentacion/): memoria y documentación académica de la práctica.
+- [`../diagramas/`](../diagramas/): diagramas conceptuales y versiones editables.
+- [`../documentacion/`](../documentacion/): memoria y documentación académica.
 
-## Publicación
-
-Al añadir la exportación de Widoco, subir **toda la carpeta generada**, no solo el HTML principal, para conservar los enlaces internos y los recursos necesarios.
-
-> Esta carpeta está preparada para recibir los resultados de Widoco y el diagrama final. Esos archivos aún no se han incorporado.
+> Esta carpeta se ha preparado para almacenar el resultado de la ejecución de WIDOCO; la generación no se ha ejecutado desde GitHub ni se ha añadido todavía su salida HTML.
