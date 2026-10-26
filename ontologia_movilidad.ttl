@@ -1,562 +1,242 @@
 @prefix : <https://example.org/ontologia-movilidad#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix prop: <https://example.org/ontologia-movilidad/propulsion#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prop: <https://example.org/ontologia-movilidad/propulsion#> .
 @prefix estado: <https://example.org/ontologia-movilidad/estado#> .
 @prefix estur-paymentmethod: <https://ontologia.segittur.es/turismo/kos/paymentmethod/> .
 @prefix estur-vehicletype: <https://ontologia.segittur.es/turismo/kos/vehicletype/> .
 @prefix estur-stationtype: <https://ontologia.segittur.es/turismo/kos/stationtype/> .
 
-##################################################
-### CLASES
-##################################################
-
-# Vehiculos compartidos
-
-:VehiculoCompartido a rdfs:Class .
-
-# Vehiculos de movilidad personal
-
-:VehiculoMovilidadPersonal a rdfs:Class ;
-    rdfs:subClassOf :VehiculoCompartido .
-
-:Patinete a rdfs:Class ;
-    rdfs:subClassOf :VehiculoMovilidadPersonal .
-
-:Bicicleta a rdfs:Class ;
-    rdfs:subClassOf :VehiculoMovilidadPersonal .
-
-:Coche a rdfs:Class ;
-    rdfs:subClassOf :VehiculoMovilidadPersonal .
-
-:CocheVolador a rdfs:Class ;
-    rdfs:subClassOf :VehiculoMovilidadPersonal .
-
-# Subclases de coche
-
-:CochePersonal a rdfs:Class ;
-    rdfs:subClassOf :Coche .
-
-:Taxi a rdfs:Class ;
-    rdfs:subClassOf :Coche .
-
-# Vehiculos colectivos
-
-:VehiculoColectivo a rdfs:Class ;
-    rdfs:subClassOf :VehiculoCompartido .
-
-:Autobus a rdfs:Class ;
-    rdfs:subClassOf :VehiculoColectivo .
-
-:Metro a rdfs:Class ;
-    rdfs:subClassOf :VehiculoColectivo .
-
-:Tren a rdfs:Class ;
-    rdfs:subClassOf :VehiculoColectivo .
-
-
-# Clasificacion de vehiculos segun propulsion
-
-:VehiculoPropulsionElectrica a rdfs:Class ;
-    rdfs:subClassOf :VehiculoCompartido .
-
-:VehiculoCombustion a rdfs:Class ;
-    rdfs:subClassOf :VehiculoCompartido .
-
-:VehiculoPropulsionHumana a rdfs:Class ;
-    rdfs:subClassOf :VehiculoCompartido .
-
-:VehiculoPropulsionHibrida a rdfs:Class ;
-    rdfs:subClassOf :VehiculoCompartido .
-
-
-# Componentes de almacenamiento
-
-:ComponenteAlmacenamiento a rdfs:Class .
-
-:Bateria a rdfs:Class ;
-    rdfs:subClassOf :ComponenteAlmacenamiento .
-
-:DepositoCombustible a rdfs:Class ;
-    rdfs:subClassOf :ComponenteAlmacenamiento .
-
-
-# Servicios de movilidad
-
-:ServicioMovilidad a rdfs:Class .
-
-:ServicioConRecorrido a rdfs:Class ;
-    rdfs:subClassOf :ServicioMovilidad .
-
-:ServicioSinRecorrido a rdfs:Class ;
-    rdfs:subClassOf :ServicioMovilidad .
-
-
-# Agentes y roles
-
-:Agente a rdfs:Class .
-
-:Persona a rdfs:Class ;
-    rdfs:subClassOf :Agente .
-
-:Organizacion a rdfs:Class ;
-    rdfs:subClassOf :Agente .
-
-:Rol a rdfs:Class .
-
-:RolUsuario a rdfs:Class ;
-    rdfs:subClassOf :Rol .
-
-:RolProveedor a rdfs:Class ;
-    rdfs:subClassOf :Rol .
-
-
-# Reservas
-
-:Reserva a rdfs:Class .
-
-:ReservaAnticipada a rdfs:Class ;
-    rdfs:subClassOf :Reserva .
-
-:ReservaInmediata a rdfs:Class ;
-    rdfs:subClassOf :Reserva .
-
-
-# Trayectos
-
-:Trayecto a rdfs:Class .
-
-:RelacionTrayecto a rdfs:Class .
-
-
-# Tarifas
-
-:Tarifa a rdfs:Class .
-
-:TarifaSuscripcion a rdfs:Class ;
-    rdfs:subClassOf :Tarifa .
-
-:TarifaSuscripcionDiaria a rdfs:Class ;
-    rdfs:subClassOf :TarifaSuscripcion .
-
-:TarifaSuscripcionMensual a rdfs:Class ;
-    rdfs:subClassOf :TarifaSuscripcion .
-
-:TarifaSuscripcionAnual a rdfs:Class ;
-    rdfs:subClassOf :TarifaSuscripcion .
-
-:TarifaBonoPrepago a rdfs:Class ;
-    rdfs:subClassOf :Tarifa .
-
-:TarifaPagoPorUso a rdfs:Class ;
-    rdfs:subClassOf :Tarifa .
-
-:CriterioCalculo a rdfs:Class .
-
-
-# Facturacion y pagos
-
-:Factura a rdfs:Class .
-
-:Pago a rdfs:Class .
-
-
-# Puntos de servicio
-
-:PuntoServicio a rdfs:Class .
-
-:EstacionFisica a rdfs:Class ;
-    rdfs:subClassOf :PuntoServicio .
-
-:InstalacionPrivadaConcertada a rdfs:Class ;
-    rdfs:subClassOf :PuntoServicio .
-
-:ViaPublica a rdfs:Class ;
-    rdfs:subClassOf :PuntoServicio .
-
-# Subclases de estacion fisica
-
-:EstacionFerroviaria a rdfs:Class ;
-    rdfs:subClassOf :EstacionFisica .
-
-:ParadaAutobus a rdfs:Class ;
-    rdfs:subClassOf :EstacionFisica .
-
-:AnclajeBicicleta a rdfs:Class ;
-    rdfs:subClassOf :EstacionFisica .
-
-:Vertipuerto a rdfs:Class ;
-    rdfs:subClassOf :EstacionFisica .
-
-# Subclases de parada de autobus
-
-:ParadaBus a rdfs:Class ;
-    rdfs:subClassOf :ParadaAutobus .
-
-:ParadaTranvia a rdfs:Class ;
-    rdfs:subClassOf :ParadaAutobus .
-
-# Subclases de instalacion privada o concertada
-
-:ParkingCorporativo a rdfs:Class ;
-    rdfs:subClassOf :InstalacionPrivadaConcertada .
-
-:ParkingColectivo a rdfs:Class ;
-    rdfs:subClassOf :InstalacionPrivadaConcertada .
-
-
-# Patron 4: Secuencia ordenada de paradas
-
-:MultiStopRelation a rdfs:Class .
-
-:FinalStop a rdfs:Class ;
-    rdfs:subClassOf :MultiStopRelation .
-
-
-# Patron Event: Desplazamiento como evento
-
-:EventoMovilidad a rdfs:Class .
-
-
-##################################################
-### PROPIEDADES
-##################################################
-
-# Vehiculos
-
-:ubicadoEn a rdf:Property ;
-    rdfs:domain :VehiculoCompartido ;
-    rdfs:range :PuntoServicio .
-
-:parteDe a rdf:Property ;
-    rdfs:domain :ComponenteAlmacenamiento ;
-    rdfs:range :VehiculoCompartido .
-
-:tipoVehiculo a rdf:Property ;
-    rdfs:domain :VehiculoCompartido ;
-    rdfs:range skos:Concept .
-
-# Agentes y roles
-
-:tieneRol a rdf:Property ;
-    rdfs:domain :Agente ;
-    rdfs:range :Rol .
-
-# Habilitacion de usuarios
-
-:fechaNacimiento a rdf:Property ;
-    rdfs:domain :Persona ;
-    rdfs:range xsd:date .
-
-:tienePermisoConducir a rdf:Property ;
-    rdfs:domain :Persona ;
-    rdfs:range xsd:boolean .
-
-:registradoPlataforma a rdf:Property ;
-    rdfs:domain :Persona ;
-    rdfs:range xsd:boolean .
-
-
-# Facturacion y pagos
-
-:emitidaPor a rdf:Property ;
-    rdfs:domain :Factura ;
-    rdfs:range :Agente .
-
-:emitidaA a rdf:Property ;
-    rdfs:domain :Factura ;
-    rdfs:range :Agente .
-
-:importeTotal a rdf:Property ;
-    rdfs:domain :Factura ;
-    rdfs:range xsd:decimal .
-
-:moneda a rdf:Property ;
-    rdfs:domain :Factura ;
-    rdfs:range xsd:string .
-
-:pendientePago a rdf:Property ;
-    rdfs:domain :Factura ;
-    rdfs:range xsd:boolean .
-
-
-# Servicios de movilidad
-# El agente ofrece o contrata segun el rol que desempena.
-
-:ofreceServicio a rdf:Property ;
-    rdfs:domain :Agente ;
-    rdfs:range :ServicioMovilidad .
-    
-:contrataServicio a rdf:Property ;
-    rdfs:domain :Agente ;
-    rdfs:range :ServicioMovilidad .
-    
-:aplicaTarifa a rdf:Property ;
-    rdfs:domain :ServicioMovilidad ;
-    rdfs:range :Tarifa .
-
-# Criterios de calculo de tarifas
-
-:parteDeTarifa a rdf:Property ;
-    rdfs:domain :CriterioCalculo ;
-    rdfs:range :TarifaPagoPorUso .
-
-
-# Reservas
-
-:reserva a rdf:Property ;
-    rdfs:domain :Reserva ;
-    rdfs:range :VehiculoCompartido .
-
-:minutosCortesia a rdf:Property ;
-    rdfs:domain :ReservaInmediata ;
-    rdfs:range xsd:integer .
-
-:activa a rdf:Property ;
-    rdfs:domain :Reserva ;
-    rdfs:range xsd:boolean .
-
-
-# Puntos de servicio
-
-:puntoRecogida a rdf:Property ;
-    rdfs:domain :ServicioMovilidad ;
-    rdfs:range :PuntoServicio .
-
-:puntoDevolucion a rdf:Property ;
-    rdfs:domain :ServicioMovilidad ;
-    rdfs:range :PuntoServicio .
-
-:tipoEstacion a rdf:Property ;
-    rdfs:domain :EstacionFisica ;
-    rdfs:range skos:Concept .
-
-# Patron 1: Contratacion de un servicio
-
-:ofrece a rdf:Property ;
-    rdfs:domain :ServicioMovilidad ;
-    rdfs:range :Reserva .
-
-:define a rdf:Property ;
-    rdfs:domain :ServicioMovilidad ;
-    rdfs:range :Trayecto .
-
-:ofrecidoEn a rdf:Property ;
-    rdfs:domain :ServicioMovilidad ;
-    rdfs:range :PuntoServicio .
-
-:disponeDe a rdf:Property ;
-    rdfs:domain :ServicioMovilidad ;
-    rdfs:range :VehiculoCompartido .
-
-
-# Patron 3: Relacion n-aria para trayectos
-
-:tieneTrayecto a rdf:Property ;
-    rdfs:domain :ServicioConRecorrido ;
-    rdfs:range :RelacionTrayecto .
-
-:asignaTrayecto a rdf:Property ;
-    rdfs:domain :RelacionTrayecto ;
-    rdfs:range :Trayecto .
-
-:recorreDist a rdf:Property ;
-    rdfs:domain :RelacionTrayecto ;
-    rdfs:range xsd:decimal .
-
-:duracionTray a rdf:Property ;
-    rdfs:domain :RelacionTrayecto ;
-    rdfs:range xsd:integer .
-
-:costeTrayecto a rdf:Property ;
-    rdfs:domain :RelacionTrayecto ;
-    rdfs:range xsd:decimal .
-
-
-# Patron 4: Secuencia ordenada de paradas
-
-:hasMultiStop a rdf:Property ;
-    rdfs:domain :Trayecto ;
-    rdfs:range :MultiStopRelation .
-
-:hasDestination a rdf:Property ;
-    rdfs:domain :MultiStopRelation ;
-    rdfs:range :ParadaBus .
-
-:hasNextStop a rdf:Property ;
-    rdfs:domain :MultiStopRelation ;
-    rdfs:range :MultiStopRelation .
-
-
-# Patron Event: Desplazamiento como evento
-
-:agent a rdf:Property ;
-    rdfs:domain :EventoMovilidad ;
-    rdfs:range :Agente .
-
-:medio a rdf:Property ;
-    rdfs:domain :EventoMovilidad ;
-    rdfs:range :VehiculoCompartido .
-
-:lugar a rdf:Property ;
-    rdfs:domain :EventoMovilidad ;
-    rdfs:range :PuntoServicio .
-
-:tiempo a rdf:Property ;
-    rdfs:domain :EventoMovilidad ;
-    rdfs:range xsd:date .
-
-:producto a rdf:Property ;
-    rdfs:domain :EventoMovilidad ;
-    rdfs:range :Trayecto .
-
-
-# Propiedades vinculadas a tesauros SKOS
-
-:tienePropulsion a rdf:Property ;
-    rdfs:domain :VehiculoCompartido ;
-    rdfs:range skos:Concept .
-
-:tieneEstado a rdf:Property ;
-    rdfs:domain :VehiculoCompartido ;
-    rdfs:range skos:Concept .
-
-:metodoPago a rdf:Property ;
-    rdfs:domain :Pago ;
-    rdfs:range skos:Concept .
-
-:tipoVehiculo a rdf:Property ;
-    rdfs:domain :VehiculoCompartido ;
-    rdfs:range skos:Concept .
-
-:tipoEstacion a rdf:Property ;
-    rdfs:domain :EstacionFisica ;
-    rdfs:range skos:Concept .
-
-
-
-##################################################
-### INDIVIDUOS
-##################################################
-
-# Coches
-
-:Coche_01 a :Coche ;
-    :ubicadoEn :Parking_Atocha ;
-    :tienePropulsion prop:Electrica ;
-    :tieneEstado estado:Disponible .
-
-:Coche_02 a :Coche ;
-    :ubicadoEn :Parking_Castellana ;
-    :tieneEstado estado:Disponible .
-
-:Coche_05 a :Coche ;
-    :tieneEstado estado:Disponible .
-
-:Coche_06 a :Coche .
-
-# Coches en mantenimiento
-
-:Coche_08 a :Coche ;
-    :tienePropulsion prop:Combustion ;
-    :tieneEstado estado:Mantenimiento .
-
-:Coche_15 a :Coche ;
-    :tienePropulsion prop:Electrica ;
-    :tieneEstado estado:Mantenimiento .
-
-
-# Componentes fisicos de los coches
-
-[] a :DepositoCombustible ;
-   :parteDe :Coche_08 .
-
-[] a :Bateria ;
-   :parteDe :Coche_15 .
-
-
-# Puntos de servicio
-
+# Modelo conceptual ampliado preparado para Protégé.
+# No se imponen cardinalidades ni disjunciones sin requisitos expresos.
+# Las propiedades opcionales se pueden dejar sin valor en los individuos.
+
+<https://example.org/ontologia-movilidad> a owl:Ontology ;
+    rdfs:label "Ontología de movilidad compartida urbana"@es ;
+    rdfs:comment "Modelo de servicios, agentes, reservas, vehículos, infraestructura, tarifas, trayectos, facturas y pagos, con vocabularios SKOS."@es .
+
+#################################################################
+# CLASES Y JERARQUIAS
+#################################################################
+:ServicioMovilidad a owl:Class .
+:Agente a owl:Class .
+:Persona a owl:Class ; rdfs:subClassOf :Agente .
+:Organizacion a owl:Class ; rdfs:subClassOf :Agente .
+:Rol a owl:Class .
+:RolUsuario a owl:Class ; rdfs:subClassOf :Rol .
+:RolProveedor a owl:Class ; rdfs:subClassOf :Rol .
+
+:Reserva a owl:Class .
+:ReservaInmediata a owl:Class ; rdfs:subClassOf :Reserva .
+:ReservaAnticipada a owl:Class ; rdfs:subClassOf :Reserva .
+
+:VehiculoCompartido a owl:Class .
+:VehiculoMovilidadPersonal a owl:Class ; rdfs:subClassOf :VehiculoCompartido .
+:VehiculoColectivo a owl:Class ; rdfs:subClassOf :VehiculoCompartido .
+:Patinete a owl:Class ; rdfs:subClassOf :VehiculoMovilidadPersonal .
+:Bicicleta a owl:Class ; rdfs:subClassOf :VehiculoMovilidadPersonal .
+:Coche a owl:Class ; rdfs:subClassOf :VehiculoMovilidadPersonal .
+:CocheVolador a owl:Class ; rdfs:subClassOf :VehiculoMovilidadPersonal .
+:CochePersonal a owl:Class ; rdfs:subClassOf :Coche .
+:Taxi a owl:Class ; rdfs:subClassOf :Coche .
+:Autobus a owl:Class ; rdfs:subClassOf :VehiculoColectivo .
+:Metro a owl:Class ; rdfs:subClassOf :VehiculoColectivo .
+:Tren a owl:Class ; rdfs:subClassOf :VehiculoColectivo .
+
+# Clasificacion complementaria por propulsion (clases, distintas de SKOS).
+:VehiculoPropulsionElectrica a owl:Class ; rdfs:subClassOf :VehiculoCompartido .
+:VehiculoCombustion a owl:Class ; rdfs:subClassOf :VehiculoCompartido .
+:VehiculoPropulsionHumana a owl:Class ; rdfs:subClassOf :VehiculoCompartido .
+:VehiculoPropulsionHibrida a owl:Class ; rdfs:subClassOf :VehiculoCompartido .
+:ComponenteAlmacenamiento a owl:Class .
+:Bateria a owl:Class ; rdfs:subClassOf :ComponenteAlmacenamiento .
+:DepositoCombustible a owl:Class ; rdfs:subClassOf :ComponenteAlmacenamiento .
+
+:PuntoServicio a owl:Class .
+:EstacionFisica a owl:Class ; rdfs:subClassOf :PuntoServicio .
+:InstalacionPrivadaConcertada a owl:Class ; rdfs:subClassOf :PuntoServicio .
+:ViaPublica a owl:Class ; rdfs:subClassOf :PuntoServicio .
+:EstacionFerroviaria a owl:Class ; rdfs:subClassOf :EstacionFisica .
+:ParadaAutobus a owl:Class ; rdfs:subClassOf :EstacionFisica .
+:ParadaBus a owl:Class ; rdfs:subClassOf :ParadaAutobus .
+:ParadaTranvia a owl:Class ; rdfs:subClassOf :EstacionFisica .
+:AnclajeBicicleta a owl:Class ; rdfs:subClassOf :EstacionFisica .
+:Vertipuerto a owl:Class ; rdfs:subClassOf :EstacionFisica .
+:ParkingCorporativo a owl:Class ; rdfs:subClassOf :InstalacionPrivadaConcertada .
+:ParkingColectivo a owl:Class ; rdfs:subClassOf :InstalacionPrivadaConcertada .
+
+:Tarifa a owl:Class .
+:TarifaSuscripcion a owl:Class ; rdfs:subClassOf :Tarifa .
+:TarifaSuscripcionDiaria a owl:Class ; rdfs:subClassOf :TarifaSuscripcion .
+:TarifaSuscripcionMensual a owl:Class ; rdfs:subClassOf :TarifaSuscripcion .
+:TarifaSuscripcionAnual a owl:Class ; rdfs:subClassOf :TarifaSuscripcion .
+:TarifaBonoPrepago a owl:Class ; rdfs:subClassOf :Tarifa .
+:TarifaPagoPorUso a owl:Class ; rdfs:subClassOf :Tarifa .
+:CriterioCalculo a owl:Class .
+
+:RelacionTrayecto a owl:Class .
+:Trayecto a owl:Class .
+:MultiStopRelation a owl:Class .
+:FinalStop a owl:Class ; rdfs:subClassOf :MultiStopRelation .
+:Factura a owl:Class .
+:Pago a owl:Class .
+
+#################################################################
+# PROPIEDADES DE OBJETO
+#################################################################
+:tieneRol a owl:ObjectProperty ; rdfs:domain :Agente ; rdfs:range :Rol .
+:ofreceServicio a owl:ObjectProperty ; rdfs:domain :Agente ; rdfs:range :ServicioMovilidad ;
+    rdfs:comment "El agente ofrece el servicio cuando desempeña el rol de proveedor."@es .
+:contrataServicio a owl:ObjectProperty ; rdfs:domain :Agente ; rdfs:range :ServicioMovilidad ;
+    rdfs:comment "El agente contrata el servicio cuando desempeña el rol de usuario."@es .
+:haceReserva a owl:ObjectProperty ; rdfs:domain :Agente ; rdfs:range :Reserva .
+:reservaServicio a owl:ObjectProperty ; rdfs:domain :Reserva ; rdfs:range :ServicioMovilidad .
+:reservaVehiculo a owl:ObjectProperty ; rdfs:domain :Reserva ; rdfs:range :VehiculoCompartido .
+:reservaEn a owl:ObjectProperty ; rdfs:domain :Reserva ; rdfs:range :PuntoServicio .
+
+:disponeDe a owl:ObjectProperty ; rdfs:domain :ServicioMovilidad ; rdfs:range :VehiculoCompartido .
+:ubicadoEn a owl:ObjectProperty ; rdfs:domain :VehiculoCompartido ; rdfs:range :PuntoServicio .
+:parteDe a owl:ObjectProperty ; rdfs:domain :ComponenteAlmacenamiento ; rdfs:range :VehiculoCompartido .
+:ofrecidoEn a owl:ObjectProperty ; rdfs:domain :ServicioMovilidad ; rdfs:range :PuntoServicio .
+:puntoRecogida a owl:ObjectProperty ; rdfs:domain :ServicioMovilidad ; rdfs:range :PuntoServicio .
+:puntoDevolucion a owl:ObjectProperty ; rdfs:domain :ServicioMovilidad ; rdfs:range :PuntoServicio .
+
+:aplicaTarifa a owl:ObjectProperty ; rdfs:domain :ServicioMovilidad ; rdfs:range :Tarifa .
+:tieneCriterio a owl:ObjectProperty ; rdfs:domain :TarifaPagoPorUso ; rdfs:range :CriterioCalculo .
+
+:tieneTrayecto a owl:ObjectProperty ; rdfs:domain :ServicioMovilidad ; rdfs:range :RelacionTrayecto .
+:asignaTrayecto a owl:ObjectProperty ; rdfs:domain :RelacionTrayecto ; rdfs:range :Trayecto .
+:hasMultiStop a owl:ObjectProperty ; rdfs:domain :Trayecto ; rdfs:range :MultiStopRelation .
+:hasDestination a owl:ObjectProperty ; rdfs:domain :MultiStopRelation ; rdfs:range :PuntoServicio .
+:hasNextStop a owl:ObjectProperty ; rdfs:domain :MultiStopRelation ; rdfs:range :MultiStopRelation .
+
+:emitidaPor a owl:ObjectProperty ; rdfs:domain :Factura ; rdfs:range :Agente .
+:emitidaA a owl:ObjectProperty ; rdfs:domain :Factura ; rdfs:range :Agente .
+:facturaServicio a owl:ObjectProperty ; rdfs:domain :Factura ; rdfs:range :ServicioMovilidad .
+:facturaTrayecto a owl:ObjectProperty ; rdfs:domain :Factura ; rdfs:range :RelacionTrayecto .
+:tienePago a owl:ObjectProperty ; rdfs:domain :Factura ; rdfs:range :Pago .
+:realizadoPor a owl:ObjectProperty ; rdfs:domain :Pago ; rdfs:range :Agente .
+
+# Conexiones a conceptos SKOS. El rango es skos:Concept, no una clase de vehículo.
+:tienePropulsion a owl:ObjectProperty ; rdfs:domain :VehiculoCompartido ; rdfs:range skos:Concept .
+:tieneEstado a owl:ObjectProperty ; rdfs:domain :VehiculoCompartido ; rdfs:range skos:Concept .
+:tipoVehiculo a owl:ObjectProperty ; rdfs:domain :VehiculoCompartido ; rdfs:range skos:Concept .
+:tipoEstacion a owl:ObjectProperty ; rdfs:domain :EstacionFisica ; rdfs:range skos:Concept .
+:metodoPago a owl:ObjectProperty ; rdfs:domain :Pago ; rdfs:range skos:Concept .
+
+#################################################################
+# PROPIEDADES DE DATOS
+#################################################################
+:idServicio a owl:DatatypeProperty ; rdfs:domain :ServicioMovilidad ; rdfs:range xsd:string .
+:nombreServicio a owl:DatatypeProperty ; rdfs:domain :ServicioMovilidad ; rdfs:range xsd:string .
+:descripcionServicio a owl:DatatypeProperty ; rdfs:domain :ServicioMovilidad ; rdfs:range xsd:string .
+:activoServicio a owl:DatatypeProperty ; rdfs:domain :ServicioMovilidad ; rdfs:range xsd:boolean .
+
+:idAgente a owl:DatatypeProperty ; rdfs:domain :Agente ; rdfs:range xsd:string .
+:nombreAgente a owl:DatatypeProperty ; rdfs:domain :Agente ; rdfs:range xsd:string .
+:apellidos a owl:DatatypeProperty ; rdfs:domain :Persona ; rdfs:range xsd:string .
+:fechaNacimiento a owl:DatatypeProperty ; rdfs:domain :Persona ; rdfs:range xsd:date .
+:tienePermisoConducir a owl:DatatypeProperty ; rdfs:domain :Persona ; rdfs:range xsd:boolean .
+:registradoPlataforma a owl:DatatypeProperty ; rdfs:domain :Persona ; rdfs:range xsd:boolean .
+:NIF a owl:DatatypeProperty ; rdfs:domain :Organizacion ; rdfs:range xsd:string .
+:tipoOrganizacion a owl:DatatypeProperty ; rdfs:domain :Organizacion ; rdfs:range xsd:string .
+
+:idReserva a owl:DatatypeProperty ; rdfs:domain :Reserva ; rdfs:range xsd:string .
+:fechaReserva a owl:DatatypeProperty ; rdfs:domain :Reserva ; rdfs:range xsd:dateTime .
+:reservaActiva a owl:DatatypeProperty ; rdfs:domain :Reserva ; rdfs:range xsd:boolean .
+:inicioUso a owl:DatatypeProperty ; rdfs:domain :ReservaInmediata ; rdfs:range xsd:dateTime .
+:fechaInicio a owl:DatatypeProperty ; rdfs:domain :ReservaAnticipada ; rdfs:range xsd:dateTime .
+:fechaFin a owl:DatatypeProperty ; rdfs:domain :ReservaAnticipada ; rdfs:range xsd:dateTime .
+:minutosCortesia a owl:DatatypeProperty ; rdfs:domain :ReservaAnticipada ; rdfs:range xsd:integer ;
+    rdfs:comment "Margen de cortesía respecto al horario de la reserva anticipada."@es .
+:cancelable a owl:DatatypeProperty ; rdfs:domain :ReservaAnticipada ; rdfs:range xsd:boolean .
+
+:idVehiculo a owl:DatatypeProperty ; rdfs:domain :VehiculoCompartido ; rdfs:range xsd:string .
+:matricula a owl:DatatypeProperty ; rdfs:domain :VehiculoCompartido ; rdfs:range xsd:string .
+:kilometraje a owl:DatatypeProperty ; rdfs:domain :VehiculoCompartido ; rdfs:range xsd:decimal .
+:capacidad a owl:DatatypeProperty ; rdfs:domain :VehiculoCompartido ; rdfs:range xsd:integer .
+
+:idPunto a owl:DatatypeProperty ; rdfs:domain :PuntoServicio ; rdfs:range xsd:string .
+:nombrePunto a owl:DatatypeProperty ; rdfs:domain :PuntoServicio ; rdfs:range xsd:string .
+:direccionPunto a owl:DatatypeProperty ; rdfs:domain :PuntoServicio ; rdfs:range xsd:string .
+:latitud a owl:DatatypeProperty ; rdfs:domain :PuntoServicio ; rdfs:range xsd:decimal .
+:longitud a owl:DatatypeProperty ; rdfs:domain :PuntoServicio ; rdfs:range xsd:decimal .
+
+:idTarifa a owl:DatatypeProperty ; rdfs:domain :Tarifa ; rdfs:range xsd:string .
+:nombreTarifa a owl:DatatypeProperty ; rdfs:domain :Tarifa ; rdfs:range xsd:string .
+:precio a owl:DatatypeProperty ; rdfs:domain :Tarifa ; rdfs:range xsd:decimal ;
+    rdfs:comment "Precio fijo u orientativo, opcional. El coste final de una tarifa de pago por uso depende de las mediciones."@es .
+:monedaTarifa a owl:DatatypeProperty ; rdfs:domain :Tarifa ; rdfs:range xsd:string .
+:precioPorKm a owl:DatatypeProperty ; rdfs:domain :TarifaPagoPorUso ; rdfs:range xsd:decimal .
+:precioPorMinuto a owl:DatatypeProperty ; rdfs:domain :TarifaPagoPorUso ; rdfs:range xsd:decimal .
+
+:distanciaKm a owl:DatatypeProperty ; rdfs:domain :RelacionTrayecto ; rdfs:range xsd:decimal .
+:duracionMin a owl:DatatypeProperty ; rdfs:domain :RelacionTrayecto ; rdfs:range xsd:decimal .
+:costeTrayecto a owl:DatatypeProperty ; rdfs:domain :RelacionTrayecto ; rdfs:range xsd:decimal .
+:idTrayecto a owl:DatatypeProperty ; rdfs:domain :Trayecto ; rdfs:range xsd:string .
+
+:idFactura a owl:DatatypeProperty ; rdfs:domain :Factura ; rdfs:range xsd:string .
+:fechaEmision a owl:DatatypeProperty ; rdfs:domain :Factura ; rdfs:range xsd:date .
+:importeTotal a owl:DatatypeProperty ; rdfs:domain :Factura ; rdfs:range xsd:decimal .
+:monedaFactura a owl:DatatypeProperty ; rdfs:domain :Factura ; rdfs:range xsd:string .
+:pendientePago a owl:DatatypeProperty ; rdfs:domain :Factura ; rdfs:range xsd:boolean .
+:idPago a owl:DatatypeProperty ; rdfs:domain :Pago ; rdfs:range xsd:string .
+:fechaPago a owl:DatatypeProperty ; rdfs:domain :Pago ; rdfs:range xsd:dateTime .
+:importePago a owl:DatatypeProperty ; rdfs:domain :Pago ; rdfs:range xsd:decimal .
+:monedaPago a owl:DatatypeProperty ; rdfs:domain :Pago ; rdfs:range xsd:string .
+
+#################################################################
+# EJEMPLOS CONSERVADOS DE LA PRACTICA
+# No se inventan importes, NIF, coordenadas ni tarifas adicionales.
+#################################################################
 :Parking_Atocha a :ParkingColectivo .
-
 :Parking_Castellana a :ParkingColectivo .
-
 :Calle_Alcala a :ViaPublica .
+:Coche_01 a :Coche ; :ubicadoEn :Parking_Atocha ; :tienePropulsion prop:Electrica ; :tieneEstado estado:Disponible .
+:Coche_02 a :Coche ; :ubicadoEn :Parking_Castellana ; :tieneEstado estado:Disponible .
+:Coche_05 a :Coche ; :tieneEstado estado:Disponible .
+:Coche_06 a :Coche .
+:Coche_08 a :Coche ; :tienePropulsion prop:Combustion ; :tieneEstado estado:Mantenimiento .
+:Coche_15 a :Coche ; :tienePropulsion prop:Electrica ; :tieneEstado estado:Mantenimiento .
+[] a :DepositoCombustible ; :parteDe :Coche_08 .
+[] a :Bateria ; :parteDe :Coche_15 .
 
-
-# Servicio de alquiler
-
-:ServicioAlquiler_01 a :ServicioConRecorrido ;
+:ServicioAlquiler_01 a :ServicioMovilidad ;
+    :disponeDe :Coche_01 ;
+    :ofrecidoEn :Parking_Atocha ;
     :puntoRecogida :Parking_Atocha ;
     :puntoDevolucion :Parking_Castellana ;
     :tieneTrayecto :RelacionTrayecto_01 ;
     :aplicaTarifa :TarifaUso_01 .
-
-
-# Agentes
-
-:Carlos a :Persona ;
-    :tieneRol [ a :RolUsuario ] ;
-    :fechaNacimiento "2000-05-12"^^xsd:date ;
-    :tienePermisoConducir true ;
-    :registradoPlataforma true .
-
-:Laura_Perez a :Persona ;
-    :tieneRol [ a :RolUsuario ] ;
-    :fechaNacimiento "2000-01-12"^^xsd:date ;
-    :tienePermisoConducir true ;
-    :registradoPlataforma true .
-
-:EcoCar_Mobility_SL a :Organizacion ;
-    :tieneRol [ a :RolProveedor ] ;
-    :ofreceServicio :ServicioAlquiler_01 .
-
-:Colegio_SanJose a :Organizacion ;
-    :tieneRol [ a :RolUsuario ] ;
-    :contrataServicio :ServicioAlquiler_01 .
-
-
-# Reservas
-
-:ReservaAnticipada_R44 a :ReservaAnticipada ;
-    :activa true .
-
-:ReservaInmediata_01 a :ReservaInmediata ;
-    :reserva :Coche_06 ;
-    :minutosCortesia 15 .
-
-
-# Tarifas
-
 :TarifaUso_01 a :TarifaPagoPorUso .
-
-
-# Pagos
-
-[] a :Pago ;
-   :metodoPago estur-paymentmethod:Bizum .
-
-
-# Facturas
-
-:FacturaEjemplo_01 a :Factura ;
-    :emitidaPor :EcoCar_Mobility_SL ;
-    :emitidaA :Laura_Perez ;
-    :importeTotal "18.50"^^xsd:decimal ;
-    :moneda "EUR" .
-
-:FAC-88 a :Factura ;
-    :emitidaA :Colegio_SanJose ;
-    :pendientePago true .
-
-
-# Trayecto
-
 :RelacionTrayecto_01 a :RelacionTrayecto ;
     :asignaTrayecto :Trayecto_01 ;
-    :recorreDist "14.5"^^xsd:decimal ;
-    :duracionTray "26"^^xsd:integer .
-
+    :distanciaKm "14.5"^^xsd:decimal ;
+    :duracionMin "26"^^xsd:decimal .
 :Trayecto_01 a :Trayecto .
+
+:Carlos a :Persona ; :nombreAgente "Carlos" ; :tieneRol [ a :RolUsuario ] ;
+    :fechaNacimiento "2000-05-12"^^xsd:date ;
+    :tienePermisoConducir true ; :registradoPlataforma true .
+:Laura_Perez a :Persona ; :tieneRol [ a :RolUsuario ] ;
+    :fechaNacimiento "2000-01-12"^^xsd:date ;
+    :tienePermisoConducir true ; :registradoPlataforma true .
+:EcoCar_Mobility_SL a :Organizacion ; :tieneRol [ a :RolProveedor ] ;
+    :ofreceServicio :ServicioAlquiler_01 .
+:Colegio_SanJose a :Organizacion ; :tieneRol [ a :RolUsuario ] ;
+    :contrataServicio :ServicioAlquiler_01 .
+
+:ReservaAnticipada_R44 a :ReservaAnticipada ; :reservaActiva true .
+:ReservaInmediata_01 a :ReservaInmediata ; :reservaVehiculo :Coche_06 .
+
+:FacturaEjemplo_01 a :Factura ; :emitidaPor :EcoCar_Mobility_SL ;
+    :emitidaA :Laura_Perez ; :importeTotal "18.50"^^xsd:decimal ; :monedaFactura "EUR" .
+:FAC-88 a :Factura ; :emitidaA :Colegio_SanJose ; :pendientePago true .
+[] a :Pago ; :metodoPago estur-paymentmethod:Bizum .
+
+# Los conceptos externos de VehicleType y StationType se usan cuando
+# se conozca el tipo exacto de un individuo. Los prefijos no los importan.
+# No se asignan a los coches tipos específicos no documentados.
