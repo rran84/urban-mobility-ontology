@@ -1,0 +1,2025 @@
+{
+  "version": "32.6.1",
+  "pages": [
+    {
+      "id": "CV-4M4d1xT9Z3qV9vCh_",
+      "name": "Página-2",
+      "cells": [
+        {
+          "id": "1",
+          "type": "layer"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-1",
+          "type": "node",
+          "parent": "1",
+          "label": "@base: <http://movilidad.es/def/compartida#>\nmo: <http://movilidad.es/def/compartida#>\n\nowl: <http://www.w3.org/2002/07/owl#>\nrdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nrdfs: <http://www.w3.org/2000/01/rdf-schema#>\nxsd: <http://www.w3.org/2001/XMLSchema#>\ndc: <http://purl.org/dc/elements/1.1/>\ndcterms: <http://purl.org/dc/terms/>\nskos: <http://www.w3.org/2004/02/skos/core#>\nvann: <http://purl.org/vocab/vann/>\nsegittur: <http://vocab.segittur.es/def/>\ngr: <http://purl.org/goodrelations/v1#>\ninv: <http://purl.org/net/oeg/keychain/invoice#>\nmv: <http://purl.org/net/mobivic#>\nfoaf: <http://xmlns.com/foaf/0.1/>",
+          "html": "<b>@base</b>: &lt;http://movilidad.es/def/compartida#&gt;<br/><b>mo</b>: &lt;http://movilidad.es/def/compartida#&gt;<br/><br/><b>owl</b>: &lt;http://www.w3.org/2002/07/owl#&gt;<br/><b>rdf</b>: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;<br/><b>rdfs</b>: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br/><b>xsd</b>: &lt;http://www.w3.org/2001/XMLSchema#&gt;<br/><b>dc</b>: &lt;http://purl.org/dc/elements/1.1/&gt;<br/><b>dcterms</b>: &lt;http://purl.org/dc/terms/&gt;<br/><b>skos</b>: &lt;http://www.w3.org/2004/02/skos/core#&gt;<br/><b>vann</b>: &lt;http://purl.org/vocab/vann/&gt;<br/><b>segittur</b>: &lt;http://vocab.segittur.es/def/&gt;<br/><b>gr</b>: &lt;http://purl.org/goodrelations/v1#&gt;<br/><b>inv</b>: &lt;http://purl.org/net/oeg/keychain/invoice#&gt;<br/><b>mv</b>: &lt;http://purl.org/net/mobivic#&gt;<br/><b>foaf</b>: &lt;http://xmlns.com/foaf/0.1/&gt;"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-2",
+          "type": "node",
+          "parent": "1",
+          "label": "owl:Ontology: <http://movilidad.es/def/compartida>\n\ndcterms:title: \"Ontología de Movilidad Compartida (myOntology)\"@es\ndcterms:description: \"Ontología para la representación de servicios de movilidad compartida, agentes, vehículos, reservas y tarifas.\"@es\n\ndcterms:created: \"2026-10-26\"^^xsd:date\nvann:preferredNamespacePrefix: \"mo\"\nvann:preferredNamespaceUri: \"http://movilidad.es/def/compartida#\"\nowl:versionInfo: \"1.0.0\"",
+          "html": "<b>owl:Ontology</b>: &lt;http://movilidad.es/def/compartida&gt;<br/><br/><b>dcterms:title</b>: \"Ontología de Movilidad Compartida (myOntology)\"@es<br/><b>dcterms:description</b>: \"Ontología para la representación de servicios de movilidad compartida, agentes, vehículos, reservas y tarifas.\"@es<br/><br/><b>dcterms:created</b>: \"2026-10-26\"^^xsd:date<br/><b>vann:preferredNamespacePrefix</b>: \"mo\"<br/><b>vann:preferredNamespaceUri</b>: \"http://movilidad.es/def/compartida#\"<br/><b>owl:versionInfo</b>: \"1.0.0\""
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-3",
+          "type": "node",
+          "parent": "1",
+          "label": "Ontologías Reutilizadas\nGoodRelations (gr)\nInvoice (inv)\nMobiVic (mv)\nFOAF (foaf)",
+          "html": "Ontologías Reutilizadas<br><hr>GoodRelations (gr)<br>Invoice (inv)<br>MobiVic (mv)<br>FOAF (foaf)"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-4",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Agentes\n(Agentes)idAgente :: xsd:string\nnombreAgente :: xsd:string",
+          "html": "<b>mo:Agentes<br/>(Agentes)</b><hr size='1'/>idAgente :: xsd:string<br/>nombreAgente :: xsd:string"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-5",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Persona\n(Persona)apellidos :: xsd:string\nfechaNacimiento :: xsd:date\npermisoConducir :: xsd:boolean\nregistradoEnPlataforma :: xsd:boolean",
+          "html": "<b>mo:Persona<br>(Persona)</b><hr size=\"1\">apellidos :: xsd:string<br>fechaNacimiento :: xsd:date<br>permisoConducir :: xsd:boolean<br>registradoEnPlataforma :: xsd:boolean"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-6",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Organizacion / foaf:Organization\n(Organización)NIF :: xsd:string\ntipo :: xsd:string",
+          "html": "<b>mo:Organizacion / foaf:Organization<br/>(Organización)</b><hr size='1'/>NIF :: xsd:string<br/>tipo :: xsd:string"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-7",
+          "type": "node",
+          "parent": "1",
+          "label": "gr:BusinessEntity\n(Empresa)",
+          "html": "<b>gr:BusinessEntity<br/>(Empresa)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-9",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Rol\n(Rol)",
+          "html": "<b>mo:Rol<br/>(Rol)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-10",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:RolUsuario\n(RolUsuario)",
+          "html": "<b>mo:RolUsuario<br/>(RolUsuario)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-11",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:RolProveedor\n(RolProveedor)",
+          "html": "<b>mo:RolProveedor<br/>(RolProveedor)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-12",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-14",
+          "target": "fFK2-XL6DUKGFpSItUKg-43"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-13",
+          "type": "node",
+          "parent": "fFK2-XL6DUKGFpSItUKg-12",
+          "label": "mo:puntoDevolucion"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-14",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:ServicioDeMovilidad\n(Servicio De Movilidad)idServicio :: xsd:string\nnombreServicio :: xsd:string\ndescripcion :: xsd:string\nactivo :: xsd:boolean",
+          "html": "<b>mo:ServicioDeMovilidad<br>(Servicio De Movilidad)</b><hr size=\"1\">idServicio :: xsd:string<br>nombreServicio :: xsd:string<br>descripcion :: xsd:string<br>activo :: xsd:boolean"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-15",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Factura\n(Factura)idFactura :: xsd:string\nfechaEmision :: xsd:dateTime\nimporteTotal :: xsd:decimal\nmoneda :: xsd:string\npendientePago :: xsd:boolean",
+          "html": "<b>mo:Factura<br>(Factura)</b><hr size=\"1\">idFactura :: xsd:string<br>fechaEmision :: xsd:dateTime<br>importeTotal :: xsd:decimal<br>moneda :: xsd:string<br>pendientePago :: xsd:boolean"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-16",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Pago\n(Pago)idPago :: xsd:string\nfechaPago :: xsd:dateTime\nimporte :: xsd:decimal\nmoneda :: xsd:string",
+          "html": "<b>mo:Pago<br/>(Pago)</b><hr size='1'/>idPago :: xsd:string<br/>fechaPago :: xsd:dateTime<br/>importe :: xsd:decimal<br/>moneda :: xsd:string"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-17",
+          "type": "node",
+          "parent": "1",
+          "label": "skos:Concept / mv:PaymentMethod\n<<skos:inScheme segittur:MetodoPago>>\n(MetodoPago)",
+          "html": "skos:Concept / mv:PaymentMethod<br/>&lt;&lt;skos:inScheme segittur:MetodoPago&gt;&gt;<br/><b>(MetodoPago)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-18",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Reserva\n(Reserva)idReserva :: xsd:string\nfechaReserva :: xsd:dateTime\nactiva :: xsd:boolean\nminutosCortesia :: xsd:integer",
+          "html": "<b>mo:Reserva<br/>(Reserva)</b><hr size='1'/>idReserva :: xsd:string<br/>fechaReserva :: xsd:dateTime<br/>activa :: xsd:boolean<br/>minutosCortesia :: xsd:integer"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-19",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:ReservaInmediata\n(Reserva Inmediata)inicioUso :: xsd:dateTime",
+          "html": "<b>mo:ReservaInmediata<br/>(Reserva Inmediata)</b><hr size='1'/>inicioUso :: xsd:dateTime"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-20",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:ReservaAnticipada\n(Reserva Anticipada)fechaInicio :: xsd:dateTime\nfechaFin :: xsd:dateTime\ncancelable :: xsd:boolean",
+          "html": "<b>mo:ReservaAnticipada<br/>(Reserva Anticipada)</b><hr size='1'/>fechaInicio :: xsd:dateTime<br/>fechaFin :: xsd:dateTime<br/>cancelable :: xsd:boolean"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-21",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoCompartido\n(Vehiculo Compartido)idVehiculo :: xsd:string\nmatricula :: xsd:string\nkilometraje :: xsd:decimal\ncapacidad :: xsd:integer",
+          "html": "<b>mo:VehiculoCompartido<br/>(Vehiculo Compartido)</b><hr size='1'/>idVehiculo :: xsd:string<br/>matricula :: xsd:string<br/>kilometraje :: xsd:decimal<br/>capacidad :: xsd:integer"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-22",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoMovilidadPersonal\n(Vehiculo Movilidad Personal)",
+          "html": "<b>mo:VehiculoMovilidadPersonal<br/>(Vehiculo Movilidad Personal)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-23",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoColectivo\n(Vehiculo Colectivo)",
+          "html": "<b>mo:VehiculoColectivo<br/>(Vehiculo Colectivo)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-26",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoPropulsionElectrica\n(Eléctrica)",
+          "html": "<b>mo:VehiculoPropulsionElectrica<br>(Eléctrica)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-27",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoPropulsionCombustible\n(Combustible)",
+          "html": "<b>mo:VehiculoPropulsionCombustible<br/>(Combustible)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-28",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoPropulsionHumana\n(Humana)",
+          "html": "<b>mo:VehiculoPropulsionHumana<br/>(Humana)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-29",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoPropulsionHibrida\n(Híbrida)",
+          "html": "<b>mo:VehiculoPropulsionHibrida<br/>(Híbrida)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-30",
+          "type": "node",
+          "parent": "1",
+          "label": "skos:Concept\n<<skos:inScheme mo:TipoPropulsionScheme>>\nmo:TipoPropulsion",
+          "html": "skos:Concept<br/>&lt;&lt;skos:inScheme mo:TipoPropulsionScheme&gt;&gt;<br/><b>mo:TipoPropulsion</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-31",
+          "type": "node",
+          "parent": "1",
+          "label": "skos:Concept\n<<skos:inScheme mo:EstadoVehiculoScheme>>\nmo:EstadoVehiculo",
+          "html": "skos:Concept<br/>&lt;&lt;skos:inScheme mo:EstadoVehiculoScheme&gt;&gt;<br/><b>mo:EstadoVehiculo</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-32",
+          "type": "node",
+          "parent": "1",
+          "label": "skos:Concept\n<<skos:inScheme segittur:TipoVehiculo>>\n(TipoVehiculo)",
+          "html": "skos:Concept<br/>&lt;&lt;skos:inScheme segittur:TipoVehiculo&gt;&gt;<br/><b>(TipoVehiculo)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-33",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:RelacionTrayecto\n(Relación Trayecto)distanciaKm :: xsd:decimal\nduracionMinutos :: xsd:decimal\ncosteTrayecto :: xsd:decimal",
+          "html": "<b>mo:RelacionTrayecto<br/>(Relación Trayecto)</b><hr size='1'/>distanciaKm :: xsd:decimal<br/>duracionMinutos :: xsd:decimal<br/>costeTrayecto :: xsd:decimal"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-34",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Trayecto\n(Trayecto)idTrayecto :: xsd:string",
+          "html": "<b>mo:Trayecto<br/>(Trayecto)</b><hr size='1'/>idTrayecto :: xsd:string"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-35",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:MultiStopRelation\n(MultiStop Relation)",
+          "html": "<b>mo:MultiStopRelation<br/>(MultiStop Relation)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-36",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Tarifa\n(Tarifa)idTarifa :: xsd:string\nnombreTarifa :: xsd:string\nprecio :: xsd:decimal\nmoneda :: xsd:string",
+          "html": "<b>mo:Tarifa<br/>(Tarifa)</b><hr size='1'/>idTarifa :: xsd:string<br/>nombreTarifa :: xsd:string<br/>precio :: xsd:decimal<br/>moneda :: xsd:string"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-37",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:TarifaSuscripcion\n(Tarifa Suscripción)",
+          "html": "<b>mo:TarifaSuscripcion<br/>(Tarifa Suscripción)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-38",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:TarifaBonoPrepago\n(Tarifa Bono Prepago)nUsos :: xsd:integer\nvalidez :: xsd:date",
+          "html": "<b>mo:TarifaBonoPrepago<br/>(Tarifa Bono Prepago)</b><hr size='1'/>nUsos :: xsd:integer<br/>validez :: xsd:date"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-39",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:TarifaPagoUso\n(Tarifa Pago Uso)precioMinuto :: xsd:decimal\nprecioKm :: xsd:decimal",
+          "html": "<b>mo:TarifaPagoUso<br/>(Tarifa Pago Uso)</b><hr size='1'/>precioMinuto :: xsd:decimal<br/>precioKm :: xsd:decimal"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-40",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:TarifaSuscripcionDiaria\n(Diaria)",
+          "html": "<b>mo:TarifaSuscripcionDiaria<br/>(Diaria)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-41",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:TarifaSuscripcionMensual\n(Mensual)",
+          "html": "<b>mo:TarifaSuscripcionMensual<br/>(Mensual)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-42",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:TarifaSuscripcionAnual\n(Anual)",
+          "html": "<b>mo:TarifaSuscripcionAnual<br/>(Anual)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-43",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:PuntoDeServicio\n(Punto De Servicio)idPunto :: xsd:string\nnombrePunto :: xsd:string\ndireccion :: xsd:string\nlatitud :: xsd:decimal\nlongitud :: xsd:decimal\nbaseRecarga :: xsd:boolean",
+          "html": "<b>mo:PuntoDeServicio<br/>(Punto De Servicio)</b><hr size='1'/>idPunto :: xsd:string<br/>nombrePunto :: xsd:string<br/>direccion :: xsd:string<br/>latitud :: xsd:decimal<br/>longitud :: xsd:decimal<br/>baseRecarga :: xsd:boolean"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-44",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:EstacionFisica\n(Estación Física)",
+          "html": "<b>mo:EstacionFisica<br/>(Estación Física)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-45",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:ParkingPrivadoConcertadoPublico\n(Parking Privado Concertado)",
+          "html": "<b>mo:ParkingPrivadoConcertadoPublico<br>(Parking Privado Concertado)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-47",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:EstacionFerroviaria\n(Estación Ferroviaria)",
+          "html": "<b>mo:EstacionFerroviaria<br/>(Estación Ferroviaria)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-48",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:EstacionBicicletas\n(Estación Bicicletas)",
+          "html": "<b>mo:EstacionBicicletas<br/>(Estación Bicicletas)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-49",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:EstacionBus\n(Estación Bus)",
+          "html": "<b>mo:EstacionBus<br/>(Estación Bus)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-50",
+          "type": "node",
+          "parent": "1",
+          "label": "skos:Concept\n<<skos:inScheme segittur:TipoEstacion>>\n(TipoEstacion)",
+          "html": "skos:Concept<br/>&lt;&lt;skos:inScheme segittur:TipoEstacion&gt;&gt;<br/><b>(TipoEstacion)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-51",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-5",
+          "target": "fFK2-XL6DUKGFpSItUKg-4"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-52",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-6",
+          "target": "fFK2-XL6DUKGFpSItUKg-4",
+          "label": "sc"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-53",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-10",
+          "target": "fFK2-XL6DUKGFpSItUKg-9"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-54",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-11",
+          "target": "fFK2-XL6DUKGFpSItUKg-9",
+          "label": "sc"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-55",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-19",
+          "target": "fFK2-XL6DUKGFpSItUKg-18"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-56",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-20",
+          "target": "fFK2-XL6DUKGFpSItUKg-18",
+          "label": "sc"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-57",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-22",
+          "target": "fFK2-XL6DUKGFpSItUKg-21"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-58",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-23",
+          "target": "fFK2-XL6DUKGFpSItUKg-21",
+          "label": "sc"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-59",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-44",
+          "target": "fFK2-XL6DUKGFpSItUKg-43"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-60",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-45",
+          "target": "fFK2-XL6DUKGFpSItUKg-43"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-62",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-47",
+          "target": "fFK2-XL6DUKGFpSItUKg-44"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-63",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-48",
+          "target": "fFK2-XL6DUKGFpSItUKg-44"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-64",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-49",
+          "target": "fFK2-XL6DUKGFpSItUKg-44"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-132",
+          "type": "node",
+          "parent": "fFK2-XL6DUKGFpSItUKg-64",
+          "label": "sc"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-65",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-37",
+          "target": "fFK2-XL6DUKGFpSItUKg-36"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-66",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-38",
+          "target": "fFK2-XL6DUKGFpSItUKg-36"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-67",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-39",
+          "target": "fFK2-XL6DUKGFpSItUKg-36"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-137",
+          "type": "node",
+          "parent": "fFK2-XL6DUKGFpSItUKg-67",
+          "label": "sc"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-68",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-40",
+          "target": "fFK2-XL6DUKGFpSItUKg-37"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-69",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-41",
+          "target": "fFK2-XL6DUKGFpSItUKg-37"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-70",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-42",
+          "target": "fFK2-XL6DUKGFpSItUKg-37"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-134",
+          "type": "node",
+          "parent": "fFK2-XL6DUKGFpSItUKg-70",
+          "label": "sc"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-71",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-6",
+          "target": "fFK2-XL6DUKGFpSItUKg-9",
+          "label": "mo:tieneRol"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-72",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-5",
+          "target": "fFK2-XL6DUKGFpSItUKg-18",
+          "label": "mo:haceReserva"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-73",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-4",
+          "target": "fFK2-XL6DUKGFpSItUKg-14",
+          "label": "mo:ofreceServicio (Proveedor)"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-74",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-4",
+          "target": "fFK2-XL6DUKGFpSItUKg-14",
+          "label": "mo:contrataServicio (Usuario)"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-75",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-18",
+          "target": "fFK2-XL6DUKGFpSItUKg-14",
+          "label": "mo:reservaServicio"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-76",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-18",
+          "target": "fFK2-XL6DUKGFpSItUKg-21",
+          "label": "mo:reservaVehiculo"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-77",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-18",
+          "target": "fFK2-XL6DUKGFpSItUKg-43",
+          "label": "mo:reservaEn"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-78",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-14",
+          "target": "fFK2-XL6DUKGFpSItUKg-21",
+          "label": "mo:disponeDe"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-79",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-14",
+          "target": "fFK2-XL6DUKGFpSItUKg-43",
+          "label": "mo:ofrecidoEn"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-80",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-14",
+          "target": "fFK2-XL6DUKGFpSItUKg-36",
+          "label": "mo:tieneTarifa"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-81",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-14",
+          "target": "fFK2-XL6DUKGFpSItUKg-33",
+          "label": "mo:tieneTrayecto"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-82",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-15",
+          "target": "fFK2-XL6DUKGFpSItUKg-14",
+          "label": "mo:facturaServicio"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-83",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-15",
+          "target": "fFK2-XL6DUKGFpSItUKg-33",
+          "label": "mo:facturaTrayecto"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-84",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-16",
+          "target": "fFK2-XL6DUKGFpSItUKg-4",
+          "label": "mo:realizadoPor"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-85",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-15",
+          "target": "fFK2-XL6DUKGFpSItUKg-4",
+          "label": "mo:emitidaPor (Proveedor)"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-86",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-15",
+          "label": "mo:emitidaA (Usuario)"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-87",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-15",
+          "target": "fFK2-XL6DUKGFpSItUKg-16",
+          "label": "mo:tienePago"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-88",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-16",
+          "target": "fFK2-XL6DUKGFpSItUKg-17",
+          "label": "mo:tieneMetodoPago"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-89",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-33",
+          "target": "fFK2-XL6DUKGFpSItUKg-34",
+          "label": "mo:asignaTrayecto"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-90",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-34",
+          "target": "fFK2-XL6DUKGFpSItUKg-35",
+          "label": "mo:hasMultiStop"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-91",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-35",
+          "target": "fFK2-XL6DUKGFpSItUKg-35",
+          "label": "mo:hasNextStop"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-92",
+          "type": "edge",
+          "parent": "1",
+          "target": "fFK2-XL6DUKGFpSItUKg-43",
+          "label": "mo:hasDestination"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-93",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-21",
+          "target": "fFK2-XL6DUKGFpSItUKg-43",
+          "label": "mo:estacionadoEn"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-94",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-21",
+          "target": "fFK2-XL6DUKGFpSItUKg-30",
+          "label": "mo:tienePropulsion"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-95",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-21",
+          "target": "fFK2-XL6DUKGFpSItUKg-31",
+          "label": "mo:tieneEstado"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-96",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-21",
+          "target": "fFK2-XL6DUKGFpSItUKg-32",
+          "label": "mo:tipoVehiculo"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-97",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-43",
+          "target": "fFK2-XL6DUKGFpSItUKg-50",
+          "label": "mo:tipoEstacion"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-98",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-5",
+          "target": "fFK2-XL6DUKGFpSItUKg-9",
+          "label": "mo:tieneRol"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-99",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-6",
+          "target": "fFK2-XL6DUKGFpSItUKg-7",
+          "label": "owl:equivalentClass"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-100",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-7",
+          "target": "fFK2-XL6DUKGFpSItUKg-14",
+          "label": "gr:offers"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-102",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-36",
+          "target": "fFK2-XL6DUKGFpSItUKg-17",
+          "label": "mo:pagadoCon"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-103",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-14",
+          "target": "fFK2-XL6DUKGFpSItUKg-43"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-104",
+          "type": "node",
+          "parent": "fFK2-XL6DUKGFpSItUKg-103",
+          "label": "mo:puntoRecogida"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-108",
+          "type": "node",
+          "parent": "1",
+          "label": "foaf:Person\n(Persona)",
+          "html": "<b>foaf:Person<br>(Persona)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-109",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-108",
+          "target": "fFK2-XL6DUKGFpSItUKg-5"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-110",
+          "type": "node",
+          "parent": "fFK2-XL6DUKGFpSItUKg-109",
+          "label": "owl:equivalentClass",
+          "html": "<span style=\"font-size: 10px; background-color: rgb(255, 255, 255);\">owl:equivalentClass</span>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-116",
+          "type": "edge",
+          "parent": "1",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-1"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-117",
+          "type": "node",
+          "parent": "fFK2-XL6DUKGFpSItUKg-116",
+          "label": "owl:equivalentClass",
+          "html": "<span style=\"font-size: 10px; background-color: rgb(255, 255, 255);\">owl:equivalentClass</span>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-125",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-26"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-126",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-28",
+          "target": "fFK2-XL6DUKGFpSItUKg-21"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-127",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-27",
+          "target": "fFK2-XL6DUKGFpSItUKg-21"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-129",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-29",
+          "target": "fFK2-XL6DUKGFpSItUKg-21"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-130",
+          "type": "node",
+          "parent": "fFK2-XL6DUKGFpSItUKg-129",
+          "label": "sc"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-140",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:BatteryElectricVehicle\n(Eléctrica)",
+          "html": "<b>mv:BatteryElectricVehicle<br>(Eléctrica)</b>"
+        },
+        {
+          "id": "fFK2-XL6DUKGFpSItUKg-141",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-26",
+          "target": "fFK2-XL6DUKGFpSItUKg-140",
+          "label": "owl:equivalentClass"
+        },
+        {
+          "id": "HsF7JuUkiCoPEepHlgDT-1",
+          "type": "edge",
+          "parent": "1",
+          "source": "fFK2-XL6DUKGFpSItUKg-29",
+          "target": "HsF7JuUkiCoPEepHlgDT-2",
+          "label": "owl:equivalentClass"
+        },
+        {
+          "id": "HsF7JuUkiCoPEepHlgDT-2",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:Plug-inHybridElectricVehicle\n(Eléctrica)",
+          "html": "<b>mv:Plug-inHybridElectricVehicle<br>(Eléctrica)</b>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-1",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ParkingFacility\n(Parking Facility)exitRate ::xsd:string\nfillRate ::xsd:string\nmaximumParkingHour ::xsd:string\nnumberOfLevels :: xsd:integer\nrateOfOccupancy :: xsd:string\nqueuingTime :: xsd:string\ntotalNumberOfCharger ::xsd:integer",
+          "html": "<b>mv:ParkingFacility<br>(Parking Facility)</b><hr size=\"1\">exitRate ::xsd:string<div>fillRate ::xsd:string</div><div>maximumParkingHour ::xsd:string<div>numberOfLevels :: xsd:integer<br>rateOfOccupancy :: xsd:string<br>queuingTime :: xsd:string</div></div><div>totalNumberOfCharger ::xsd:integer</div>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-2",
+          "type": "node",
+          "parent": "1",
+          "label": "s:CivicStructure\n(Civic Structure)",
+          "html": "<b>s:CivicStructure<br>(Civic Structure)</b>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-51",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-3",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-50"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-52",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-51",
+          "label": "mv:hasCharger"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-58",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-3",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-2"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-59",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-58",
+          "label": "sc"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-3",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ParkingSpace\n(Parking Space)level :: xsd:integer\nmaximumParkingHour ::xds:string",
+          "html": "<b>mv:ParkingSpace<br>(Parking Space)</b><hr size=\"1\">level :: xsd:integer<div>maximumParkingHour ::xds:string</div>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-4",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ParkingFacilityEntrance\n(Entrance)",
+          "html": "<b>mv:ParkingFacilityEntrance<br>(Entrance)</b>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-5",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ParkingFacilityExit\n(Exit)",
+          "html": "<b>mv:ParkingFacilityExit<br>(Exit)</b>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-6",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ParkingFacilityFeature\n(Feature)",
+          "html": "<b>mv:ParkingFacilityFeature<br>(Feature)</b>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-7",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ParkingFacilityConnection\n(Connection)",
+          "html": "<b>mv:ParkingFacilityConnection<br>(Connection)</b>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-8",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:AccessCondition\n(Access Condition)",
+          "html": "<b>mv:AccessCondition<br>(Access Condition)</b>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-9",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:CivicStructureStatus\n(Status)",
+          "html": "<b>mv:CivicStructureStatus<br>(Status)</b>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-10",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:Capacity\n(Capacity)maximumValue :: xsd:integer\ntotalCapacity ::xsd:boolean",
+          "html": "<b>mv:Capacity<br>(Capacity)</b><hr size=\"1\">maximumValue :: xsd:integer<div>totalCapacity ::xsd:boolean</div>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-11",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:RealTimeCapacity\n(Real Time Capacity)currentValue :: xsd:integer",
+          "html": "<b>mv:RealTimeCapacity<br>(Real Time Capacity)</b><hr size=\"1\">currentValue :: xsd:integer"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-13",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ArrangementPattern\n(Arrangement Pattern)",
+          "html": "<b>mv:ArrangementPattern<br>(Arrangement Pattern)</b>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-14",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:Plug\n(Plug)currentInA:: xsd:double\ncurrentType:: xsd:string\npowerInkW:: xsd:double\nsupportedChargingMode::xsd:string\nthree-phasedCurrentAvaliable::xsd:boolean\nvoltageInV::xsd:double",
+          "html": "<b>mv:Plug<br>(Plug)</b><hr size=\"1\">currentInA:: xsd:double<div>currentType:: xsd:string</div><div>powerInkW:: xsd:double</div><div>supportedChargingMode::xsd:string</div><div><div>three-phasedCurrentAvaliable::xsd:boolean</div><div>voltageInV::xsd:double</div></div><div><br></div>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-15",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:PlugType\n(Plug Type)",
+          "html": "<b>mv:PlugType<br>(Plug Type)</b>"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-16",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-1",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-2"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-55",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-16",
+          "label": "sc"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-17",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-11",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-10"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-47",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-17",
+          "label": "mv:price"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-18",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-1",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-3"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-19",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-18",
+          "label": "mv:parkingSpace"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-20",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-1",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-4"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-21",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-20",
+          "label": "mv:entrance"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-40",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-20",
+          "label": "mv:entrance"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-22",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-1",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-5"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-23",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-22",
+          "label": "mv:exit"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-41",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-22",
+          "label": "mv:exit"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-24",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-1",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-6"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-25",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-24",
+          "label": "mv:feature"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-44",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-24",
+          "label": "mv:feature"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-26",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-1",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-7"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-27",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-26",
+          "label": "mv:connectedTo"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-48",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-26",
+          "label": "mv:concectTo"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-28",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-2",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-8"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-29",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-28",
+          "label": "mv:access"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-45",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-28",
+          "label": "mv:access"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-30",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-2",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-9"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-31",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-30",
+          "label": "mv:civicStructureStatus"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-32",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-2",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-10"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-33",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-32",
+          "label": "mv:capacity"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-46",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-32",
+          "label": "mv:hasCapacity"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-36",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-3",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-13"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-37",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-36",
+          "label": "mv:arrangement"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-49",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-36",
+          "label": "mv:arragementPattern"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-38",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-14",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-15"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-39",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-38",
+          "label": "mv:plugType"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-42",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-5",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-2"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-56",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-42",
+          "label": "sc"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-43",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-4",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-2"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-57",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-43",
+          "label": "sc"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-53",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-50",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-2"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-54",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-53",
+          "label": "sc"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-60",
+          "type": "edge",
+          "parent": "1",
+          "source": "X7DFrgqZQ-kSHslZ6yVO-50",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-14"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-61",
+          "type": "node",
+          "parent": "X7DFrgqZQ-kSHslZ6yVO-60",
+          "label": "mv:plug"
+        },
+        {
+          "id": "X7DFrgqZQ-kSHslZ6yVO-50",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:Charger\n(Cargador)brand::xsd:string\ncableAvaliable::xsd:boolean\nchargerQuantity::xsd:integer\ncurrentInA:: xsd:double\ncurrentType:: xsd:string\nenergySource:: xsd:string\nisFastChargerCapable::xsd:boolean\npowerInkW::xsd:double\nsupportedChargingMode::xsd:string\nthree-phasedCurrentAvaliable::xsd:boolean\nvoltageInV::xsd:double",
+          "html": "<b>mv:Charger<br>(Cargador)</b><hr size=\"1\">brand::xsd:string<div>cableAvaliable::xsd:boolean</div><div>chargerQuantity::xsd:integer<div>currentInA:: xsd:double<br>currentType:: xsd:string<br>energySource:: xsd:string</div></div><div>isFastChargerCapable::xsd:boolean</div><div>powerInkW::xsd:double</div><div>supportedChargingMode::xsd:string</div><div>three-phasedCurrentAvaliable::xsd:boolean</div><div>voltageInV::xsd:double</div>"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-4",
+          "type": "edge",
+          "parent": "1",
+          "source": "P7Pihx5i4-BFO8H1iZLG-1",
+          "target": "P7Pihx5i4-BFO8H1iZLG-2"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-5",
+          "type": "node",
+          "parent": "P7Pihx5i4-BFO8H1iZLG-4",
+          "label": "sg:tieneHorarioDeApertura"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-1",
+          "type": "node",
+          "parent": "1",
+          "label": "sg:Lugar\n(Lugar)",
+          "html": "<b>sg:Lugar<br>(Lugar)</b>"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-2",
+          "type": "node",
+          "parent": "1",
+          "label": "sg:HorarioDeApertura\n(Horario de apertura)",
+          "html": "<b>sg:HorarioDeApertura<br>(Horario de apertura)</b>"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-6",
+          "type": "edge",
+          "parent": "1",
+          "source": "P7Pihx5i4-BFO8H1iZLG-3",
+          "target": "P7Pihx5i4-BFO8H1iZLG-1"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-7",
+          "type": "node",
+          "parent": "P7Pihx5i4-BFO8H1iZLG-6",
+          "label": "sc"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-17",
+          "type": "edge",
+          "parent": "1",
+          "source": "P7Pihx5i4-BFO8H1iZLG-3",
+          "target": "X7DFrgqZQ-kSHslZ6yVO-1"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-3",
+          "type": "node",
+          "parent": "1",
+          "label": "sg:InfraestructuraDeTransporte\n(Infraestructura de Transporte)",
+          "html": "<b>sg:InfraestructuraDeTransporte<br>(Infraestructura de Transporte)</b>"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-9",
+          "type": "edge",
+          "parent": "1",
+          "source": "P7Pihx5i4-BFO8H1iZLG-8",
+          "target": "P7Pihx5i4-BFO8H1iZLG-1"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-10",
+          "type": "node",
+          "parent": "P7Pihx5i4-BFO8H1iZLG-9",
+          "label": "sg:tieneLocalizacion"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-15",
+          "type": "edge",
+          "parent": "1",
+          "source": "P7Pihx5i4-BFO8H1iZLG-8",
+          "target": "P7Pihx5i4-BFO8H1iZLG-11"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-16",
+          "type": "node",
+          "parent": "P7Pihx5i4-BFO8H1iZLG-15",
+          "label": "sg:hasFeature"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-8",
+          "type": "node",
+          "parent": "1",
+          "label": "sg:Localizacion\n(Localizacion)comarca:: xsd:string\ncomunidadAutonoma:: xsd:string\ncodigoPostal:: xsd:string\ndireccion::xsd:string\nlocalidad::xsd:string\npais::xsd:string\nprovincia::xsd:string",
+          "html": "<b>sg:Localizacion<br>(Localizacion)</b><hr size=\"1\">comarca:: xsd:string<div>comunidadAutonoma:: xsd:string</div><div>codigoPostal:: xsd:string</div><div>direccion::xsd:string</div><div><div>localidad::xsd:string</div><div>pais::xsd:string</div></div><div>provincia::xsd:string</div><div><br></div>"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-13",
+          "type": "edge",
+          "parent": "1",
+          "source": "P7Pihx5i4-BFO8H1iZLG-11",
+          "target": "P7Pihx5i4-BFO8H1iZLG-12"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-14",
+          "type": "node",
+          "parent": "P7Pihx5i4-BFO8H1iZLG-13",
+          "label": "sg:hasGeometry"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-11",
+          "type": "node",
+          "parent": "1",
+          "label": "geosparql:Feature\n(Caracteristica)",
+          "html": "<b>geosparql:Feature<br>(Caracteristica)</b>"
+        },
+        {
+          "id": "P7Pihx5i4-BFO8H1iZLG-12",
+          "type": "node",
+          "parent": "1",
+          "label": "geosparql:Geometry\n(Geometria)geoLat:: xsd:string\ngeoLong:: xsd:string\nasWKT:: xsd:string\nasGeoJSON::xsd:string",
+          "html": "<b>geosparql:Geometry<br>(Geometria)</b><hr size=\"1\">geoLat:: xsd:string<div>geoLong:: xsd:string</div><div>asWKT:: xsd:string</div><div><span style=\"background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));\">asGeoJSON::xsd:string</span></div><div><br></div>"
+        }
+      ]
+    },
+    {
+      "id": "rUOHLcUU29OFF3RhXsMC",
+      "name": "Página-3",
+      "cells": [
+        {
+          "id": "1",
+          "type": "layer"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-1",
+          "type": "node",
+          "parent": "1",
+          "label": "@base: <http://movilidad.es/def/compartida#>\nmo: <http://movilidad.es/def/compartida#>\n\nowl: <http://www.w3.org/2002/07/owl#>\nrdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nrdfs: <http://www.w3.org/2000/01/rdf-schema#>\nxsd: <http://www.w3.org/2001/XMLSchema#>\ndc: <http://purl.org/dc/elements/1.1/>\ndcterms: <http://purl.org/dc/terms/>\nskos: <http://www.w3.org/2004/02/skos/core#>\nvann: <http://purl.org/vocab/vann/>\nsegittur: <http://vocab.segittur.es/def/>\ngr: <http://purl.org/goodrelations/v1#>\ninv: <http://purl.org/net/oeg/keychain/invoice#>\nmv: <http://schema.mobivoc.org/>\nfoaf: <http://xmlns.com/foaf/0.1/>",
+          "html": "<b>@base</b>: &lt;http://movilidad.es/def/compartida#&gt;<br/><b>mo</b>: &lt;http://movilidad.es/def/compartida#&gt;<br/><br/><b>owl</b>: &lt;http://www.w3.org/2002/07/owl#&gt;<br/><b>rdf</b>: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;<br/><b>rdfs</b>: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br/><b>xsd</b>: &lt;http://www.w3.org/2001/XMLSchema#&gt;<br/><b>dc</b>: &lt;http://purl.org/dc/elements/1.1/&gt;<br/><b>dcterms</b>: &lt;http://purl.org/dc/terms/&gt;<br/><b>skos</b>: &lt;http://www.w3.org/2004/02/skos/core#&gt;<br/><b>vann</b>: &lt;http://purl.org/vocab/vann/&gt;<br/><b>segittur</b>: &lt;http://vocab.segittur.es/def/&gt;<br/><b>gr</b>: &lt;http://purl.org/goodrelations/v1#&gt;<br/><b>inv</b>: &lt;http://purl.org/net/oeg/keychain/invoice#&gt;<br/><b>mv</b>: &lt;http://schema.mobivoc.org/&gt;<br/><b>foaf</b>: &lt;http://xmlns.com/foaf/0.1/&gt;"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-2",
+          "type": "node",
+          "parent": "1",
+          "label": "owl:Ontology: <http://movilidad.es/def/compartida>\n\ndcterms:title: \"Ontología de Movilidad Compartida (myOntology)\"@es\ndcterms:description: \"Ontología para la representación de servicios de movilidad compartida, agentes, vehículos, reservas y tarifas.\"@es\n\ndcterms:created: \"2026-10-26\"^^xsd:date\nvann:preferredNamespacePrefix: \"mo\"\nvann:preferredNamespaceUri: \"http://movilidad.es/def/compartida#\"\nowl:versionInfo: \"1.0.0\"",
+          "html": "<b>owl:Ontology</b>: &lt;http://movilidad.es/def/compartida&gt;<br/><br/><b>dcterms:title</b>: \"Ontología de Movilidad Compartida (myOntology)\"@es<br/><b>dcterms:description</b>: \"Ontología para la representación de servicios de movilidad compartida, agentes, vehículos, reservas y tarifas.\"@es<br/><br/><b>dcterms:created</b>: \"2026-10-26\"^^xsd:date<br/><b>vann:preferredNamespacePrefix</b>: \"mo\"<br/><b>vann:preferredNamespaceUri</b>: \"http://movilidad.es/def/compartida#\"<br/><b>owl:versionInfo</b>: \"1.0.0\""
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-3",
+          "type": "node",
+          "parent": "1",
+          "label": "Ontologías Reutilizadas\nGoodRelations (gr)\nInvoice (inv)\nMobiVoc (mv)\nFOAF (foaf)",
+          "html": "Ontologías Reutilizadas<br><hr>GoodRelations (gr)<br>Invoice (inv)<br>MobiVoc (mv)<br>FOAF (foaf)"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-4",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Agentes\n(Agentes)idAgente :: xsd:string\nnombreAgente :: xsd:string",
+          "html": "<b>mo:Agentes<br/>(Agentes)</b><hr size='1'/>idAgente :: xsd:string<br/>nombreAgente :: xsd:string"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-5",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Persona\n(Persona)apellidos :: xsd:string\nfechaNacimiento :: xsd:date\npermisoConducir :: xsd:boolean\nregistradoEnPlataforma :: xsd:boolean",
+          "html": "<b>mo:Persona<br>(Persona)</b><hr size=\"1\">apellidos :: xsd:string<br>fechaNacimiento :: xsd:date<br>permisoConducir :: xsd:boolean<br>registradoEnPlataforma :: xsd:boolean"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-6",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Organizacion / foaf:Organization\n(Organización)NIF :: xsd:string\ntipo :: xsd:string",
+          "html": "<b>mo:Organizacion / foaf:Organization<br/>(Organización)</b><hr size='1'/>NIF :: xsd:string<br/>tipo :: xsd:string"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-7",
+          "type": "node",
+          "parent": "1",
+          "label": "gr:BusinessEntity\n(Empresa)",
+          "html": "<b>gr:BusinessEntity<br/>(Empresa)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-8",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Rol\n(Rol)",
+          "html": "<b>mo:Rol<br/>(Rol)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-9",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:RolUsuario\n(RolUsuario)",
+          "html": "<b>mo:RolUsuario<br/>(RolUsuario)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-10",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:RolProveedor\n(RolProveedor)",
+          "html": "<b>mo:RolProveedor<br/>(RolProveedor)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-11",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:ServicioDeMovilidad\n(Servicio De Movilidad)idServicio :: xsd:string\nnombreServicio :: xsd:string\ndescripcion :: xsd:string\nactivo :: xsd:boolean",
+          "html": "<b>mo:ServicioDeMovilidad<br>(Servicio De Movilidad)</b><hr size=\"1\">idServicio :: xsd:string<br>nombreServicio :: xsd:string<br>descripcion :: xsd:string<br>activo :: xsd:boolean"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-12",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Factura\n(Factura)idFactura :: xsd:string\nfechaEmision :: xsd:dateTime\nimporteTotal :: xsd:decimal\nmoneda :: xsd:string\npendientePago :: xsd:boolean",
+          "html": "<b>mo:Factura<br>(Factura)</b><hr size=\"1\">idFactura :: xsd:string<br>fechaEmision :: xsd:dateTime<br>importeTotal :: xsd:decimal<br>moneda :: xsd:string<br>pendientePago :: xsd:boolean"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-13",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Pago\n(Pago)idPago :: xsd:string\nfechaPago :: xsd:dateTime\nimporte :: xsd:decimal\nmoneda :: xsd:string",
+          "html": "<b>mo:Pago<br/>(Pago)</b><hr size='1'/>idPago :: xsd:string<br/>fechaPago :: xsd:dateTime<br/>importe :: xsd:decimal<br/>moneda :: xsd:string"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-14",
+          "type": "node",
+          "parent": "1",
+          "label": "skos:Concept / mv:PaymentMethod\n<<skos:inScheme segittur:MetodoPago>>\n(MetodoPago)",
+          "html": "skos:Concept / mv:PaymentMethod<br/>&lt;&lt;skos:inScheme segittur:MetodoPago&gt;&gt;<br/><b>(MetodoPago)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-15",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Reserva\n(Reserva)idReserva :: xsd:string\nfechaReserva :: xsd:dateTime\nactiva :: xsd:boolean\nminutosCortesia :: xsd:integer",
+          "html": "<b>mo:Reserva<br/>(Reserva)</b><hr size='1'/>idReserva :: xsd:string<br/>fechaReserva :: xsd:dateTime<br/>activa :: xsd:boolean<br/>minutosCortesia :: xsd:integer"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-16",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:ReservaInmediata\n(Reserva Inmediata)inicioUso :: xsd:dateTime",
+          "html": "<b>mo:ReservaInmediata<br/>(Reserva Inmediata)</b><hr size='1'/>inicioUso :: xsd:dateTime"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-17",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:ReservaAnticipada\n(Reserva Anticipada)fechaInicio :: xsd:dateTime\nfechaFin :: xsd:dateTime\ncancelable :: xsd:boolean",
+          "html": "<b>mo:ReservaAnticipada<br/>(Reserva Anticipada)</b><hr size='1'/>fechaInicio :: xsd:dateTime<br/>fechaFin :: xsd:dateTime<br/>cancelable :: xsd:boolean"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-18",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoCompartido\n(Vehiculo Compartido)idVehiculo :: xsd:string\nmatricula :: xsd:string\nkilometraje :: xsd:decimal\ncapacidad :: xsd:integer",
+          "html": "<b>mo:VehiculoCompartido<br/>(Vehiculo Compartido)</b><hr size='1'/>idVehiculo :: xsd:string<br/>matricula :: xsd:string<br/>kilometraje :: xsd:decimal<br/>capacidad :: xsd:integer"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-19",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoMovilidadPersonal\n(Vehiculo Movilidad Personal)",
+          "html": "<b>mo:VehiculoMovilidadPersonal<br/>(Vehiculo Movilidad Personal)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-20",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoColectivo\n(Vehiculo Colectivo)",
+          "html": "<b>mo:VehiculoColectivo<br/>(Vehiculo Colectivo)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-21",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoPropulsionElectrica\n(Eléctrica)",
+          "html": "<b>mo:VehiculoPropulsionElectrica<br>(Eléctrica)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-22",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoPropulsionCombustible\n(Combustible)",
+          "html": "<b>mo:VehiculoPropulsionCombustible<br/>(Combustible)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-23",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoPropulsionHumana\n(Humana)",
+          "html": "<b>mo:VehiculoPropulsionHumana<br/>(Humana)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-24",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:VehiculoPropulsionHibrida\n(Híbrida)",
+          "html": "<b>mo:VehiculoPropulsionHibrida<br/>(Híbrida)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-25",
+          "type": "node",
+          "parent": "1",
+          "label": "skos:Concept\n<<skos:inScheme mo:TipoPropulsionScheme>>\nmo:TipoPropulsion",
+          "html": "skos:Concept<br/>&lt;&lt;skos:inScheme mo:TipoPropulsionScheme&gt;&gt;<br/><b>mo:TipoPropulsion</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-26",
+          "type": "node",
+          "parent": "1",
+          "label": "skos:Concept\n<<skos:inScheme mo:EstadoVehiculoScheme>>\nmo:EstadoVehiculo",
+          "html": "skos:Concept<br/>&lt;&lt;skos:inScheme mo:EstadoVehiculoScheme&gt;&gt;<br/><b>mo:EstadoVehiculo</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-27",
+          "type": "node",
+          "parent": "1",
+          "label": "skos:Concept\n<<skos:inScheme segittur:TipoVehiculo>>\n(TipoVehiculo)",
+          "html": "skos:Concept<br/>&lt;&lt;skos:inScheme segittur:TipoVehiculo&gt;&gt;<br/><b>(TipoVehiculo)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-28",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:RelacionTrayecto\n(Relación Trayecto)distanciaKm :: xsd:decimal\nduracionMinutos :: xsd:decimal\ncosteTrayecto :: xsd:decimal",
+          "html": "<b>mo:RelacionTrayecto<br/>(Relación Trayecto)</b><hr size='1'/>distanciaKm :: xsd:decimal<br/>duracionMinutos :: xsd:decimal<br/>costeTrayecto :: xsd:decimal"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-29",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Trayecto\n(Trayecto)idTrayecto :: xsd:string",
+          "html": "<b>mo:Trayecto<br/>(Trayecto)</b><hr size='1'/>idTrayecto :: xsd:string"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-30",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:MultiStopRelation\n(MultiStop Relation)",
+          "html": "<b>mo:MultiStopRelation<br/>(MultiStop Relation)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-31",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:Tarifa\n(Tarifa)idTarifa :: xsd:string\nnombreTarifa :: xsd:string\nprecio :: xsd:decimal\nmoneda :: xsd:string",
+          "html": "<b>mo:Tarifa<br/>(Tarifa)</b><hr size='1'/>idTarifa :: xsd:string<br/>nombreTarifa :: xsd:string<br/>precio :: xsd:decimal<br/>moneda :: xsd:string"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-32",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:TarifaSuscripcion\n(Tarifa Suscripción)",
+          "html": "<b>mo:TarifaSuscripcion<br/>(Tarifa Suscripción)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-33",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:TarifaBonoPrepago\n(Tarifa Bono Prepago)nUsos :: xsd:integer\nvalidez :: xsd:date",
+          "html": "<b>mo:TarifaBonoPrepago<br/>(Tarifa Bono Prepago)</b><hr size='1'/>nUsos :: xsd:integer<br/>validez :: xsd:date"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-34",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:TarifaPagoUso\n(Tarifa Pago Uso)precioMinuto :: xsd:decimal\nprecioKm :: xsd:decimal",
+          "html": "<b>mo:TarifaPagoUso<br/>(Tarifa Pago Uso)</b><hr size='1'/>precioMinuto :: xsd:decimal<br/>precioKm :: xsd:decimal"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-35",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:TarifaSuscripcionDiaria\n(Diaria)",
+          "html": "<b>mo:TarifaSuscripcionDiaria<br/>(Diaria)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-36",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:TarifaSuscripcionMensual\n(Mensual)",
+          "html": "<b>mo:TarifaSuscripcionMensual<br/>(Mensual)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-37",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:TarifaSuscripcionAnual\n(Anual)",
+          "html": "<b>mo:TarifaSuscripcionAnual<br/>(Anual)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-38",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:PuntoDeServicio\n(Punto De Servicio)idPunto :: xsd:string\nnombrePunto :: xsd:string\ndireccion :: xsd:string\nlatitud :: xsd:decimal\nlongitud :: xsd:decimal\nbaseRecarga :: xsd:boolean",
+          "html": "<b>mo:PuntoDeServicio<br/>(Punto De Servicio)</b><hr size='1'/>idPunto :: xsd:string<br/>nombrePunto :: xsd:string<br/>direccion :: xsd:string<br/>latitud :: xsd:decimal<br/>longitud :: xsd:decimal<br/>baseRecarga :: xsd:boolean"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-39",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:EstacionFisica\n(Estación Física)",
+          "html": "<b>mo:EstacionFisica<br/>(Estación Física)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-40",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:ParkingPrivadoConcertadoPublico\n(Parking Privado Concertado)",
+          "html": "<b>mo:ParkingPrivadoConcertadoPublico<br>(Parking Privado Concertado)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-41",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:EstacionFerroviaria\n(Estación Ferroviaria)",
+          "html": "<b>mo:EstacionFerroviaria<br/>(Estación Ferroviaria)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-42",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:EstacionBicicletas\n(Estación Bicicletas)",
+          "html": "<b>mo:EstacionBicicletas<br/>(Estación Bicicletas)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-43",
+          "type": "node",
+          "parent": "1",
+          "label": "mo:EstacionBus\n(Estación Bus)",
+          "html": "<b>mo:EstacionBus<br/>(Estación Bus)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-44",
+          "type": "node",
+          "parent": "1",
+          "label": "skos:Concept\n<<skos:inScheme segittur:TipoEstacion>>\n(TipoEstacion)",
+          "html": "skos:Concept<br/>&lt;&lt;skos:inScheme segittur:TipoEstacion&gt;&gt;<br/><b>(TipoEstacion)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-45",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ParkingFacility\n(Parking Facility)totalCapacity :: xsd:integer\nnumberOfLevels :: xsd:integer\nrateOfOccupancy :: xsd:string\nqueuingTime :: xsd:string",
+          "html": "<b>mv:ParkingFacility<br>(Parking Facility)</b><hr size='1'/>totalCapacity :: xsd:integer<br/>numberOfLevels :: xsd:integer<br/>rateOfOccupancy :: xsd:string<br/>queuingTime :: xsd:string"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-46",
+          "type": "node",
+          "parent": "1",
+          "label": "s:CivicStructure\n(Civic Structure)",
+          "html": "<b>s:CivicStructure<br>(Civic Structure)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-47",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ParkingSpace\n(Parking Space)level :: xsd:integer",
+          "html": "<b>mv:ParkingSpace<br>(Parking Space)</b><hr size='1'/>level :: xsd:integer"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-48",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ParkingFacilityEntrance\n(Entrance)",
+          "html": "<b>mv:ParkingFacilityEntrance<br>(Entrance)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-49",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ParkingFacilityExit\n(Exit)",
+          "html": "<b>mv:ParkingFacilityExit<br>(Exit)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-50",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ParkingFacilityFeature\n(Feature)",
+          "html": "<b>mv:ParkingFacilityFeature<br>(Feature)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-51",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ParkingFacilityConnection\n(Connection)",
+          "html": "<b>mv:ParkingFacilityConnection<br>(Connection)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-52",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:AccessCondition\n(Access Condition)",
+          "html": "<b>mv:AccessCondition<br>(Access Condition)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-53",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:CivicStructureStatus\n(Status)",
+          "html": "<b>mv:CivicStructureStatus<br>(Status)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-54",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:Capacity\n(Capacity)maximumValue :: xsd:integer",
+          "html": "<b>mv:Capacity<br>(Capacity)</b><hr size='1'/>maximumValue :: xsd:integer"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-55",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:RealTimeCapacity\n(Real Time Capacity)currentValue :: xsd:integer\ndate :: xsd:dateTime",
+          "html": "<b>mv:RealTimeCapacity<br>(Real Time Capacity)</b><hr size='1'/>currentValue :: xsd:integer<br/>date :: xsd:dateTime"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-56",
+          "type": "node",
+          "parent": "1",
+          "label": "s:PriceSpecification\n(Price Specification)",
+          "html": "<b>s:PriceSpecification<br>(Price Specification)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-57",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:ArrangementPattern\n(Arrangement Pattern)",
+          "html": "<b>mv:ArrangementPattern<br>(Arrangement Pattern)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-58",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:Plug\n(Plug)cableAvailable :: xsd:boolean",
+          "html": "<b>mv:Plug<br>(Plug)</b><hr size='1'/>cableAvailable :: xsd:boolean"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-59",
+          "type": "node",
+          "parent": "1",
+          "label": "mv:PlugType\n(Plug Type)",
+          "html": "<b>mv:PlugType<br>(Plug Type)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-60",
+          "type": "node",
+          "parent": "1",
+          "label": "foaf:Person\n(Persona)",
+          "html": "<b>foaf:Person<br>(Persona)</b>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-61",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-60",
+          "target": "2ieOZ83HMaaBbBJk24y8-5"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-62",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-61",
+          "label": "owl:equivalentClass",
+          "html": "<span style=\"font-size: 10px; background-color: rgb(255, 255, 255);\">owl:equivalentClass</span>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-63",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-40",
+          "target": "2ieOZ83HMaaBbBJk24y8-45"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-64",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-63",
+          "label": "owl:equivalentClass",
+          "html": "<span style=\"font-size: 10px; background-color: rgb(255, 255, 255);\">owl:equivalentClass</span>"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-65",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-45",
+          "target": "2ieOZ83HMaaBbBJk24y8-46"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-66",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-55",
+          "target": "2ieOZ83HMaaBbBJk24y8-54"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-67",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-45",
+          "target": "2ieOZ83HMaaBbBJk24y8-47"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-68",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-67",
+          "label": "mv:parkingSpace"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-69",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-45",
+          "target": "2ieOZ83HMaaBbBJk24y8-48"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-70",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-69",
+          "label": "mv:entrance"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-71",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-45",
+          "target": "2ieOZ83HMaaBbBJk24y8-49"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-72",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-71",
+          "label": "mv:exit"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-73",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-45",
+          "target": "2ieOZ83HMaaBbBJk24y8-50"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-74",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-73",
+          "label": "mv:feature"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-75",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-45",
+          "target": "2ieOZ83HMaaBbBJk24y8-51"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-76",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-75",
+          "label": "mv:connectedTo"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-77",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-46",
+          "target": "2ieOZ83HMaaBbBJk24y8-52"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-78",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-77",
+          "label": "mv:access"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-79",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-46",
+          "target": "2ieOZ83HMaaBbBJk24y8-53"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-80",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-79",
+          "label": "mv:civicStructureStatus"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-81",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-46",
+          "target": "2ieOZ83HMaaBbBJk24y8-54"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-82",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-81",
+          "label": "mv:capacity"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-83",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-46",
+          "target": "2ieOZ83HMaaBbBJk24y8-56"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-84",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-83",
+          "label": "mv:price"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-85",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-47",
+          "target": "2ieOZ83HMaaBbBJk24y8-57"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-86",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-85",
+          "label": "mv:arrangement"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-87",
+          "type": "edge",
+          "parent": "1",
+          "source": "2ieOZ83HMaaBbBJk24y8-58",
+          "target": "2ieOZ83HMaaBbBJk24y8-59"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-88",
+          "type": "node",
+          "parent": "2ieOZ83HMaaBbBJk24y8-87",
+          "label": "mv:plugType"
+        },
+        {
+          "id": "2ieOZ83HMaaBbBJk24y8-89",
+          "type": "node",
+          "parent": "1",
+          "label": "Text"
+        },
+        {
+          "id": "td9ktVzfgUng4xpTi6K_-1",
+          "type": "node",
+          "parent": "1",
+          "label": "<b>:Location</b><hr size='1'/>autonomousCommunity :: xsd:string<br>country :: xsd:string<br>county :: xsd:string<br>locality :: xsd:string<br>postalCode :: xsd:string<br>province :: xsd:string<br>streetAddress :: xsd:string"
+        },
+        {
+          "id": "td9ktVzfgUng4xpTi6K_-2",
+          "type": "node",
+          "parent": "1",
+          "label": "<b>:Place</b><hr size='1'/>keyword :: xsd:string<br>shortDescription :: xsd:string<br>longDescription :: xsd:string"
+        },
+        {
+          "id": "td9ktVzfgUng4xpTi6K_-3",
+          "type": "node",
+          "parent": "1",
+          "label": "<b>:OpeningHours</b><hr size='1'/>opensAt :: xsd:string<br>closesAt :: xsd:string<br>open24Hours :: xsd:boolean<br>temporaryClosure :: xsd:boolean<br>validFrom :: xsd:date<br>validTo :: xsd:date"
+        },
+        {
+          "id": "td9ktVzfgUng4xpTi6K_-4",
+          "type": "node",
+          "parent": "1",
+          "label": "<b>:SportFacility</b><hr size='1'/>offersAdditionalSportService<br>offersMultiadventureActivityType"
+        },
+        {
+          "id": "td9ktVzfgUng4xpTi6K_-5",
+          "type": "node",
+          "parent": "1",
+          "label": "<b>Instalaciones Deportivas (Subclases)</b><hr size='1'/>• BasketballCourt, FootballField, Gym<br>• PaddleCourt, TennisCourt, SwimmingPool<br>• GolfCourse, ClimbingWall, SportsCentre<br>• SkatePark, Stadium, BowlingAlley, etc."
+        },
+        {
+          "id": "td9ktVzfgUng4xpTi6K_-6",
+          "type": "edge",
+          "parent": "1",
+          "source": "td9ktVzfgUng4xpTi6K_-2",
+          "target": "td9ktVzfgUng4xpTi6K_-1",
+          "label": "mo:hasLocation"
+        },
+        {
+          "id": "td9ktVzfgUng4xpTi6K_-7",
+          "type": "edge",
+          "parent": "1",
+          "source": "td9ktVzfgUng4xpTi6K_-2",
+          "target": "td9ktVzfgUng4xpTi6K_-3",
+          "label": "mo:hasOpeningHours"
+        },
+        {
+          "id": "td9ktVzfgUng4xpTi6K_-8",
+          "type": "edge",
+          "parent": "1",
+          "source": "td9ktVzfgUng4xpTi6K_-4",
+          "target": "td9ktVzfgUng4xpTi6K_-2",
+          "label": "rdfs:subClassOf"
+        },
+        {
+          "id": "td9ktVzfgUng4xpTi6K_-9",
+          "type": "edge",
+          "parent": "1",
+          "source": "td9ktVzfgUng4xpTi6K_-5",
+          "target": "td9ktVzfgUng4xpTi6K_-4",
+          "label": "rdfs:subClassOf"
+        }
+      ]
+    }
+  ]
+}
