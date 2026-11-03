@@ -1,6 +1,3 @@
-# Ontologia principal V6. No contiene datos de ejemplo.
-# Los SKOS se mantienen en archivos separados; para revisar todo junto use el archivo integrado.
-
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix edint-kos: <https://edint.es/kos/> .
 @prefix estado: <https://example.org/ontologia-movilidad/estado#> .
