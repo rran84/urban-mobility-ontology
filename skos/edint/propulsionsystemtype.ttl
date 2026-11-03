@@ -19,11 +19,11 @@ edintkos:PropulsionSystemType a skos:ConceptScheme ;
   dct:issued "2026-05-21"^^xsd:date ;
   dct:modified "2026-05-21"^^xsd:date ;
   rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
-  rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologÃ­as del espacio de datos EDINT."@es ;
+  rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
   rdfs:label "Propulsion system type"@en ;
-  rdfs:label "Tipo de sistema de propulsiÃ³n"@es ;
+  rdfs:label "Tipo de sistema de propulsión"@es ;
   dct:title "Concept scheme grouping propulsion system types"@en ;
-  dct:title "Esquema de conceptos agrupando tipos de sistema de propulsiÃ³n"@es .
+  dct:title "Esquema de conceptos agrupando tipos de sistema de propulsión"@es .
 
 #################################################################
 #
@@ -34,7 +34,7 @@ edintkos:PropulsionSystemType a skos:ConceptScheme ;
 edintpropulsionsystemtype:Electric a skos:Concept ;
   skos:inScheme edintkos:PropulsionSystemType ;
   skos:prefLabel "Electric"@en ;
-  skos:prefLabel "ElÃ©ctrico"@es .
+  skos:prefLabel "Eléctrico"@es .
 
 edintpropulsionsystemtype:Diesel a skos:Concept ;
   skos:inScheme edintkos:PropulsionSystemType ;
@@ -49,4 +49,4 @@ edintpropulsionsystemtype:Gasoline a skos:Concept ;
 edintpropulsionsystemtype:Hybrid a skos:Concept ;
   skos:inScheme edintkos:PropulsionSystemType ;
   skos:prefLabel "Hybrid"@en ;
-  skos:prefLabel "HÃ­brido"@es .
+  skos:prefLabel "Híbrido"@es .

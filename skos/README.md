@@ -1,11 +1,9 @@
 # Vocabularios SKOS
 
-Los vocabularios se organizan por procedencia:
+- [`propios/`](propios/): esquemas `mo:EstadoVehiculoScheme` y `mo:TipoPropulsionScheme`, con alineamientos EDINT entre conceptos.
+- [`segittur/`](segittur/): PaymentMethod, StationType y VehicleType, con IRIs oficiales.
+- [`edint/`](edint/): VehicleState y PropulsionSystemType, con etiquetas mal codificadas corregidas en copias locales, sin cambiar IRIs.
 
-- [`propios/`](propios/): `estado_vehiculo.ttl` (Disponible, Ocupado, Mantenimiento) y `tipo_propulsion.ttl` (Electrica, Combustion, Hibrida, Humana). Incluyen alineamientos SKOS con EDINT.
-- [`segittur/`](segittur/): `paymentmethod.ttl`, `stationtype.ttl` y `vehicletype.ttl`, vocabularios reutilizados de SEGITTUR, con sus IRIs originales.
-- [`edint/`](edint/): `propulsionsystemtype.ttl` y `vehiclestate.ttl`, vocabularios externos de EDINT.
+El vocabulario de estados incluye una correspondencia aproximada `closeMatch` (Mantenimiento y UnderRepair); los de propulsión incluyen dos `exactMatch` y dos `narrowMatch`. No se definen equivalencias Active/Ocupado o Inactive/Disponible.
 
-Los conceptos SKOS se mantienen separados de las clases OWL. Las correspondencias `skos:exactMatch`, `skos:closeMatch` y `skos:narrowMatch` se documentan en los vocabularios propios; no implican identidad OWL de las clases.
-
-La [ontología principal](../ontologia/ontologia_movilidad_compartida_v6.ttl) define el modelo. Para abrir todos los grafos juntos en Protégé, puede usarse la [versión integrada](../resources/ontologia_movilidad_compartida_v6_integrada_protege.ttl).
+La ontología actual se encuentra en [`../ontologia/ontologia_movilidad_compartida_v8.ttl`](../ontologia/ontologia_movilidad_compartida_v8.ttl). El grafo combinado de trabajo para Protégé está en [`../resources/ontologia_movilidad_compartida_v8_integrada_protege.ttl`](../resources/ontologia_movilidad_compartida_v8_integrada_protege.ttl).

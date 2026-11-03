@@ -1,32 +1,29 @@
-@prefix estado: <https://example.org/ontologia-movilidad/estado#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix edint-estado: <https://edint.es/kos/VehicleState/> .
+@prefix mo: <http://movilidad.es/def/compartida#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-estado:EstadoVehiculo a skos:ConceptScheme ;
-    skos:prefLabel "Estado del vehículo"@es ;
-    skos:prefLabel "Vehicle status"@en ;
-    skos:hasTopConcept estado:Disponible ,
-                       estado:Mantenimiento ,
-                       estado:Ocupado .
+mo:Disponible a skos:Concept ;
+    skos:inScheme mo:EstadoVehiculoScheme ;
+    skos:prefLabel "Available"@en,
+        "Disponible"@es ;
+    skos:topConceptOf mo:EstadoVehiculoScheme .
 
-estado:Disponible a skos:Concept ;
-    skos:inScheme estado:EstadoVehiculo ;
-    skos:topConceptOf estado:EstadoVehiculo ;
-    skos:prefLabel "Disponible"@es ;
-    skos:prefLabel "Available"@en .
+mo:Mantenimiento a skos:Concept ;
+    skos:closeMatch edint-estado:UnderRepair ;
+    skos:inScheme mo:EstadoVehiculoScheme ;
+    skos:prefLabel "Under maintenance"@en,
+        "Mantenimiento"@es ;
+    skos:topConceptOf mo:EstadoVehiculoScheme .
 
-estado:Mantenimiento a skos:Concept ;
-    skos:inScheme estado:EstadoVehiculo ;
-    skos:topConceptOf estado:EstadoVehiculo ;
-    skos:prefLabel "Mantenimiento"@es ;
-    skos:prefLabel "Under maintenance"@en .
+mo:Ocupado a skos:Concept ;
+    skos:inScheme mo:EstadoVehiculoScheme ;
+    skos:prefLabel "Occupied"@en,
+        "Ocupado"@es ;
+    skos:topConceptOf mo:EstadoVehiculoScheme .
 
-estado:Ocupado a skos:Concept ;
-    skos:inScheme estado:EstadoVehiculo ;
-    skos:topConceptOf estado:EstadoVehiculo ;
-    skos:prefLabel "Ocupado"@es ;
-    skos:prefLabel "Occupied"@en .
-
-# Relaciones
-estado:Mantenimiento
-    skos:closeMatch edint-estado:UnderRepair .
+mo:EstadoVehiculoScheme a skos:ConceptScheme ;
+    skos:hasTopConcept mo:Disponible,
+        mo:Mantenimiento,
+        mo:Ocupado ;
+    skos:prefLabel "Vehicle status"@en,
+        "Estado del vehículo"@es .

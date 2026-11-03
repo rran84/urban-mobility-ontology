@@ -19,11 +19,11 @@ edintkos:VehicleState a skos:ConceptScheme ;
   dct:issued "2026-05-21"^^xsd:date ;
   dct:modified "2026-05-21"^^xsd:date ;
   rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
-  rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologÃ­as del espacio de datos EDINT."@es ;
+  rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
   rdfs:label "Vehicle state"@en ;
-  rdfs:label "Estado del vehÃ­culo"@es ;
+  rdfs:label "Estado del vehículo"@es ;
   dct:title "Concept scheme grouping vehicle states"@en ;
-  dct:title "Esquema de conceptos agrupando estados de vehÃ­culo"@es .
+  dct:title "Esquema de conceptos agrupando estados de vehículo"@es .
 
 #################################################################
 #
@@ -44,7 +44,7 @@ edintvehiclestate:Inactive a skos:Concept ;
 edintvehiclestate:UnderRepair a skos:Concept ;
   skos:inScheme edintkos:VehicleState ;
   skos:prefLabel "Under repair"@en ;
-  skos:prefLabel "En reparaciÃ³n"@es .
+  skos:prefLabel "En reparación"@es .
 
 edintvehiclestate:Abandoned a skos:Concept ;
   skos:inScheme edintkos:VehicleState ;
