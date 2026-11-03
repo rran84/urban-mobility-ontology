@@ -1,0 +1,48 @@
+@prefix prop: <https://example.org/ontologia-movilidad/propulsion#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix edint-prop: <https://edint.es/kos/PropulsionSystemType/> .
+
+prop:Propulsion a skos:ConceptScheme ;
+    skos:prefLabel "Tipos de propulsión"@es ;
+    skos:prefLabel "Propulsion types"@en ;
+    skos:hasTopConcept prop:Electrica ,
+                       prop:Combustion ,
+                       prop:Hibrida ,
+                       prop:Humana .
+
+# Propulsión eléctrica
+prop:Electrica a skos:Concept ;
+    skos:inScheme prop:Propulsion ;
+    skos:topConceptOf prop:Propulsion ;
+    skos:prefLabel "Eléctrica"@es ;
+    skos:prefLabel "Electric"@en .
+
+# Propulsión de combustión
+prop:Combustion a skos:Concept ;
+    skos:inScheme prop:Propulsion ;
+    skos:topConceptOf prop:Propulsion ;
+    skos:prefLabel "Combustión"@es ;
+    skos:prefLabel "Combustion"@en .
+
+# Propulsión híbrida
+prop:Hibrida a skos:Concept ;
+    skos:inScheme prop:Propulsion ;
+    skos:topConceptOf prop:Propulsion ;
+    skos:prefLabel "Híbrida"@es ;
+    skos:prefLabel "Hybrid"@en .
+
+# Propulsión humana
+prop:Humana a skos:Concept ;
+    skos:inScheme prop:Propulsion ;
+    skos:topConceptOf prop:Propulsion ;
+    skos:prefLabel "Humana"@es ;
+    skos:prefLabel "Human-powered"@en .
+
+# Relaciones
+prop:Electrica skos:exactMatch edint-prop:Electric .
+
+prop:Hibrida skos:exactMatch edint-prop:Hybrid .
+
+prop:Combustion skos:narrowMatch
+    edint-prop:Diesel ,
+    edint-prop:Gasoline .

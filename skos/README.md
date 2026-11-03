@@ -1,13 +1,11 @@
-# Vocabularios controlados SKOS
+# Vocabularios SKOS
 
+Los vocabularios se organizan por procedencia:
 
-## Finalidad
-Representar mediante SKOS las categorías utilizadas por la ontología, separando los conceptos controlados de las clases RDF/RDFS.
+- [`propios/`](propios/): `estado_vehiculo.ttl` (Disponible, Ocupado, Mantenimiento) y `tipo_propulsion.ttl` (Electrica, Combustion, Hibrida, Humana). Incluyen alineamientos SKOS con EDINT.
+- [`segittur/`](segittur/): `paymentmethod.ttl`, `stationtype.ttl` y `vehicletype.ttl`, vocabularios reutilizados de SEGITTUR, con sus IRIs originales.
+- [`edint/`](edint/): `propulsionsystemtype.ttl` y `vehiclestate.ttl`, vocabularios externos de EDINT.
 
-## Contenido previsto
-- `propulsion.ttl`: conceptos de tipos de propulsión de los vehículos.
-- `estado.ttl`: conceptos de estado de los vehículos.
-- Referencias documentadas a vocabularios externos reutilizados, como el de métodos de pago de SEGITTUR, sin copiar su definición salvo que sea necesario.
+Los conceptos SKOS se mantienen separados de las clases OWL. Las correspondencias `skos:exactMatch`, `skos:closeMatch` y `skos:narrowMatch` se documentan en los vocabularios propios; no implican identidad OWL de las clases.
 
-## Buenas prácticas
-Usar `skos:ConceptScheme`, `skos:Concept`, `skos:prefLabel` y los idiomas definidos en el proyecto (español e inglés). Mantener URI y prefijos coherentes con [`../ontologia/`](../ontologia/) y validar los archivos Turtle.
+La [ontología principal](../ontologia/ontologia_movilidad_compartida_v6.ttl) define el modelo. Para abrir todos los grafos juntos en Protégé, puede usarse la [versión integrada](../resources/ontologia_movilidad_compartida_v6_integrada_protege.ttl).

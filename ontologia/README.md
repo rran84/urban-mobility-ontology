@@ -1,15 +1,8 @@
-# Implementación de la ontología
+# Ontología de movilidad compartida
 
-## Finalidad
-Almacenar el modelo legible por máquinas: clases, jerarquías, propiedades, dominios, rangos y relaciones entre vehículos, agentes, reservas, servicios de movilidad, trayectos, tarifas y pagos.
+- [`ontologia_movilidad_compartida_v6.ttl`](ontologia_movilidad_compartida_v6.ttl): definición principal V6, con clases OWL, propiedades, jerarquías y restricciones. No contiene individuos de ejemplo.
+- [SKOS propios y externos](../skos/): vocabularios de estado, propulsión, medios de pago, estaciones y vehículos.
+- [TTL integrado para Protégé](../resources/ontologia_movilidad_compartida_v6_integrada_protege.ttl): copia combinada para revisar el modelo y los siete vocabularios en una sola apertura; no sustituye a una configuración formal de `owl:imports`.
+- [Diagrama V6](../diagramas/ontologia_movilidad_compartida_v6.json): fuente editable del diseño.
 
-## Contenido
-- Archivos `.ttl`, `.rdf`, `.owl` o `.jsonld` con la definición de la ontología.
-- Su versión de trabajo consolidada una vez revisada y validada.
-
-Los **individuos de ejemplo** van a [`../ejemplos/`](../ejemplos/); los **vocabularios SKOS** a [`../skos/`](../skos/); los **diagramas** a [`../diagramas/`](../diagramas/).
-
-## Buenas prácticas
-Validar la sintaxis, conservar los espacios de nombres de forma coherente y mantener la correspondencia con los requisitos y el modelo conceptual.
-
-> El archivo `ontologia_movilidad.ttl` se encuentra actualmente en la raíz del repositorio; esta carpeta está preparada para organizar la implementación definitiva.
+El archivo `ontologia_movilidad.ttl` de la raíz es una versión anterior. Mantener los datos de ejemplo en `ejemplos/` y validar con un razonador en Protégé antes de dar por comprobada la coherencia OWL.

@@ -1,0 +1,32 @@
+@prefix estado: <https://example.org/ontologia-movilidad/estado#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix edint-estado: <https://edint.es/kos/VehicleState/> .
+
+estado:EstadoVehiculo a skos:ConceptScheme ;
+    skos:prefLabel "Estado del vehículo"@es ;
+    skos:prefLabel "Vehicle status"@en ;
+    skos:hasTopConcept estado:Disponible ,
+                       estado:Mantenimiento ,
+                       estado:Ocupado .
+
+estado:Disponible a skos:Concept ;
+    skos:inScheme estado:EstadoVehiculo ;
+    skos:topConceptOf estado:EstadoVehiculo ;
+    skos:prefLabel "Disponible"@es ;
+    skos:prefLabel "Available"@en .
+
+estado:Mantenimiento a skos:Concept ;
+    skos:inScheme estado:EstadoVehiculo ;
+    skos:topConceptOf estado:EstadoVehiculo ;
+    skos:prefLabel "Mantenimiento"@es ;
+    skos:prefLabel "Under maintenance"@en .
+
+estado:Ocupado a skos:Concept ;
+    skos:inScheme estado:EstadoVehiculo ;
+    skos:topConceptOf estado:EstadoVehiculo ;
+    skos:prefLabel "Ocupado"@es ;
+    skos:prefLabel "Occupied"@en .
+
+# Relaciones
+estado:Mantenimiento
+    skos:closeMatch edint-estado:UnderRepair .
