@@ -6,7 +6,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix edintvehcom: <https://edint.es/def/vehiculos-compartidos#> .
-@prefix edintkos: <https://edint.es/kos/> .
+@prefix edint: <https://edint.es/kos/> .
 @prefix edintvehiclestate: <https://edint.es/kos/VehicleState/> .
 
 #################################################################
@@ -15,7 +15,7 @@
 #
 #################################################################
 
-edintkos:VehicleState a skos:ConceptScheme ;
+edint:VehicleState a skos:ConceptScheme ;
   dct:issued "2026-05-21"^^xsd:date ;
   dct:modified "2026-05-21"^^xsd:date ;
   rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
@@ -32,21 +32,21 @@ edintkos:VehicleState a skos:ConceptScheme ;
 #################################################################
 
 edintvehiclestate:Active a skos:Concept ;
-  skos:inScheme edintkos:VehicleState ;
+  skos:inScheme edint:VehicleState ;
   skos:prefLabel "Active"@en ;
   skos:prefLabel "Activo"@es .
 
 edintvehiclestate:Inactive a skos:Concept ;
-  skos:inScheme edintkos:VehicleState ;
+  skos:inScheme edint:VehicleState ;
   skos:prefLabel "Inactive"@en ;
   skos:prefLabel "Inactivo"@es .
 
 edintvehiclestate:UnderRepair a skos:Concept ;
-  skos:inScheme edintkos:VehicleState ;
+  skos:inScheme edint:VehicleState ;
   skos:prefLabel "Under repair"@en ;
   skos:prefLabel "En reparación"@es .
 
 edintvehiclestate:Abandoned a skos:Concept ;
-  skos:inScheme edintkos:VehicleState ;
+  skos:inScheme edint:VehicleState ;
   skos:prefLabel "Abandoned"@en ;
   skos:prefLabel "Abandonado"@es .

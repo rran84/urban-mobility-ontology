@@ -1,8 +1,9 @@
-# Ontologia V8 + 7 SKOS. Copia combinada para inspeccion en Protege.
+# Ontologia V8 y siete vocabularios SKOS: grafo integrado para Protege.
+# Los prefijos son abreviaturas; las IRIs oficiales se conservan.
 
-# Procedencia: ontologia/ontologia_movilidad_compartida_v8.ttl
+# Fuente: ontologia/ontologia_movilidad_compartida_v8.ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix estur-kos: <https://ontologia.segittur.es/turismo/kos/> .
+@prefix segittur: <https://ontologia.segittur.es/turismo/kos/> .
 @prefix sg: <https://ontologia.segittur.es/turismo/def/core#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
@@ -21,7 +22,7 @@
     dcterms:title "Ontología de Movilidad Compartida (myOntology)"@es ;
     vann:preferredNamespacePrefix "mo" ;
     vann:preferredNamespaceUri "http://movilidad.es/def/compartida#" ;
-    rdfs:comment "Los esquemas SKOS propios usan el espacio de nombres mo: conforme a la notacion del diagrama V8. Los vocabularios SEGITTUR se mantienen con sus IRIs oficiales; las referencias oficiales a sus esquemas son estur-kos:PaymentMethod, estur-kos:VehicleType y estur-kos:StationType."@es,
+    rdfs:comment "Los esquemas SKOS propios usan el espacio de nombres mo: conforme a la notacion del diagrama V8. Los vocabularios SEGITTUR se mantienen con sus IRIs oficiales; las referencias oficiales a sus esquemas son segittur:PaymentMethod, segittur:VehicleType y segittur:StationType."@es,
         "Versión 8 alineada con el diagrama. Los módulos externos MobiVoc, SEGITTUR y GeoSPARQL se referencian sin reproducir sus axiomas. Las equivalencias de propulsión externa requieren verificación semántica."@es ;
     rdfs:seeAlso mo:EstadoVehiculoScheme,
         mo:TipoPropulsionScheme,
@@ -47,9 +48,9 @@
         sg:InfraestructuraDeTransporte,
         sg:Localizacion,
         sg:Lugar,
-        estur-kos:PaymentMethod,
-        estur-kos:StationType,
-        estur-kos:VehicleType,
+        segittur:PaymentMethod,
+        segittur:StationType,
+        segittur:VehicleType,
         schema:CivicStructure ;
     owl:versionInfo "1.0.0-v8" .
 
@@ -337,10 +338,10 @@ mo:ofrecidoEn a owl:ObjectProperty ;
     rdfs:range mo:PuntoDeServicio .
 
 mo:pagadoCon a owl:ObjectProperty ;
-    rdfs:comment "Los valores son conceptos del esquema estur-kos:PaymentMethod de SEGITTUR."@es ;
+    rdfs:comment "Los valores son conceptos del esquema segittur:PaymentMethod de SEGITTUR."@es ;
     rdfs:domain mo:Tarifa ;
     rdfs:range skos:Concept ;
-    rdfs:seeAlso estur-kos:PaymentMethod .
+    rdfs:seeAlso segittur:PaymentMethod .
 
 mo:pendientePago a owl:DatatypeProperty ;
     rdfs:domain mo:Factura ;
@@ -397,10 +398,10 @@ mo:tieneEstado a owl:ObjectProperty ;
     rdfs:seeAlso mo:EstadoVehiculoScheme .
 
 mo:tieneMetodoPago a owl:ObjectProperty ;
-    rdfs:comment "Los valores son conceptos del esquema estur-kos:PaymentMethod de SEGITTUR."@es ;
+    rdfs:comment "Los valores son conceptos del esquema segittur:PaymentMethod de SEGITTUR."@es ;
     rdfs:domain mo:Pago ;
     rdfs:range skos:Concept ;
-    rdfs:seeAlso estur-kos:PaymentMethod .
+    rdfs:seeAlso segittur:PaymentMethod .
 
 mo:tienePago a owl:ObjectProperty ;
     rdfs:domain mo:Factura ;
@@ -424,16 +425,16 @@ mo:tipo a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 mo:tipoEstacion a owl:ObjectProperty ;
-    rdfs:comment "Los valores son conceptos del esquema estur-kos:StationType de SEGITTUR."@es ;
+    rdfs:comment "Los valores son conceptos del esquema segittur:StationType de SEGITTUR."@es ;
     rdfs:domain mo:PuntoDeServicio ;
     rdfs:range skos:Concept ;
-    rdfs:seeAlso estur-kos:StationType .
+    rdfs:seeAlso segittur:StationType .
 
 mo:tipoVehiculo a owl:ObjectProperty ;
-    rdfs:comment "Los valores son conceptos del esquema estur-kos:VehicleType de SEGITTUR."@es ;
+    rdfs:comment "Los valores son conceptos del esquema segittur:VehicleType de SEGITTUR."@es ;
     rdfs:domain mo:VehiculoCompartido ;
     rdfs:range skos:Concept ;
-    rdfs:seeAlso estur-kos:VehicleType .
+    rdfs:seeAlso segittur:VehicleType .
 
 mo:validez a owl:DatatypeProperty ;
     rdfs:domain mo:TarifaBonoPrepago ;
@@ -498,8 +499,115 @@ mo:PuntoDeServicio a owl:Class .
 
 mo:VehiculoCompartido a owl:Class .
 
+# Fuente: skos/edint/propulsionsystemtype.ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintvehcom: <https://edint.es/def/vehiculos-compartidos#> .
+@prefix edint: <https://edint.es/kos/> .
+@prefix edintpropulsionsystemtype: <https://edint.es/kos/PropulsionSystemType/> .
 
-# Procedencia: skos/propios/estado_vehiculo.ttl
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+edint:PropulsionSystemType a skos:ConceptScheme ;
+  dct:issued "2026-05-21"^^xsd:date ;
+  dct:modified "2026-05-21"^^xsd:date ;
+  rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+  rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+  rdfs:label "Propulsion system type"@en ;
+  rdfs:label "Tipo de sistema de propulsión"@es ;
+  dct:title "Concept scheme grouping propulsion system types"@en ;
+  dct:title "Esquema de conceptos agrupando tipos de sistema de propulsión"@es .
+
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+edintpropulsionsystemtype:Electric a skos:Concept ;
+  skos:inScheme edint:PropulsionSystemType ;
+  skos:prefLabel "Electric"@en ;
+  skos:prefLabel "Eléctrico"@es .
+
+edintpropulsionsystemtype:Diesel a skos:Concept ;
+  skos:inScheme edint:PropulsionSystemType ;
+  skos:prefLabel "Diesel"@en ;
+  skos:prefLabel "Diesel"@es .
+
+edintpropulsionsystemtype:Gasoline a skos:Concept ;
+  skos:inScheme edint:PropulsionSystemType ;
+  skos:prefLabel "Gasoline"@en ;
+  skos:prefLabel "Gasolina"@es .
+
+edintpropulsionsystemtype:Hybrid a skos:Concept ;
+  skos:inScheme edint:PropulsionSystemType ;
+  skos:prefLabel "Hybrid"@en ;
+  skos:prefLabel "Híbrido"@es .
+
+# Fuente: skos/edint/vehiclestate.ttl
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintvehcom: <https://edint.es/def/vehiculos-compartidos#> .
+@prefix edint: <https://edint.es/kos/> .
+@prefix edintvehiclestate: <https://edint.es/kos/VehicleState/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+edint:VehicleState a skos:ConceptScheme ;
+  dct:issued "2026-05-21"^^xsd:date ;
+  dct:modified "2026-05-21"^^xsd:date ;
+  rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+  rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+  rdfs:label "Vehicle state"@en ;
+  rdfs:label "Estado del vehículo"@es ;
+  dct:title "Concept scheme grouping vehicle states"@en ;
+  dct:title "Esquema de conceptos agrupando estados de vehículo"@es .
+
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+edintvehiclestate:Active a skos:Concept ;
+  skos:inScheme edint:VehicleState ;
+  skos:prefLabel "Active"@en ;
+  skos:prefLabel "Activo"@es .
+
+edintvehiclestate:Inactive a skos:Concept ;
+  skos:inScheme edint:VehicleState ;
+  skos:prefLabel "Inactive"@en ;
+  skos:prefLabel "Inactivo"@es .
+
+edintvehiclestate:UnderRepair a skos:Concept ;
+  skos:inScheme edint:VehicleState ;
+  skos:prefLabel "Under repair"@en ;
+  skos:prefLabel "En reparación"@es .
+
+edintvehiclestate:Abandoned a skos:Concept ;
+  skos:inScheme edint:VehicleState ;
+  skos:prefLabel "Abandoned"@en ;
+  skos:prefLabel "Abandonado"@es .
+
+# Fuente: skos/propios/estado_vehiculo.ttl
 @prefix edint-estado: <https://edint.es/kos/VehicleState/> .
 @prefix mo: <http://movilidad.es/def/compartida#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -530,8 +638,7 @@ mo:EstadoVehiculoScheme a skos:ConceptScheme ;
     skos:prefLabel "Vehicle status"@en,
         "Estado del vehículo"@es .
 
-
-# Procedencia: skos/propios/tipo_propulsion.ttl
+# Fuente: skos/propios/tipo_propulsion.ttl
 @prefix edint-prop: <https://edint.es/kos/PropulsionSystemType/> .
 @prefix mo: <http://movilidad.es/def/compartida#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -572,116 +679,7 @@ mo:TipoPropulsionScheme a skos:ConceptScheme ;
     skos:prefLabel "Propulsion types"@en,
         "Tipos de propulsión"@es .
 
-
-# Procedencia: skos/edint/vehiclestate.ttl
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix cc: <http://creativecommons.org/ns#> .
-@prefix edintvehcom: <https://edint.es/def/vehiculos-compartidos#> .
-@prefix edintkos: <https://edint.es/kos/> .
-@prefix edintvehiclestate: <https://edint.es/kos/VehicleState/> .
-
-#################################################################
-#
-#    Concept Scheme
-#
-#################################################################
-
-edintkos:VehicleState a skos:ConceptScheme ;
-  dct:issued "2026-05-21"^^xsd:date ;
-  dct:modified "2026-05-21"^^xsd:date ;
-  rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
-  rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
-  rdfs:label "Vehicle state"@en ;
-  rdfs:label "Estado del vehículo"@es ;
-  dct:title "Concept scheme grouping vehicle states"@en ;
-  dct:title "Esquema de conceptos agrupando estados de vehículo"@es .
-
-#################################################################
-#
-#    Concepts
-#
-#################################################################
-
-edintvehiclestate:Active a skos:Concept ;
-  skos:inScheme edintkos:VehicleState ;
-  skos:prefLabel "Active"@en ;
-  skos:prefLabel "Activo"@es .
-
-edintvehiclestate:Inactive a skos:Concept ;
-  skos:inScheme edintkos:VehicleState ;
-  skos:prefLabel "Inactive"@en ;
-  skos:prefLabel "Inactivo"@es .
-
-edintvehiclestate:UnderRepair a skos:Concept ;
-  skos:inScheme edintkos:VehicleState ;
-  skos:prefLabel "Under repair"@en ;
-  skos:prefLabel "En reparación"@es .
-
-edintvehiclestate:Abandoned a skos:Concept ;
-  skos:inScheme edintkos:VehicleState ;
-  skos:prefLabel "Abandoned"@en ;
-  skos:prefLabel "Abandonado"@es .
-
-# Procedencia: skos/edint/propulsionsystemtype.ttl
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix cc: <http://creativecommons.org/ns#> .
-@prefix edintvehcom: <https://edint.es/def/vehiculos-compartidos#> .
-@prefix edintkos: <https://edint.es/kos/> .
-@prefix edintpropulsionsystemtype: <https://edint.es/kos/PropulsionSystemType/> .
-
-#################################################################
-#
-#    Concept Scheme
-#
-#################################################################
-
-edintkos:PropulsionSystemType a skos:ConceptScheme ;
-  dct:issued "2026-05-21"^^xsd:date ;
-  dct:modified "2026-05-21"^^xsd:date ;
-  rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
-  rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
-  rdfs:label "Propulsion system type"@en ;
-  rdfs:label "Tipo de sistema de propulsión"@es ;
-  dct:title "Concept scheme grouping propulsion system types"@en ;
-  dct:title "Esquema de conceptos agrupando tipos de sistema de propulsión"@es .
-
-#################################################################
-#
-#    Concepts
-#
-#################################################################
-
-edintpropulsionsystemtype:Electric a skos:Concept ;
-  skos:inScheme edintkos:PropulsionSystemType ;
-  skos:prefLabel "Electric"@en ;
-  skos:prefLabel "Eléctrico"@es .
-
-edintpropulsionsystemtype:Diesel a skos:Concept ;
-  skos:inScheme edintkos:PropulsionSystemType ;
-  skos:prefLabel "Diesel"@en ;
-  skos:prefLabel "Diesel"@es .
-
-edintpropulsionsystemtype:Gasoline a skos:Concept ;
-  skos:inScheme edintkos:PropulsionSystemType ;
-  skos:prefLabel "Gasoline"@en ;
-  skos:prefLabel "Gasolina"@es .
-
-edintpropulsionsystemtype:Hybrid a skos:Concept ;
-  skos:inScheme edintkos:PropulsionSystemType ;
-  skos:prefLabel "Hybrid"@en ;
-  skos:prefLabel "Híbrido"@es .
-
-# Procedencia: skos/segittur/paymentmethod.ttl
+# Fuente: skos/segittur/paymentmethod.ttl
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -690,7 +688,7 @@ edintpropulsionsystemtype:Hybrid a skos:Concept ;
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix estur-core: <https://ontologia.segittur.es/turismo/def/core#> .
-@prefix estur-kos: <https://ontologia.segittur.es/turismo/kos/> .
+@prefix segittur: <https://ontologia.segittur.es/turismo/kos/> .
 
 @prefix estur-paymentmethod: <https://ontologia.segittur.es/turismo/kos/paymentmethod/> .
 
@@ -700,7 +698,7 @@ edintpropulsionsystemtype:Hybrid a skos:Concept ;
 #
 #################################################################
 
-estur-kos:PaymentMethod a skos:ConceptScheme ; 
+segittur:PaymentMethod a skos:ConceptScheme ; 
     dct:issued "2025-07-16"^^xsd:date ;
     dct:modified "2025-07-16"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -718,52 +716,51 @@ estur-kos:PaymentMethod a skos:ConceptScheme ;
 #################################################################
 
 estur-paymentmethod:BankCard a skos:Concept;
-  skos:inScheme estur-kos:PaymentMethod;
+  skos:inScheme segittur:PaymentMethod;
   skos:prefLabel "Bank Card"@en ;
   skos:prefLabel "Tarjeta bancaria"@es .
 
 estur-paymentmethod:BankTransfer a skos:Concept;
-  skos:inScheme estur-kos:PaymentMethod;
+  skos:inScheme segittur:PaymentMethod;
   skos:prefLabel "Bank Transfer"@en ;
   skos:prefLabel "Transferencia bancaria"@es .
 
 estur-paymentmethod:Bizum a skos:Concept;
-  skos:inScheme estur-kos:PaymentMethod;
+  skos:inScheme segittur:PaymentMethod;
   skos:prefLabel "Bizum"@en ;
   skos:prefLabel "Bizum"@es .
 
 estur-paymentmethod:Cash a skos:Concept;
-  skos:inScheme estur-kos:PaymentMethod;
+  skos:inScheme segittur:PaymentMethod;
   skos:prefLabel "Cash"@en ;
   skos:prefLabel "Metálico"@es .
 
 estur-paymentmethod:CheckAndPromissoryNote a skos:Concept;
-  skos:inScheme estur-kos:PaymentMethod;
+  skos:inScheme segittur:PaymentMethod;
   skos:prefLabel "Check and Promissory Note"@en ;
   skos:prefLabel "Cheque"@es .
 
 estur-paymentmethod:Cryptocurrency a skos:Concept;
-  skos:inScheme estur-kos:PaymentMethod;
+  skos:inScheme segittur:PaymentMethod;
   skos:prefLabel "Cryptocurrency"@en ;
   skos:prefLabel "Criptomoneda"@es .
 
 estur-paymentmethod:DirectBill a skos:Concept;
-  skos:inScheme estur-kos:PaymentMethod;
+  skos:inScheme segittur:PaymentMethod;
   skos:prefLabel "Direct Bill"@en ;
   skos:prefLabel "Domiciliación bancaria"@es .
 
 estur-paymentmethod:NFC a skos:Concept;
-  skos:inScheme estur-kos:PaymentMethod;
+  skos:inScheme segittur:PaymentMethod;
   skos:prefLabel "NFC"@en ;
   skos:prefLabel "NFC"@es .
 
 estur-paymentmethod:Paypal a skos:Concept;
-  skos:inScheme estur-kos:PaymentMethod;
+  skos:inScheme segittur:PaymentMethod;
   skos:prefLabel "Paypal"@en ;
   skos:prefLabel "Paypal"@es .
 
-
-# Procedencia: skos/segittur/stationtype.ttl
+# Fuente: skos/segittur/stationtype.ttl
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -772,7 +769,7 @@ estur-paymentmethod:Paypal a skos:Concept;
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix estur-core: <https://ontologia.segittur.es/turismo/def/core#> .
-@prefix estur-kos: <https://ontologia.segittur.es/turismo/kos/> .
+@prefix segittur: <https://ontologia.segittur.es/turismo/kos/> .
 
 @prefix estur-stationtype: <https://ontologia.segittur.es/turismo/kos/stationtype/> .
 
@@ -782,7 +779,7 @@ estur-paymentmethod:Paypal a skos:Concept;
 #
 #################################################################
 
-estur-kos:StationType a skos:ConceptScheme ; 
+segittur:StationType a skos:ConceptScheme ; 
     dct:issued "2024-10-29"^^xsd:date ;
     dct:modified "2024-10-29"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -800,41 +797,41 @@ estur-kos:StationType a skos:ConceptScheme ;
 #################################################################
 
 estur-stationtype:BusStop a skos:Concept;
-  skos:inScheme estur-kos:StationType;
+  skos:inScheme segittur:StationType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Bus stop"@en ;
   skos:prefLabel "Parada de autobús"@es .
 
 estur-stationtype:CableCarStop a skos:Concept;
-  skos:inScheme estur-kos:StationType;
+  skos:inScheme segittur:StationType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Cable car stop"@en ;
   skos:prefLabel "Parada de cable car"@es .
 
 estur-stationtype:CableWayStop a skos:Concept;
-  skos:inScheme estur-kos:StationType;
+  skos:inScheme segittur:StationType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Cable way stop"@en ;
   skos:prefLabel "Parada de cable way"@es .
 
 estur-stationtype:SubwayStation a skos:Concept;
-  skos:inScheme estur-kos:StationType;
+  skos:inScheme segittur:StationType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Subway station"@en ;
   skos:prefLabel "Estación de suburbano"@es .
 
 estur-stationtype:TramStop a skos:Concept;
-  skos:inScheme estur-kos:StationType;
+  skos:inScheme segittur:StationType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Tram stop"@en ;
   skos:prefLabel "Parada de tranvía"@es .
 
-# Procedencia: skos/segittur/vehicletype.ttl
+# Fuente: skos/segittur/vehicletype.ttl
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -843,7 +840,7 @@ estur-stationtype:TramStop a skos:Concept;
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix estur-core: <https://ontologia.segittur.es/turismo/def/core#> .
-@prefix estur-kos: <https://ontologia.segittur.es/turismo/kos/> .
+@prefix segittur: <https://ontologia.segittur.es/turismo/kos/> .
 
 @prefix estur-vehicletype: <https://ontologia.segittur.es/turismo/kos/vehicletype/> .
 
@@ -853,7 +850,7 @@ estur-stationtype:TramStop a skos:Concept;
 #
 #################################################################
 
-estur-kos:VehicleType a skos:ConceptScheme ; 
+segittur:VehicleType a skos:ConceptScheme ; 
     dct:issued "2024-10-29"^^xsd:date ;
     dct:modified "2024-10-29"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -871,203 +868,203 @@ estur-kos:VehicleType a skos:ConceptScheme ;
 #################################################################
 
 estur-vehicletype:AllTerrain a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Allterrain"@en ;
   skos:prefLabel "Todoterreno"@es .
 
 estur-vehicletype:Bycicle a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Bycicle"@en ;
   skos:prefLabel "Bicicleta"@es .
 
 estur-vehicletype:Boat a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Boat"@en ;
   skos:prefLabel "Bote"@es .
 
 estur-vehicletype:CarSedan a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Car sedan"@en ;
   skos:prefLabel "Sedán"@es .
 
 estur-vehicletype:CoachBus a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Coach bus"@en ;
   skos:prefLabel "Autocar"@es .
 
 estur-vehicletype:CommercialVanTruck a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Commercial van truck"@en ;
   skos:prefLabel "Furgoneta comercial"@es .
 
 estur-vehicletype:Convertible a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Convertible"@en ;
   skos:prefLabel "Descapotable"@es .
 
 estur-vehicletype:Coupe a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Coupe"@en ;
   skos:prefLabel "Coupé"@es .
 
 estur-vehicletype:Crossover a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Crossover"@en ;
   skos:prefLabel "Crossover"@es .
 
 estur-vehicletype:ElectricMoped a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Electric Moped"@en ;
   skos:prefLabel "Patinete eléctrico"@es .
 
 estur-vehicletype:ElectricScooter a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Electric Scooter"@en ;
   skos:prefLabel "Ciclomotor eléctrico"@es .
 
 estur-vehicletype:ExtendedCabPickup a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Extended cab pickup"@en ;
   skos:prefLabel "Recogida en taxi"@es .
 
 estur-vehicletype:Limo a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Limo"@en ;
   skos:prefLabel "Limusina"@es .
 
 estur-vehicletype:Monospace a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Monospace"@en ;
   skos:prefLabel "Monovolumen"@es .
 
 estur-vehicletype:Moped a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Moped"@en ;
   skos:prefLabel "Patinete"@es .
 
 estur-vehicletype:Motorcycle a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Motorcycle"@en ;
   skos:prefLabel "Motocicleta"@es .
 
 estur-vehicletype:Motorhome a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Motorhome"@en ;
   skos:prefLabel "Casa sobre ruedas"@es .
 
 estur-vehicletype:Pickup a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Pickup"@en ;
   skos:prefLabel "Pickup"@es .
 
 estur-vehicletype:Recreational a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Recreational"@en ;
   skos:prefLabel "Recreativo"@es .
 
 estur-vehicletype:RegularCabPickup a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Regular cab pickup"@en ;
   skos:prefLabel "Recogida en taxi normal"@es .
 
 estur-vehicletype:Roadster a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Roadster"@en ;
   skos:prefLabel "Roadster"@es .
 
 estur-vehicletype:Scooter a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Scooter"@en ;
   skos:prefLabel "Ciclomotor"@es .
 
 estur-vehicletype:Shuttle a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Shuttle"@en ;
   skos:prefLabel "Shuttle"@es .
 
 estur-vehicletype:Sport a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Sport"@en ;
   skos:prefLabel "Deportivo"@es .
 
 estur-vehicletype:StationWagon a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Station wagon"@en ;
   skos:prefLabel "Station wagon"@es .
 
 estur-vehicletype:SUV a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "SUV"@en ;
   skos:prefLabel "SUV"@es .
 
 estur-vehicletype:Truck a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Truck"@en ;
   skos:prefLabel "Camión"@es .
 
 estur-vehicletype:TwoWheelVehicle a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Two wheel vehicle"@en ;
   skos:prefLabel "Vehículo de dos ruedas"@es .
 
 estur-vehicletype:Van a skos:Concept;
-  skos:inScheme estur-kos:VehicleType;
+  skos:inScheme segittur:VehicleType;
   skos:note "Value generated from the original SEGITTUR ontology"@en;
   skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
   skos:prefLabel "Van"@en ;

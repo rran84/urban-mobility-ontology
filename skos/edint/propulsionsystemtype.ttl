@@ -6,7 +6,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix edintvehcom: <https://edint.es/def/vehiculos-compartidos#> .
-@prefix edintkos: <https://edint.es/kos/> .
+@prefix edint: <https://edint.es/kos/> .
 @prefix edintpropulsionsystemtype: <https://edint.es/kos/PropulsionSystemType/> .
 
 #################################################################
@@ -15,7 +15,7 @@
 #
 #################################################################
 
-edintkos:PropulsionSystemType a skos:ConceptScheme ;
+edint:PropulsionSystemType a skos:ConceptScheme ;
   dct:issued "2026-05-21"^^xsd:date ;
   dct:modified "2026-05-21"^^xsd:date ;
   rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
@@ -32,21 +32,21 @@ edintkos:PropulsionSystemType a skos:ConceptScheme ;
 #################################################################
 
 edintpropulsionsystemtype:Electric a skos:Concept ;
-  skos:inScheme edintkos:PropulsionSystemType ;
+  skos:inScheme edint:PropulsionSystemType ;
   skos:prefLabel "Electric"@en ;
   skos:prefLabel "Eléctrico"@es .
 
 edintpropulsionsystemtype:Diesel a skos:Concept ;
-  skos:inScheme edintkos:PropulsionSystemType ;
+  skos:inScheme edint:PropulsionSystemType ;
   skos:prefLabel "Diesel"@en ;
   skos:prefLabel "Diesel"@es .
 
 edintpropulsionsystemtype:Gasoline a skos:Concept ;
-  skos:inScheme edintkos:PropulsionSystemType ;
+  skos:inScheme edint:PropulsionSystemType ;
   skos:prefLabel "Gasoline"@en ;
   skos:prefLabel "Gasolina"@es .
 
 edintpropulsionsystemtype:Hybrid a skos:Concept ;
-  skos:inScheme edintkos:PropulsionSystemType ;
+  skos:inScheme edint:PropulsionSystemType ;
   skos:prefLabel "Hybrid"@en ;
   skos:prefLabel "Híbrido"@es .

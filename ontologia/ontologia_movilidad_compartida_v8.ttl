@@ -1,5 +1,5 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix estur-kos: <https://ontologia.segittur.es/turismo/kos/> .
+@prefix segittur: <https://ontologia.segittur.es/turismo/kos/> .
 @prefix sg: <https://ontologia.segittur.es/turismo/def/core#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
@@ -18,7 +18,7 @@
     dcterms:title "Ontología de Movilidad Compartida (myOntology)"@es ;
     vann:preferredNamespacePrefix "mo" ;
     vann:preferredNamespaceUri "http://movilidad.es/def/compartida#" ;
-    rdfs:comment "Los esquemas SKOS propios usan el espacio de nombres mo: conforme a la notacion del diagrama V8. Los vocabularios SEGITTUR se mantienen con sus IRIs oficiales; las referencias oficiales a sus esquemas son estur-kos:PaymentMethod, estur-kos:VehicleType y estur-kos:StationType."@es,
+    rdfs:comment "Los esquemas SKOS propios usan el espacio de nombres mo: conforme a la notacion del diagrama V8. Los vocabularios SEGITTUR se mantienen con sus IRIs oficiales; las referencias oficiales a sus esquemas son segittur:PaymentMethod, segittur:VehicleType y segittur:StationType."@es,
         "Versión 8 alineada con el diagrama. Los módulos externos MobiVoc, SEGITTUR y GeoSPARQL se referencian sin reproducir sus axiomas. Las equivalencias de propulsión externa requieren verificación semántica."@es ;
     rdfs:seeAlso mo:EstadoVehiculoScheme,
         mo:TipoPropulsionScheme,
@@ -44,9 +44,9 @@
         sg:InfraestructuraDeTransporte,
         sg:Localizacion,
         sg:Lugar,
-        estur-kos:PaymentMethod,
-        estur-kos:StationType,
-        estur-kos:VehicleType,
+        segittur:PaymentMethod,
+        segittur:StationType,
+        segittur:VehicleType,
         schema:CivicStructure ;
     owl:versionInfo "1.0.0-v8" .
 
@@ -334,10 +334,10 @@ mo:ofrecidoEn a owl:ObjectProperty ;
     rdfs:range mo:PuntoDeServicio .
 
 mo:pagadoCon a owl:ObjectProperty ;
-    rdfs:comment "Los valores son conceptos del esquema estur-kos:PaymentMethod de SEGITTUR."@es ;
+    rdfs:comment "Los valores son conceptos del esquema segittur:PaymentMethod de SEGITTUR."@es ;
     rdfs:domain mo:Tarifa ;
     rdfs:range skos:Concept ;
-    rdfs:seeAlso estur-kos:PaymentMethod .
+    rdfs:seeAlso segittur:PaymentMethod .
 
 mo:pendientePago a owl:DatatypeProperty ;
     rdfs:domain mo:Factura ;
@@ -394,10 +394,10 @@ mo:tieneEstado a owl:ObjectProperty ;
     rdfs:seeAlso mo:EstadoVehiculoScheme .
 
 mo:tieneMetodoPago a owl:ObjectProperty ;
-    rdfs:comment "Los valores son conceptos del esquema estur-kos:PaymentMethod de SEGITTUR."@es ;
+    rdfs:comment "Los valores son conceptos del esquema segittur:PaymentMethod de SEGITTUR."@es ;
     rdfs:domain mo:Pago ;
     rdfs:range skos:Concept ;
-    rdfs:seeAlso estur-kos:PaymentMethod .
+    rdfs:seeAlso segittur:PaymentMethod .
 
 mo:tienePago a owl:ObjectProperty ;
     rdfs:domain mo:Factura ;
@@ -421,16 +421,16 @@ mo:tipo a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 mo:tipoEstacion a owl:ObjectProperty ;
-    rdfs:comment "Los valores son conceptos del esquema estur-kos:StationType de SEGITTUR."@es ;
+    rdfs:comment "Los valores son conceptos del esquema segittur:StationType de SEGITTUR."@es ;
     rdfs:domain mo:PuntoDeServicio ;
     rdfs:range skos:Concept ;
-    rdfs:seeAlso estur-kos:StationType .
+    rdfs:seeAlso segittur:StationType .
 
 mo:tipoVehiculo a owl:ObjectProperty ;
-    rdfs:comment "Los valores son conceptos del esquema estur-kos:VehicleType de SEGITTUR."@es ;
+    rdfs:comment "Los valores son conceptos del esquema segittur:VehicleType de SEGITTUR."@es ;
     rdfs:domain mo:VehiculoCompartido ;
     rdfs:range skos:Concept ;
-    rdfs:seeAlso estur-kos:VehicleType .
+    rdfs:seeAlso segittur:VehicleType .
 
 mo:validez a owl:DatatypeProperty ;
     rdfs:domain mo:TarifaBonoPrepago ;
