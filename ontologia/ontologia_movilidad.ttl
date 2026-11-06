@@ -541,3 +541,117 @@ geo:geoLat a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd:st
 geo:geoLong a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd:string .
 geo:asWKT a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd:string .
 geo:asGeoJSON a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd:string .
+
+# Etiquetas en español de las clases y propiedades propias (mejora OOPS! P8).
+mo:EstacionBicicletas rdfs:label "Estación de bicicletas"@es .
+mo:EstacionBus rdfs:label "Estación de autobús"@es .
+mo:ParkingPrivadoConcertadoPublico rdfs:label "Aparcamiento privado concertado de uso público"@es .
+mo:RolProveedor rdfs:label "Rol de proveedor"@es .
+mo:RolUsuario rdfs:label "Rol de usuario"@es .
+mo:TarifaSuscripcionAnual rdfs:label "Tarifa de suscripción anual"@es .
+mo:TarifaSuscripcionDiaria rdfs:label "Tarifa de suscripción diaria"@es .
+mo:TarifaSuscripcionMensual rdfs:label "Tarifa de suscripción mensual"@es .
+mo:VehiculoColectivo rdfs:label "Vehículo colectivo"@es .
+mo:VehiculoMovilidadPersonal rdfs:label "Vehículo de movilidad personal"@es .
+mo:VehiculoPropulsionCombustible rdfs:label "Vehículo de propulsión por combustión"@es .
+mo:VehiculoPropulsionElectrica rdfs:label "Vehículo de propulsión eléctrica"@es .
+mo:VehiculoPropulsionHibrida rdfs:label "Vehículo de propulsión híbrida"@es .
+mo:VehiculoPropulsionHumana rdfs:label "Vehículo de propulsión humana"@es .
+mo:activa rdfs:label "Activa"@es .
+mo:activo rdfs:label "Activo"@es .
+mo:apellidos rdfs:label "Apellidos"@es .
+mo:asignaTrayecto rdfs:label "Asigna trayecto"@es .
+mo:baseRecarga rdfs:label "Base de recarga"@es .
+mo:cancelable rdfs:label "Cancelable"@es .
+mo:capacidad rdfs:label "Capacidad"@es .
+mo:contrataServicio rdfs:label "Contrata servicio"@es .
+mo:costeTrayecto rdfs:label "Coste del trayecto"@es .
+mo:descripcion rdfs:label "Descripción"@es .
+mo:direccion rdfs:label "Dirección"@es .
+mo:disponeDe rdfs:label "Dispone de"@es .
+mo:distanciaKm rdfs:label "Distancia en kilómetros"@es .
+mo:duracionMinutos rdfs:label "Duración en minutos"@es .
+mo:emitidaA rdfs:label "Emitida a"@es .
+mo:emitidaPor rdfs:label "Emitida por"@es .
+mo:estacionadoEn rdfs:label "Estacionado en"@es .
+mo:facturaServicio rdfs:label "Factura servicio"@es .
+mo:facturaTrayecto rdfs:label "Factura trayecto"@es .
+mo:fechaEmision rdfs:label "Fecha de emisión"@es .
+mo:fechaFin rdfs:label "Fecha de fin"@es .
+mo:fechaInicio rdfs:label "Fecha de inicio"@es .
+mo:fechaNacimiento rdfs:label "Fecha de nacimiento"@es .
+mo:fechaPago rdfs:label "Fecha de pago"@es .
+mo:fechaReserva rdfs:label "Fecha de reserva"@es .
+mo:haceReserva rdfs:label "Hace reserva"@es .
+mo:hasDestination rdfs:label "Tiene destino"@es .
+mo:hasMultiStop rdfs:label "Tiene parada múltiple"@es .
+mo:hasNextStop rdfs:label "Tiene siguiente parada"@es .
+mo:idAgente rdfs:label "Identificador de agente"@es .
+mo:idFactura rdfs:label "Identificador de factura"@es .
+mo:idPago rdfs:label "Identificador de pago"@es .
+mo:idPunto rdfs:label "Identificador de punto de servicio"@es .
+mo:idReserva rdfs:label "Identificador de reserva"@es .
+mo:idServicio rdfs:label "Identificador de servicio"@es .
+mo:idTarifa rdfs:label "Identificador de tarifa"@es .
+mo:idTrayecto rdfs:label "Identificador de trayecto"@es .
+mo:idVehiculo rdfs:label "Identificador de vehículo"@es .
+mo:importe rdfs:label "Importe"@es .
+mo:importeTotal rdfs:label "Importe total"@es .
+mo:inicioUso rdfs:label "Inicio de uso"@es .
+mo:kilometraje rdfs:label "Kilometraje"@es .
+mo:latitud rdfs:label "Latitud"@es .
+mo:longitud rdfs:label "Longitud"@es .
+mo:matricula rdfs:label "Matrícula"@es .
+mo:minutosCortesia rdfs:label "Minutos de cortesía"@es .
+mo:moneda rdfs:label "Moneda"@es .
+mo:nUsos rdfs:label "Número de usos"@es .
+mo:nombreAgente rdfs:label "Nombre del agente"@es .
+mo:nombrePunto rdfs:label "Nombre del punto de servicio"@es .
+mo:nombreServicio rdfs:label "Nombre del servicio"@es .
+mo:nombreTarifa rdfs:label "Nombre de la tarifa"@es .
+mo:ofreceServicio rdfs:label "Ofrece servicio"@es .
+mo:ofrecidoEn rdfs:label "Ofrecido en"@es .
+mo:pagadoCon rdfs:label "Pagado con"@es .
+mo:pendientePago rdfs:label "Pendiente de pago"@es .
+mo:permisoConducir rdfs:label "Permiso de conducir"@es .
+mo:precio rdfs:label "Precio"@es .
+mo:precioKm rdfs:label "Precio por kilómetro"@es .
+mo:precioMinuto rdfs:label "Precio Minuto"@es .
+mo:puntoDevolucion rdfs:label "Punto de devolución"@es .
+mo:puntoRecogida rdfs:label "Punto de recogida"@es .
+mo:realizadoPor rdfs:label "Realizado por"@es .
+mo:registradoEnPlataforma rdfs:label "Registrado en plataforma"@es .
+mo:reservaEn rdfs:label "Reserva en"@es .
+mo:reservaServicio rdfs:label "Reserva servicio"@es .
+mo:reservaVehiculo rdfs:label "Reserva vehículo"@es .
+mo:tieneEstado rdfs:label "Tiene estado"@es .
+mo:tieneMetodoPago rdfs:label "Tiene método de pago"@es .
+mo:tienePago rdfs:label "Tiene pago"@es .
+mo:tieneRol rdfs:label "Tiene rol"@es .
+mo:tieneTarifa rdfs:label "Tiene tarifa"@es .
+mo:tieneTrayecto rdfs:label "Tiene trayecto"@es .
+mo:tipo rdfs:label "Tipo"@es .
+mo:tipoEstacion rdfs:label "Tipo de estación"@es .
+mo:tipoVehiculo rdfs:label "Tipo de vehículo"@es .
+mo:validez rdfs:label "Validez"@es .
+mo:ReservaInmediata rdfs:label "Reserva inmediata"@es .
+mo:TarifaBonoPrepago rdfs:label "Tarifa de bono prepago"@es .
+mo:TarifaPagoUso rdfs:label "Tarifa de pago por uso"@es .
+mo:EstacionFisica rdfs:label "Estación física"@es .
+mo:Organizacion rdfs:label "Organización"@es .
+mo:ReservaAnticipada rdfs:label "Reserva anticipada"@es .
+mo:Rol rdfs:label "Rol"@es .
+mo:TarifaSuscripcion rdfs:label "Tarifa de suscripción"@es .
+mo:Trayecto rdfs:label "Trayecto"@es .
+mo:MultiStopRelation rdfs:label "Relación de paradas múltiples"@es .
+mo:tienePropulsion rdfs:label "Tiene propulsión"@es .
+mo:Pago rdfs:label "Pago"@es .
+mo:Persona rdfs:label "Persona"@es .
+mo:RelacionTrayecto rdfs:label "Relación de trayecto"@es .
+mo:Tarifa rdfs:label "Tarifa"@es .
+mo:Agentes rdfs:label "Agentes"@es .
+mo:Factura rdfs:label "Factura"@es .
+mo:Reserva rdfs:label "Reserva"@es .
+mo:ServicioDeMovilidad rdfs:label "Servicio de movilidad"@es .
+mo:PuntoDeServicio rdfs:label "Punto de servicio"@es .
+mo:VehiculoCompartido rdfs:label "Vehículo compartido"@es .
