@@ -64,8 +64,8 @@ mo:NIF a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 mo:ParkingPrivadoConcertadoPublico a owl:Class ;
-    rdfs:subClassOf mo:PuntoDeServicio,
-        <http://schema.mobivoc.org/#ParkingFacility> .
+    rdfs:subClassOf mo:PuntoDeServicio ;
+    owl:equivalentClass <http://schema.mobivoc.org/#ParkingFacility> .
 
 mo:RolProveedor a owl:Class ;
     rdfs:subClassOf mo:Rol .
