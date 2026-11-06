@@ -152,7 +152,7 @@ mo:capacidad a owl:DatatypeProperty ;
     rdfs:range xsd:integer .
 
 mo:contrataServicio a owl:ObjectProperty ;
-    rdfs:domain mo:Agentes ;
+    rdfs:domain mo:Agente ;
     rdfs:range mo:ServicioDeMovilidad .
 
 mo:costeTrayecto a owl:DatatypeProperty ;
@@ -181,11 +181,11 @@ mo:duracionMinutos a owl:DatatypeProperty ;
 
 mo:emitidaA a owl:ObjectProperty ;
     rdfs:domain mo:Factura ;
-    rdfs:range mo:Agentes .
+    rdfs:range mo:Agente .
 
 mo:emitidaPor a owl:ObjectProperty ;
     rdfs:domain mo:Factura ;
-    rdfs:range mo:Agentes .
+    rdfs:range mo:Agente .
 
 mo:estacionadoEn a owl:ObjectProperty ;
     rdfs:domain mo:VehiculoCompartido ;
@@ -240,7 +240,7 @@ mo:hasNextStop a owl:ObjectProperty ;
     rdfs:range mo:MultiStopRelation .
 
 mo:idAgente a owl:DatatypeProperty ;
-    rdfs:domain mo:Agentes ;
+    rdfs:domain mo:Agente ;
     rdfs:range xsd:string .
 
 mo:idFactura a owl:DatatypeProperty ;
@@ -316,7 +316,7 @@ mo:nUsos a owl:DatatypeProperty ;
     rdfs:range xsd:integer .
 
 mo:nombreAgente a owl:DatatypeProperty ;
-    rdfs:domain mo:Agentes ;
+    rdfs:domain mo:Agente ;
     rdfs:range xsd:string .
 
 mo:nombrePunto a owl:DatatypeProperty ;
@@ -332,7 +332,7 @@ mo:nombreTarifa a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
 mo:ofreceServicio a owl:ObjectProperty ;
-    rdfs:domain mo:Agentes ;
+    rdfs:domain mo:Agente ;
     rdfs:range mo:ServicioDeMovilidad .
 
 mo:ofrecidoEn a owl:ObjectProperty ;
@@ -375,7 +375,7 @@ mo:puntoRecogida a owl:ObjectProperty ;
 
 mo:realizadoPor a owl:ObjectProperty ;
     rdfs:domain mo:Pago ;
-    rdfs:range mo:Agentes .
+    rdfs:range mo:Agente .
 
 mo:registradoEnPlataforma a owl:DatatypeProperty ;
     rdfs:domain mo:Persona ;
@@ -410,7 +410,7 @@ mo:tienePago a owl:ObjectProperty ;
     rdfs:range mo:Pago .
 
 mo:tieneRol a owl:ObjectProperty ;
-    rdfs:domain mo:Agentes ;
+    rdfs:domain mo:Agente ;
     rdfs:range mo:Rol .
 
 mo:tieneTarifa a owl:ObjectProperty ;
@@ -454,7 +454,7 @@ mo:EstacionFisica a owl:Class ;
     rdfs:subClassOf mo:PuntoDeServicio .
 
 mo:Organizacion a owl:Class ;
-    rdfs:subClassOf mo:Agentes ;
+    rdfs:subClassOf mo:Agente ;
     owl:equivalentClass <http://purl.org/goodrelations/v1#BusinessEntity> .
 
 mo:ReservaAnticipada a owl:Class ;
@@ -478,14 +478,14 @@ mo:tienePropulsion a owl:ObjectProperty ;
 mo:Pago a owl:Class .
 
 mo:Persona a owl:Class ;
-    rdfs:subClassOf mo:Agentes ;
+    rdfs:subClassOf mo:Agente ;
     owl:equivalentClass foaf:Person .
 
 mo:RelacionTrayecto a owl:Class .
 
 mo:Tarifa a owl:Class .
 
-mo:Agentes a owl:Class .
+mo:Agente a owl:Class .
 
 mo:Factura a owl:Class .
 
@@ -647,7 +647,7 @@ mo:Pago rdfs:label "Pago"@es .
 mo:Persona rdfs:label "Persona"@es .
 mo:RelacionTrayecto rdfs:label "Relación de trayecto"@es .
 mo:Tarifa rdfs:label "Tarifa"@es .
-mo:Agentes rdfs:label "Agentes"@es .
+mo:Agente rdfs:label "Agentes"@es .
 mo:Factura rdfs:label "Factura"@es .
 mo:Reserva rdfs:label "Reserva"@es .
 mo:ServicioDeMovilidad rdfs:label "Servicio de movilidad"@es .
@@ -751,7 +751,7 @@ mo:Pago rdfs:comment "Operación económica asociada a la contratación o uso de
 mo:Persona rdfs:comment "Agente individual que participa en la movilidad compartida."@es .
 mo:RelacionTrayecto rdfs:comment "Relación que vincula un trayecto con su coste y duración."@es .
 mo:Tarifa rdfs:comment "Condiciones económicas aplicables al uso de un servicio de movilidad compartida."@es .
-mo:Agentes rdfs:comment "Participante en el sistema de movilidad compartida."@es .
+mo:Agente rdfs:comment "Participante en el sistema de movilidad compartida."@es .
 mo:Factura rdfs:comment "Documento que registra los importes facturados por servicios o trayectos."@es .
 mo:Reserva rdfs:comment "Solicitud de utilización de un servicio o vehículo de movilidad compartida."@es .
 mo:ServicioDeMovilidad rdfs:comment "Oferta de movilidad compartida gestionada por un agente."@es .
@@ -799,7 +799,7 @@ mo:servicioReservadoEn a owl:ObjectProperty ;
 mo:ofreceServicio owl:inverseOf mo:servicioOfrecidoPor .
 mo:servicioOfrecidoPor a owl:ObjectProperty ;
     rdfs:domain mo:ServicioDeMovilidad ;
-    rdfs:range mo:Agentes ;
+    rdfs:range mo:Agente ;
     rdfs:label "servicio ofrecido por"@es ;
     rdfs:comment "Relación inversa de mo:ofreceServicio."@es .
 
@@ -826,14 +826,14 @@ mo:estacionaVehiculo a owl:ObjectProperty ;
 
 mo:emitidaPor owl:inverseOf mo:emiteFactura .
 mo:emiteFactura a owl:ObjectProperty ;
-    rdfs:domain mo:Agentes ;
+    rdfs:domain mo:Agente ;
     rdfs:range mo:Factura ;
     rdfs:label "emite factura"@es ;
     rdfs:comment "Relación inversa de mo:emitidaPor."@es .
 
 mo:emitidaA owl:inverseOf mo:recibeFactura .
 mo:recibeFactura a owl:ObjectProperty ;
-    rdfs:domain mo:Agentes ;
+    rdfs:domain mo:Agente ;
     rdfs:range mo:Factura ;
     rdfs:label "recibe factura"@es ;
     rdfs:comment "Relación inversa de mo:emitidaA."@es .
@@ -847,7 +847,7 @@ mo:pagoDeFactura a owl:ObjectProperty ;
 
 mo:realizadoPor owl:inverseOf mo:realizaPago .
 mo:realizaPago a owl:ObjectProperty ;
-    rdfs:domain mo:Agentes ;
+    rdfs:domain mo:Agente ;
     rdfs:range mo:Pago ;
     rdfs:label "realiza pago"@es ;
     rdfs:comment "Relación inversa de mo:realizadoPor."@es .
