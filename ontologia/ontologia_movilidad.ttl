@@ -655,3 +655,123 @@ mo:Reserva rdfs:label "Reserva"@es .
 mo:ServicioDeMovilidad rdfs:label "Servicio de movilidad"@es .
 mo:PuntoDeServicio rdfs:label "Punto de servicio"@es .
 mo:VehiculoCompartido rdfs:label "Vehículo compartido"@es .
+
+# Documentación de los términos propios (OOPS! P8).
+mo:EstacionFerroviaria rdfs:label "Estación ferroviaria"@es .
+mo:NIF rdfs:label "NIF"@es .
+mo:EstacionBicicletas rdfs:comment "Estación física destinada a bicicletas compartidas."@es .
+mo:EstacionBus rdfs:comment "Estación física destinada a autobuses."@es .
+mo:EstacionFerroviaria rdfs:comment "Estación física destinada al transporte ferroviario."@es .
+mo:ParkingPrivadoConcertadoPublico rdfs:comment "Aparcamiento de titularidad privada concertado para uso público."@es .
+mo:RolProveedor rdfs:comment "Rol del agente que proporciona servicios de movilidad compartida."@es .
+mo:RolUsuario rdfs:comment "Rol del agente que utiliza servicios de movilidad compartida."@es .
+mo:TarifaSuscripcionAnual rdfs:comment "Suscripción de duración anual."@es .
+mo:TarifaSuscripcionDiaria rdfs:comment "Suscripción de duración diaria."@es .
+mo:TarifaSuscripcionMensual rdfs:comment "Suscripción de duración mensual."@es .
+mo:VehiculoColectivo rdfs:comment "Vehículo compartido destinado al transporte colectivo."@es .
+mo:VehiculoMovilidadPersonal rdfs:comment "Vehículo compartido destinado a la movilidad personal."@es .
+mo:VehiculoPropulsionCombustible rdfs:comment "Vehículo compartido clasificado por propulsión mediante combustible."@es .
+mo:VehiculoPropulsionElectrica rdfs:comment "Vehículo compartido clasificado por propulsión eléctrica."@es .
+mo:VehiculoPropulsionHibrida rdfs:comment "Vehículo compartido clasificado por propulsión híbrida."@es .
+mo:VehiculoPropulsionHumana rdfs:comment "Vehículo compartido clasificado por propulsión humana."@es .
+mo:activa rdfs:comment "Atributo «activa» asociado a Reserva, con valores de tipo boolean en el modelo de movilidad compartida."@es .
+mo:activo rdfs:comment "Relación «activo» cuyo sujeto pertenece a ServicioDeMovilidad en el modelo de movilidad compartida."@es .
+mo:apellidos rdfs:comment "Relación «apellidos» cuyo sujeto pertenece a Persona en el modelo de movilidad compartida."@es .
+mo:asignaTrayecto rdfs:comment "Relación «asigna trayecto» cuyo sujeto pertenece a RelacionTrayecto y cuyo objeto pertenece a Trayecto en el modelo de movilidad compartida."@es .
+mo:baseRecarga rdfs:comment "Atributo «base de recarga» asociado a PuntoDeServicio, con valores de tipo boolean en el modelo de movilidad compartida."@es .
+mo:cancelable rdfs:comment "Atributo «cancelable» asociado a ReservaAnticipada, con valores de tipo boolean en el modelo de movilidad compartida."@es .
+mo:capacidad rdfs:comment "Relación «capacidad» cuyo sujeto pertenece a VehiculoCompartido en el modelo de movilidad compartida."@es .
+mo:contrataServicio rdfs:comment "Relación «contrata servicio» cuyo sujeto pertenece a Agentes y cuyo objeto pertenece a ServicioDeMovilidad en el modelo de movilidad compartida."@es .
+mo:costeTrayecto rdfs:comment "Atributo «coste del trayecto» asociado a RelacionTrayecto, con valores de tipo decimal en el modelo de movilidad compartida."@es .
+mo:descripcion rdfs:comment "Relación «descripción» cuyo sujeto pertenece a ServicioDeMovilidad en el modelo de movilidad compartida."@es .
+mo:direccion rdfs:comment "Relación «dirección» cuyo sujeto pertenece a PuntoDeServicio en el modelo de movilidad compartida."@es .
+mo:disponeDe rdfs:comment "Relación «dispone de» cuyo sujeto pertenece a ServicioDeMovilidad y cuyo objeto pertenece a VehiculoCompartido en el modelo de movilidad compartida."@es .
+mo:distanciaKm rdfs:comment "Atributo «distancia en kilómetros» asociado a RelacionTrayecto, con valores de tipo decimal en el modelo de movilidad compartida."@es .
+mo:duracionMinutos rdfs:comment "Relación «duración en minutos» cuyo sujeto pertenece a RelacionTrayecto en el modelo de movilidad compartida."@es .
+mo:emitidaA rdfs:comment "Relación «emitida a» cuyo sujeto pertenece a Factura y cuyo objeto pertenece a Agentes en el modelo de movilidad compartida."@es .
+mo:emitidaPor rdfs:comment "Relación «emitida por» cuyo sujeto pertenece a Factura y cuyo objeto pertenece a Agentes en el modelo de movilidad compartida."@es .
+mo:estacionadoEn rdfs:comment "Relación «estacionado en» cuyo sujeto pertenece a VehiculoCompartido y cuyo objeto pertenece a PuntoDeServicio en el modelo de movilidad compartida."@es .
+mo:facturaServicio rdfs:comment "Relación «factura servicio» cuyo sujeto pertenece a Factura y cuyo objeto pertenece a ServicioDeMovilidad en el modelo de movilidad compartida."@es .
+mo:facturaTrayecto rdfs:comment "Relación «factura trayecto» cuyo sujeto pertenece a Factura y cuyo objeto pertenece a RelacionTrayecto en el modelo de movilidad compartida."@es .
+mo:fechaEmision rdfs:comment "Atributo «fecha de emisión» asociado a Factura, con valores de tipo dateTime en el modelo de movilidad compartida."@es .
+mo:fechaFin rdfs:comment "Atributo «fecha de fin» asociado a ReservaAnticipada, con valores de tipo dateTime en el modelo de movilidad compartida."@es .
+mo:fechaInicio rdfs:comment "Atributo «fecha de inicio» asociado a ReservaAnticipada, con valores de tipo dateTime en el modelo de movilidad compartida."@es .
+mo:fechaNacimiento rdfs:comment "Atributo «fecha de nacimiento» asociado a Persona, con valores de tipo date en el modelo de movilidad compartida."@es .
+mo:fechaPago rdfs:comment "Relación «fecha de pago» cuyo sujeto pertenece a Pago en el modelo de movilidad compartida."@es .
+mo:fechaReserva rdfs:comment "Relación «fecha de reserva» cuyo sujeto pertenece a Reserva en el modelo de movilidad compartida."@es .
+mo:haceReserva rdfs:comment "Relación «hace reserva» cuyo sujeto pertenece a Persona y cuyo objeto pertenece a Reserva en el modelo de movilidad compartida."@es .
+mo:hasDestination rdfs:comment "Relación «tiene destino» cuyo sujeto pertenece a MultiStopRelation y cuyo objeto pertenece a PuntoDeServicio en el modelo de movilidad compartida."@es .
+mo:hasMultiStop rdfs:comment "Relación «tiene parada múltiple» cuyo sujeto pertenece a Trayecto y cuyo objeto pertenece a MultiStopRelation en el modelo de movilidad compartida."@es .
+mo:hasNextStop rdfs:comment "Relación «tiene siguiente parada» cuyo sujeto pertenece a MultiStopRelation y cuyo objeto pertenece a MultiStopRelation en el modelo de movilidad compartida."@es .
+mo:idAgente rdfs:comment "Atributo «identificador de agente» asociado a Agentes, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:idFactura rdfs:comment "Atributo «identificador de factura» asociado a Factura, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:idPago rdfs:comment "Atributo «identificador de pago» asociado a Pago, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:idPunto rdfs:comment "Atributo «identificador de punto de servicio» asociado a PuntoDeServicio, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:idReserva rdfs:comment "Atributo «identificador de reserva» asociado a Reserva, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:idServicio rdfs:comment "Atributo «identificador de servicio» asociado a ServicioDeMovilidad, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:idTarifa rdfs:comment "Atributo «identificador de tarifa» asociado a Tarifa, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:idTrayecto rdfs:comment "Atributo «identificador de trayecto» asociado a Trayecto, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:idVehiculo rdfs:comment "Atributo «identificador de vehículo» asociado a VehiculoCompartido, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:importe rdfs:comment "Atributo «importe» asociado a Pago, con valores de tipo decimal en el modelo de movilidad compartida."@es .
+mo:importeTotal rdfs:comment "Atributo «importe total» asociado a Factura, con valores de tipo decimal en el modelo de movilidad compartida."@es .
+mo:inicioUso rdfs:comment "Atributo «inicio de uso» asociado a ReservaInmediata, con valores de tipo dateTime en el modelo de movilidad compartida."@es .
+mo:kilometraje rdfs:comment "Atributo «kilometraje» asociado a VehiculoCompartido, con valores de tipo decimal en el modelo de movilidad compartida."@es .
+mo:latitud rdfs:comment "Atributo «latitud» asociado a PuntoDeServicio, con valores de tipo decimal en el modelo de movilidad compartida."@es .
+mo:longitud rdfs:comment "Atributo «longitud» asociado a PuntoDeServicio, con valores de tipo decimal en el modelo de movilidad compartida."@es .
+mo:matricula rdfs:comment "Atributo «matrícula» asociado a VehiculoCompartido, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:minutosCortesia rdfs:comment "Atributo «minutos de cortesía» asociado a Reserva, con valores de tipo integer en el modelo de movilidad compartida."@es .
+mo:moneda rdfs:comment "Atributo «moneda» asociado a TarifaBonoPrepago, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:nUsos rdfs:comment "Atributo «número de usos» asociado a TarifaBonoPrepago, con valores de tipo integer en el modelo de movilidad compartida."@es .
+mo:nombreAgente rdfs:comment "Atributo «nombre del agente» asociado a Agentes, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:nombrePunto rdfs:comment "Atributo «nombre del punto de servicio» asociado a PuntoDeServicio, con valores de tipo string en el modelo de movilidad compartida."@es .
+mo:nombreServicio rdfs:comment "Relación «nombre del servicio» cuyo sujeto pertenece a ServicioDeMovilidad en el modelo de movilidad compartida."@es .
+mo:nombreTarifa rdfs:comment "Relación «nombre de la tarifa» cuyo sujeto pertenece a Tarifa en el modelo de movilidad compartida."@es .
+mo:ofreceServicio rdfs:comment "Relación «ofrece servicio» cuyo sujeto pertenece a Agentes y cuyo objeto pertenece a ServicioDeMovilidad en el modelo de movilidad compartida."@es .
+mo:pendientePago rdfs:comment "Atributo «pendiente de pago» asociado a Factura, con valores de tipo boolean en el modelo de movilidad compartida."@es .
+mo:permisoConducir rdfs:comment "Atributo «permiso de conducir» asociado a Persona, con valores de tipo boolean en el modelo de movilidad compartida."@es .
+mo:precio rdfs:comment "Atributo «precio» asociado a Tarifa, con valores de tipo decimal en el modelo de movilidad compartida."@es .
+mo:precioKm rdfs:comment "Relación «precio por kilómetro» cuyo sujeto pertenece a TarifaPagoUso en el modelo de movilidad compartida."@es .
+mo:precioMinuto rdfs:comment "Relación «precio minuto» cuyo sujeto pertenece a TarifaPagoUso en el modelo de movilidad compartida."@es .
+mo:puntoDevolucion rdfs:comment "Relación «punto de devolución» cuyo sujeto pertenece a ServicioDeMovilidad y cuyo objeto pertenece a PuntoDeServicio en el modelo de movilidad compartida."@es .
+mo:puntoRecogida rdfs:comment "Relación «punto de recogida» cuyo sujeto pertenece a ServicioDeMovilidad y cuyo objeto pertenece a PuntoDeServicio en el modelo de movilidad compartida."@es .
+mo:realizadoPor rdfs:comment "Relación «realizado por» cuyo sujeto pertenece a Pago y cuyo objeto pertenece a Agentes en el modelo de movilidad compartida."@es .
+mo:registradoEnPlataforma rdfs:comment "Relación «registrado en plataforma» cuyo sujeto pertenece a Persona en el modelo de movilidad compartida."@es .
+mo:reservaEn rdfs:comment "Relación «reserva en» cuyo sujeto pertenece a Reserva y cuyo objeto pertenece a PuntoDeServicio en el modelo de movilidad compartida."@es .
+mo:reservaServicio rdfs:comment "Relación «reserva servicio» cuyo sujeto pertenece a Reserva y cuyo objeto pertenece a ServicioDeMovilidad en el modelo de movilidad compartida."@es .
+mo:tienePago rdfs:comment "Relación «tiene pago» cuyo sujeto pertenece a Factura y cuyo objeto pertenece a Pago en el modelo de movilidad compartida."@es .
+mo:tieneRol rdfs:comment "Relación «tiene rol» cuyo sujeto pertenece a Organizacion y cuyo objeto pertenece a Rol en el modelo de movilidad compartida."@es .
+mo:tieneTarifa rdfs:comment "Relación «tiene tarifa» cuyo sujeto pertenece a ServicioDeMovilidad y cuyo objeto pertenece a Tarifa en el modelo de movilidad compartida."@es .
+mo:tieneTrayecto rdfs:comment "Relación «tiene trayecto» cuyo sujeto pertenece a ServicioDeMovilidad y cuyo objeto pertenece a RelacionTrayecto en el modelo de movilidad compartida."@es .
+mo:validez rdfs:comment "Relación «validez» cuyo sujeto pertenece a TarifaBonoPrepago en el modelo de movilidad compartida."@es .
+mo:ReservaInmediata rdfs:comment "Reserva que permite iniciar el uso del servicio sin programación anticipada."@es .
+mo:TarifaBonoPrepago rdfs:comment "Tarifa basada en la compra anticipada de un bono de usos."@es .
+mo:TarifaPagoUso rdfs:comment "Tarifa cuyo coste depende del uso realizado."@es .
+mo:EstacionFisica rdfs:comment "Punto físico habilitado como estación de movilidad compartida."@es .
+mo:Organizacion rdfs:comment "Entidad organizativa que participa en servicios de movilidad compartida."@es .
+mo:ReservaAnticipada rdfs:comment "Reserva realizada para una fecha u hora futura."@es .
+mo:Pago rdfs:comment "Operación económica asociada a la contratación o uso de un servicio."@es .
+mo:Persona rdfs:comment "Agente individual que participa en la movilidad compartida."@es .
+mo:RelacionTrayecto rdfs:comment "Relación que vincula un trayecto con su coste y duración."@es .
+mo:Tarifa rdfs:comment "Condiciones económicas aplicables al uso de un servicio de movilidad compartida."@es .
+mo:Agentes rdfs:comment "Participante en el sistema de movilidad compartida."@es .
+mo:Factura rdfs:comment "Documento que registra los importes facturados por servicios o trayectos."@es .
+mo:Reserva rdfs:comment "Solicitud de utilización de un servicio o vehículo de movilidad compartida."@es .
+mo:ServicioDeMovilidad rdfs:comment "Oferta de movilidad compartida gestionada por un agente."@es .
+mo:PuntoDeServicio rdfs:comment "Infraestructura donde se ofrece, recoge o devuelve un servicio o vehículo compartido."@es .
+mo:VehiculoCompartido rdfs:comment "Vehículo destinado a servicios de movilidad compartida."@es .
+
+# Particiones OWL del modelo: disyunción y cobertura cuando son exhaustivas.
+mo:Reserva owl:equivalentClass [ a owl:Class ; owl:unionOf ( mo:ReservaInmediata mo:ReservaAnticipada ) ] .
+mo:ReservaInmediata owl:disjointWith mo:ReservaAnticipada .
+mo:PuntoDeServicio owl:equivalentClass [ a owl:Class ; owl:unionOf ( mo:EstacionFisica mo:OficinaDeAlquiler mo:ParkingPrivadoConcertadoPublico ) ] .
+[] a owl:AllDisjointClasses ; owl:members ( mo:EstacionFisica mo:OficinaDeAlquiler mo:ParkingPrivadoConcertadoPublico ) .
+# Clasificación exhaustiva y disjunta de los vehículos según su propulsión.
+mo:VehiculoCompartido rdfs:subClassOf [ a owl:Class ; owl:unionOf ( mo:VehiculoPropulsionElectrica mo:VehiculoPropulsionHibrida mo:VehiculoPropulsionCombustible mo:VehiculoPropulsionHumana ) ] .
+[] a owl:AllDisjointClasses ; owl:members ( mo:VehiculoPropulsionElectrica mo:VehiculoPropulsionHibrida mo:VehiculoPropulsionCombustible mo:VehiculoPropulsionHumana ) .
+# Clasificación de vehículos personales/colectivos: partición del diagrama.
+mo:VehiculoCompartido rdfs:subClassOf [ a owl:Class ; owl:unionOf ( mo:VehiculoMovilidadPersonal mo:VehiculoColectivo ) ] .
+mo:VehiculoMovilidadPersonal owl:disjointWith mo:VehiculoColectivo .
+# Las tarifas son disjuntas, sin imponer exhaustividad.
+[] a owl:AllDisjointClasses ; owl:members ( mo:TarifaSuscripcion mo:TarifaBonoPrepago mo:TarifaPagoUso ) .
+# Suscripciones: subtipos disjuntos, sin cobertura obligatoria.
+[] a owl:AllDisjointClasses ; owl:members ( mo:TarifaSuscripcionDiaria mo:TarifaSuscripcionMensual mo:TarifaSuscripcionAnual ) .
