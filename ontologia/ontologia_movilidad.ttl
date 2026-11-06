@@ -774,3 +774,88 @@ mo:VehiculoMovilidadPersonal owl:disjointWith mo:VehiculoColectivo .
 [] a owl:AllDisjointClasses ; owl:members ( mo:TarifaSuscripcion mo:TarifaBonoPrepago mo:TarifaPagoUso ) .
 # Suscripciones: subtipos disjuntos, sin cobertura obligatoria.
 [] a owl:AllDisjointClasses ; owl:members ( mo:TarifaSuscripcionDiaria mo:TarifaSuscripcionMensual mo:TarifaSuscripcionAnual ) .
+
+# Propiedades inversas propias para navegación bidireccional (OOPS! P13).
+mo:haceReserva owl:inverseOf mo:reservaRealizadaPor .
+mo:reservaRealizadaPor a owl:ObjectProperty ;
+    rdfs:domain mo:Reserva ;
+    rdfs:range mo:Persona ;
+    rdfs:label "reserva realizada por"@es ;
+    rdfs:comment "Relación inversa de mo:haceReserva."@es .
+
+mo:reservaVehiculo owl:inverseOf mo:vehiculoReservadoEn .
+mo:vehiculoReservadoEn a owl:ObjectProperty ;
+    rdfs:domain mo:VehiculoCompartido ;
+    rdfs:range mo:Reserva ;
+    rdfs:label "vehiculo reservado en"@es ;
+    rdfs:comment "Relación inversa de mo:reservaVehiculo."@es .
+
+mo:reservaServicio owl:inverseOf mo:servicioReservadoEn .
+mo:servicioReservadoEn a owl:ObjectProperty ;
+    rdfs:domain mo:ServicioDeMovilidad ;
+    rdfs:range mo:Reserva ;
+    rdfs:label "servicio reservado en"@es ;
+    rdfs:comment "Relación inversa de mo:reservaServicio."@es .
+
+mo:ofreceServicio owl:inverseOf mo:servicioOfrecidoPor .
+mo:servicioOfrecidoPor a owl:ObjectProperty ;
+    rdfs:domain mo:ServicioDeMovilidad ;
+    rdfs:range mo:Agentes ;
+    rdfs:label "servicio ofrecido por"@es ;
+    rdfs:comment "Relación inversa de mo:ofreceServicio."@es .
+
+mo:tieneTarifa owl:inverseOf mo:tarifaDeServicio .
+mo:tarifaDeServicio a owl:ObjectProperty ;
+    rdfs:domain mo:Tarifa ;
+    rdfs:range mo:ServicioDeMovilidad ;
+    rdfs:label "tarifa de servicio"@es ;
+    rdfs:comment "Relación inversa de mo:tieneTarifa."@es .
+
+mo:disponeDe owl:inverseOf mo:vehiculoDisponibleEnServicio .
+mo:vehiculoDisponibleEnServicio a owl:ObjectProperty ;
+    rdfs:domain mo:VehiculoCompartido ;
+    rdfs:range mo:ServicioDeMovilidad ;
+    rdfs:label "vehiculo disponible en servicio"@es ;
+    rdfs:comment "Relación inversa de mo:disponeDe."@es .
+
+mo:estacionadoEn owl:inverseOf mo:estacionaVehiculo .
+mo:estacionaVehiculo a owl:ObjectProperty ;
+    rdfs:domain mo:PuntoDeServicio ;
+    rdfs:range mo:VehiculoCompartido ;
+    rdfs:label "estaciona vehiculo"@es ;
+    rdfs:comment "Relación inversa de mo:estacionadoEn."@es .
+
+mo:emitidaPor owl:inverseOf mo:emiteFactura .
+mo:emiteFactura a owl:ObjectProperty ;
+    rdfs:domain mo:Agentes ;
+    rdfs:range mo:Factura ;
+    rdfs:label "emite factura"@es ;
+    rdfs:comment "Relación inversa de mo:emitidaPor."@es .
+
+mo:emitidaA owl:inverseOf mo:recibeFactura .
+mo:recibeFactura a owl:ObjectProperty ;
+    rdfs:domain mo:Agentes ;
+    rdfs:range mo:Factura ;
+    rdfs:label "recibe factura"@es ;
+    rdfs:comment "Relación inversa de mo:emitidaA."@es .
+
+mo:tienePago owl:inverseOf mo:pagoDeFactura .
+mo:pagoDeFactura a owl:ObjectProperty ;
+    rdfs:domain mo:Pago ;
+    rdfs:range mo:Factura ;
+    rdfs:label "pago de factura"@es ;
+    rdfs:comment "Relación inversa de mo:tienePago."@es .
+
+mo:realizadoPor owl:inverseOf mo:realizaPago .
+mo:realizaPago a owl:ObjectProperty ;
+    rdfs:domain mo:Agentes ;
+    rdfs:range mo:Pago ;
+    rdfs:label "realiza pago"@es ;
+    rdfs:comment "Relación inversa de mo:realizadoPor."@es .
+
+mo:tieneRol owl:inverseOf mo:rolDeAgente .
+mo:rolDeAgente a owl:ObjectProperty ;
+    rdfs:domain mo:Rol ;
+    rdfs:label "rol de agente"@es ;
+    rdfs:comment "Relación inversa de mo:tieneRol."@es .
+
