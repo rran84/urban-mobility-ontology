@@ -96,17 +96,17 @@ mo:VehiculoPropulsionCombustible a owl:Class ;
                         owl:onProperty mo:tienePropulsion ] ) ] .
 
 mo:VehiculoPropulsionElectrica a owl:Class ;
-    rdfs:seeAlso <http://schema.mobivoc.org/#BatteryElectricVehicle> ;
     rdfs:subClassOf mo:VehiculoCompartido ;
-    owl:equivalentClass [ a owl:Class ;
+    owl:equivalentClass <http://schema.mobivoc.org/#BatteryElectricVehicle>,
+        [ a owl:Class ;
             owl:intersectionOf ( mo:VehiculoCompartido [ a owl:Restriction ;
                         owl:hasValue mo:Electrica ;
                         owl:onProperty mo:tienePropulsion ] ) ] .
 
 mo:VehiculoPropulsionHibrida a owl:Class ;
-    rdfs:seeAlso <http://schema.mobivoc.org/#Plug-inHybridElectricVehicle> ;
     rdfs:subClassOf mo:VehiculoCompartido ;
-    owl:equivalentClass [ a owl:Class ;
+    owl:equivalentClass <http://schema.mobivoc.org/#Plug-inHybridElectricVehicle>,
+        [ a owl:Class ;
             owl:intersectionOf ( mo:VehiculoCompartido [ a owl:Restriction ;
                         owl:hasValue mo:Hibrida ;
                         owl:onProperty mo:tienePropulsion ] ) ] .
