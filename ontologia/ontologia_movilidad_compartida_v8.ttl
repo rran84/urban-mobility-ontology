@@ -452,8 +452,7 @@ mo:EstacionFisica a owl:Class ;
 
 mo:Organizacion a owl:Class ;
     rdfs:subClassOf mo:Agentes ;
-    owl:equivalentClass <http://purl.org/goodrelations/v1#BusinessEntity>,
-        foaf:Organization .
+    owl:equivalentClass <http://purl.org/goodrelations/v1#BusinessEntity> .
 
 mo:ReservaAnticipada a owl:Class ;
     rdfs:subClassOf mo:Reserva .
