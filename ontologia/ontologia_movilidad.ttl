@@ -13,6 +13,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://movilidad.es/def/compartida> a owl:Ontology ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:created "2026-10-26"^^xsd:date ;
     dcterms:description "Ontología para la representación de servicios de movilidad compartida, agentes, vehículos, reservas y tarifas."@es ;
     dcterms:title "Ontología de Movilidad Compartida (myOntology)"@es ;
