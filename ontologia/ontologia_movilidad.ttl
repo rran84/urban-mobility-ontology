@@ -68,7 +68,7 @@ mo:OficinaDeAlquiler a owl:Class ;
     rdfs:label "Oficina de alquiler"@es ;
     rdfs:comment "Punto de servicio destinado a la atención y gestión del alquiler de vehículos de movilidad compartida."@es .
 
-mo:ParkingPrivadoConcertadoPublico a owl:Class ;
+mo:Aparcamiento a owl:Class ;
     rdfs:subClassOf mo:PuntoDeServicio ;
     owl:equivalentClass <http://schema.mobivoc.org/#ParkingFacility> .
 
@@ -410,8 +410,7 @@ mo:tienePago a owl:ObjectProperty ;
     rdfs:range mo:Pago .
 
 mo:tieneRol a owl:ObjectProperty ;
-    rdfs:domain mo:Organizacion,
-        mo:Persona ;
+    rdfs:domain mo:Agentes ;
     rdfs:range mo:Rol .
 
 mo:tieneTarifa a owl:ObjectProperty ;
@@ -544,7 +543,7 @@ geo:asGeoJSON a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd
 # Etiquetas en español de las clases y propiedades propias (mejora OOPS! P8).
 mo:EstacionBicicletas rdfs:label "Estación de bicicletas"@es .
 mo:EstacionBus rdfs:label "Estación de autobús"@es .
-mo:ParkingPrivadoConcertadoPublico rdfs:label "Aparcamiento privado concertado de uso público"@es .
+mo:Aparcamiento rdfs:label "Aparcamiento privado concertado de uso público"@es .
 mo:RolProveedor rdfs:label "Rol de proveedor"@es .
 mo:RolUsuario rdfs:label "Rol de usuario"@es .
 mo:TarifaSuscripcionAnual rdfs:label "Tarifa de suscripción anual"@es .
@@ -661,7 +660,7 @@ mo:NIF rdfs:label "NIF"@es .
 mo:EstacionBicicletas rdfs:comment "Estación física destinada a bicicletas compartidas."@es .
 mo:EstacionBus rdfs:comment "Estación física destinada a autobuses."@es .
 mo:EstacionFerroviaria rdfs:comment "Estación física destinada al transporte ferroviario."@es .
-mo:ParkingPrivadoConcertadoPublico rdfs:comment "Aparcamiento de titularidad privada concertado para uso público."@es .
+mo:Aparcamiento rdfs:comment "Instalación destinada al estacionamiento de vehículos, integrada como punto de servicio de movilidad compartida."@es .
 mo:RolProveedor rdfs:comment "Rol del agente que proporciona servicios de movilidad compartida."@es .
 mo:RolUsuario rdfs:comment "Rol del agente que utiliza servicios de movilidad compartida."@es .
 mo:TarifaSuscripcionAnual rdfs:comment "Suscripción de duración anual."@es .
@@ -762,8 +761,8 @@ mo:VehiculoCompartido rdfs:comment "Vehículo destinado a servicios de movilidad
 # Particiones OWL del modelo: disyunción y cobertura cuando son exhaustivas.
 mo:Reserva owl:equivalentClass [ a owl:Class ; owl:unionOf ( mo:ReservaInmediata mo:ReservaAnticipada ) ] .
 mo:ReservaInmediata owl:disjointWith mo:ReservaAnticipada .
-mo:PuntoDeServicio owl:equivalentClass [ a owl:Class ; owl:unionOf ( mo:EstacionFisica mo:OficinaDeAlquiler mo:ParkingPrivadoConcertadoPublico ) ] .
-[] a owl:AllDisjointClasses ; owl:members ( mo:EstacionFisica mo:OficinaDeAlquiler mo:ParkingPrivadoConcertadoPublico ) .
+mo:PuntoDeServicio owl:equivalentClass [ a owl:Class ; owl:unionOf ( mo:EstacionFisica mo:OficinaDeAlquiler mo:Aparcamiento ) ] .
+[] a owl:AllDisjointClasses ; owl:members ( mo:EstacionFisica mo:OficinaDeAlquiler mo:Aparcamiento ) .
 # Clasificación exhaustiva y disjunta de los vehículos según su propulsión.
 mo:VehiculoCompartido rdfs:subClassOf [ a owl:Class ; owl:unionOf ( mo:VehiculoPropulsionElectrica mo:VehiculoPropulsionHibrida mo:VehiculoPropulsionCombustible mo:VehiculoPropulsionHumana ) ] .
 [] a owl:AllDisjointClasses ; owl:members ( mo:VehiculoPropulsionElectrica mo:VehiculoPropulsionHibrida mo:VehiculoPropulsionCombustible mo:VehiculoPropulsionHumana ) .
