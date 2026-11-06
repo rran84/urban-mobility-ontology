@@ -1,0 +1,1127 @@
+# Grafo integrado: ontologia/ontologia_movilidad.ttl y todos los SKOS de skos/.
+# Archivo para abrir directamente en Protege.
+# Fuentes: 
+# - ontologia/ontologia_movilidad.ttl
+# - skos/edint/propulsionsystemtype.ttl
+# - skos/edint/vehiclestate.ttl
+# - skos/propios/estado_vehiculo.ttl
+# - skos/propios/tipo_propulsion.ttl
+# - skos/segittur/paymentmethod.ttl
+# - skos/segittur/stationtype.ttl
+# - skos/segittur/vehicletype.ttl
+
+# === Fuente: ontologia/ontologia_movilidad.ttl ===
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix segittur: <https://ontologia.segittur.es/turismo/kos/> .
+@prefix sg: <https://ontologia.segittur.es/turismo/def/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mo: <http://movilidad.es/def/compartida#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://movilidad.es/def/compartida> a owl:Ontology ;
+    dcterms:created "2026-10-26"^^xsd:date ;
+    dcterms:description "Ontología para la representación de servicios de movilidad compartida, agentes, vehículos, reservas y tarifas."@es ;
+    dcterms:title "Ontología de Movilidad Compartida (myOntology)"@es ;
+    vann:preferredNamespacePrefix "mo" ;
+    vann:preferredNamespaceUri "http://movilidad.es/def/compartida#" ;
+    rdfs:comment "Los esquemas SKOS propios usan el espacio de nombres mo: conforme a la notacion del diagrama V8. Los vocabularios SEGITTUR se mantienen con sus IRIs oficiales; las referencias oficiales a sus esquemas son segittur:PaymentMethod, segittur:VehicleType y segittur:StationType."@es,
+        "Versión 8 alineada con el diagrama. Los módulos externos MobiVoc, SEGITTUR y GeoSPARQL se referencian sin reproducir sus axiomas. Las equivalencias de propulsión externa requieren verificación semántica."@es ;
+    rdfs:seeAlso mo:EstadoVehiculoScheme,
+        mo:TipoPropulsionScheme,
+        <http://schema.mobivoc.org/#AccessCondition>,
+        <http://schema.mobivoc.org/#ArrangementPattern>,
+        <http://schema.mobivoc.org/#Capacity>,
+        <http://schema.mobivoc.org/#Charger>,
+        <http://schema.mobivoc.org/#CivicStructureStatus>,
+        <http://schema.mobivoc.org/#ParkingFacility>,
+        <http://schema.mobivoc.org/#ParkingFacilityConnection>,
+        <http://schema.mobivoc.org/#ParkingFacilityEntrance>,
+        <http://schema.mobivoc.org/#ParkingFacilityExit>,
+        <http://schema.mobivoc.org/#ParkingFacilityFeature>,
+        <http://schema.mobivoc.org/#ParkingSpace>,
+        <http://schema.mobivoc.org/#Plug>,
+        <http://schema.mobivoc.org/#PlugType>,
+        <http://schema.mobivoc.org/#RealTimeCapacity>,
+        geo:Feature,
+        geo:Geometry,
+        <https://edint.es/kos/PropulsionSystemType>,
+        <https://edint.es/kos/VehicleState>,
+        sg:OpeningHours,
+        sg:TransportInfrastructure,
+        sg:Localizacion,
+        sg:Place,
+        segittur:PaymentMethod,
+        segittur:StationType,
+        segittur:VehicleType,
+        schema:CivicStructure ;
+    owl:versionInfo "1.0.0-v8" .
+
+mo:EstacionBicicletas a owl:Class ;
+    rdfs:subClassOf mo:EstacionFisica .
+
+mo:EstacionBus a owl:Class ;
+    rdfs:subClassOf mo:EstacionFisica .
+
+mo:EstacionFerroviaria a owl:Class ;
+    rdfs:subClassOf mo:EstacionFisica .
+
+mo:NIF a owl:DatatypeProperty ;
+    rdfs:domain mo:Organizacion ;
+    rdfs:range xsd:string .
+
+mo:OficinaDeAlquiler a owl:Class ;
+    rdfs:subClassOf mo:PuntoDeServicio ;
+    rdfs:label "Oficina de alquiler"@es ;
+    rdfs:comment "Punto de servicio destinado a la atención y gestión del alquiler de vehículos de movilidad compartida."@es .
+
+mo:ParkingPrivadoConcertadoPublico a owl:Class ;
+    rdfs:subClassOf mo:PuntoDeServicio ;
+    owl:equivalentClass <http://schema.mobivoc.org/#ParkingFacility> .
+
+mo:RolProveedor a owl:Class ;
+    rdfs:subClassOf mo:Rol .
+
+mo:RolUsuario a owl:Class ;
+    rdfs:subClassOf mo:Rol .
+
+mo:TarifaSuscripcionAnual a owl:Class ;
+    rdfs:subClassOf mo:TarifaSuscripcion .
+
+mo:TarifaSuscripcionDiaria a owl:Class ;
+    rdfs:subClassOf mo:TarifaSuscripcion .
+
+mo:TarifaSuscripcionMensual a owl:Class ;
+    rdfs:subClassOf mo:TarifaSuscripcion .
+
+mo:VehiculoColectivo a owl:Class ;
+    rdfs:subClassOf mo:VehiculoCompartido .
+
+mo:VehiculoMovilidadPersonal a owl:Class ;
+    rdfs:subClassOf mo:VehiculoCompartido .
+
+mo:VehiculoPropulsionCombustible a owl:Class ;
+    rdfs:subClassOf mo:VehiculoCompartido ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( mo:VehiculoCompartido [ a owl:Restriction ;
+                        owl:hasValue mo:Combustion ;
+                        owl:onProperty mo:tienePropulsion ] ) ] .
+
+mo:VehiculoPropulsionElectrica a owl:Class ;
+    rdfs:subClassOf mo:VehiculoCompartido ;
+    owl:equivalentClass <http://schema.mobivoc.org/#BatteryElectricVehicle>,
+        [ a owl:Class ;
+            owl:intersectionOf ( mo:VehiculoCompartido [ a owl:Restriction ;
+                        owl:hasValue mo:Electrica ;
+                        owl:onProperty mo:tienePropulsion ] ) ] .
+
+mo:VehiculoPropulsionHibrida a owl:Class ;
+    rdfs:subClassOf mo:VehiculoCompartido ;
+    owl:equivalentClass <http://schema.mobivoc.org/#Plug-inHybridElectricVehicle>,
+        [ a owl:Class ;
+            owl:intersectionOf ( mo:VehiculoCompartido [ a owl:Restriction ;
+                        owl:hasValue mo:Hibrida ;
+                        owl:onProperty mo:tienePropulsion ] ) ] .
+
+mo:VehiculoPropulsionHumana a owl:Class ;
+    rdfs:subClassOf mo:VehiculoCompartido ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( mo:VehiculoCompartido [ a owl:Restriction ;
+                        owl:hasValue mo:Humana ;
+                        owl:onProperty mo:tienePropulsion ] ) ] .
+
+mo:activa a owl:DatatypeProperty ;
+    rdfs:domain mo:Reserva ;
+    rdfs:range xsd:boolean .
+
+mo:activo a owl:DatatypeProperty ;
+    rdfs:domain mo:ServicioDeMovilidad ;
+    rdfs:range xsd:boolean .
+
+mo:apellidos a owl:DatatypeProperty ;
+    rdfs:domain mo:Persona ;
+    rdfs:range xsd:string .
+
+mo:asignaTrayecto a owl:ObjectProperty ;
+    rdfs:domain mo:RelacionTrayecto ;
+    rdfs:range mo:Trayecto .
+
+mo:baseRecarga a owl:DatatypeProperty ;
+    rdfs:domain mo:PuntoDeServicio ;
+    rdfs:range xsd:boolean .
+
+mo:cancelable a owl:DatatypeProperty ;
+    rdfs:domain mo:ReservaAnticipada ;
+    rdfs:range xsd:boolean .
+
+mo:capacidad a owl:DatatypeProperty ;
+    rdfs:domain mo:VehiculoCompartido ;
+    rdfs:range xsd:integer .
+
+mo:contrataServicio a owl:ObjectProperty ;
+    rdfs:domain mo:Agentes ;
+    rdfs:range mo:ServicioDeMovilidad .
+
+mo:costeTrayecto a owl:DatatypeProperty ;
+    rdfs:domain mo:RelacionTrayecto ;
+    rdfs:range xsd:decimal .
+
+mo:descripcion a owl:DatatypeProperty ;
+    rdfs:domain mo:ServicioDeMovilidad ;
+    rdfs:range xsd:string .
+
+mo:direccion a owl:DatatypeProperty ;
+    rdfs:domain mo:PuntoDeServicio ;
+    rdfs:range xsd:string .
+
+mo:disponeDe a owl:ObjectProperty ;
+    rdfs:domain mo:ServicioDeMovilidad ;
+    rdfs:range mo:VehiculoCompartido .
+
+mo:distanciaKm a owl:DatatypeProperty ;
+    rdfs:domain mo:RelacionTrayecto ;
+    rdfs:range xsd:decimal .
+
+mo:duracionMinutos a owl:DatatypeProperty ;
+    rdfs:domain mo:RelacionTrayecto ;
+    rdfs:range xsd:decimal .
+
+mo:emitidaA a owl:ObjectProperty ;
+    rdfs:domain mo:Factura ;
+    rdfs:range mo:Agentes .
+
+mo:emitidaPor a owl:ObjectProperty ;
+    rdfs:domain mo:Factura ;
+    rdfs:range mo:Agentes .
+
+mo:estacionadoEn a owl:ObjectProperty ;
+    rdfs:domain mo:VehiculoCompartido ;
+    rdfs:range mo:PuntoDeServicio .
+
+mo:facturaServicio a owl:ObjectProperty ;
+    rdfs:domain mo:Factura ;
+    rdfs:range mo:ServicioDeMovilidad .
+
+mo:facturaTrayecto a owl:ObjectProperty ;
+    rdfs:domain mo:Factura ;
+    rdfs:range mo:RelacionTrayecto .
+
+mo:fechaEmision a owl:DatatypeProperty ;
+    rdfs:domain mo:Factura ;
+    rdfs:range xsd:dateTime .
+
+mo:fechaFin a owl:DatatypeProperty ;
+    rdfs:domain mo:ReservaAnticipada ;
+    rdfs:range xsd:dateTime .
+
+mo:fechaInicio a owl:DatatypeProperty ;
+    rdfs:domain mo:ReservaAnticipada ;
+    rdfs:range xsd:dateTime .
+
+mo:fechaNacimiento a owl:DatatypeProperty ;
+    rdfs:domain mo:Persona ;
+    rdfs:range xsd:date .
+
+mo:fechaPago a owl:DatatypeProperty ;
+    rdfs:domain mo:Pago ;
+    rdfs:range xsd:dateTime .
+
+mo:fechaReserva a owl:DatatypeProperty ;
+    rdfs:domain mo:Reserva ;
+    rdfs:range xsd:dateTime .
+
+mo:haceReserva a owl:ObjectProperty ;
+    rdfs:domain mo:Persona ;
+    rdfs:range mo:Reserva .
+
+mo:hasDestination a owl:ObjectProperty ;
+    rdfs:domain mo:MultiStopRelation ;
+    rdfs:range mo:PuntoDeServicio .
+
+mo:hasMultiStop a owl:ObjectProperty ;
+    rdfs:domain mo:Trayecto ;
+    rdfs:range mo:MultiStopRelation .
+
+mo:hasNextStop a owl:ObjectProperty ;
+    rdfs:domain mo:MultiStopRelation ;
+    rdfs:range mo:MultiStopRelation .
+
+mo:idAgente a owl:DatatypeProperty ;
+    rdfs:domain mo:Agentes ;
+    rdfs:range xsd:string .
+
+mo:idFactura a owl:DatatypeProperty ;
+    rdfs:domain mo:Factura ;
+    rdfs:range xsd:string .
+
+mo:idPago a owl:DatatypeProperty ;
+    rdfs:domain mo:Pago ;
+    rdfs:range xsd:string .
+
+mo:idPunto a owl:DatatypeProperty ;
+    rdfs:domain mo:PuntoDeServicio ;
+    rdfs:range xsd:string .
+
+mo:idReserva a owl:DatatypeProperty ;
+    rdfs:domain mo:Reserva ;
+    rdfs:range xsd:string .
+
+mo:idServicio a owl:DatatypeProperty ;
+    rdfs:domain mo:ServicioDeMovilidad ;
+    rdfs:range xsd:string .
+
+mo:idTarifa a owl:DatatypeProperty ;
+    rdfs:domain mo:Tarifa ;
+    rdfs:range xsd:string .
+
+mo:idTrayecto a owl:DatatypeProperty ;
+    rdfs:domain mo:Trayecto ;
+    rdfs:range xsd:string .
+
+mo:idVehiculo a owl:DatatypeProperty ;
+    rdfs:domain mo:VehiculoCompartido ;
+    rdfs:range xsd:string .
+
+mo:importe a owl:DatatypeProperty ;
+    rdfs:domain mo:Pago ;
+    rdfs:range xsd:decimal .
+
+mo:importeTotal a owl:DatatypeProperty ;
+    rdfs:domain mo:Factura ;
+    rdfs:range xsd:decimal .
+
+mo:inicioUso a owl:DatatypeProperty ;
+    rdfs:domain mo:ReservaInmediata ;
+    rdfs:range xsd:dateTime .
+
+mo:kilometraje a owl:DatatypeProperty ;
+    rdfs:domain mo:VehiculoCompartido ;
+    rdfs:range xsd:decimal .
+
+mo:latitud a owl:DatatypeProperty ;
+    rdfs:domain mo:PuntoDeServicio ;
+    rdfs:range xsd:decimal .
+
+mo:longitud a owl:DatatypeProperty ;
+    rdfs:domain mo:PuntoDeServicio ;
+    rdfs:range xsd:decimal .
+
+mo:matricula a owl:DatatypeProperty ;
+    rdfs:domain mo:VehiculoCompartido ;
+    rdfs:range xsd:string .
+
+mo:minutosCortesia a owl:DatatypeProperty ;
+    rdfs:domain mo:Reserva ;
+    rdfs:range xsd:integer .
+
+mo:moneda a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+mo:nUsos a owl:DatatypeProperty ;
+    rdfs:domain mo:TarifaBonoPrepago ;
+    rdfs:range xsd:integer .
+
+mo:nombreAgente a owl:DatatypeProperty ;
+    rdfs:domain mo:Agentes ;
+    rdfs:range xsd:string .
+
+mo:nombrePunto a owl:DatatypeProperty ;
+    rdfs:domain mo:PuntoDeServicio ;
+    rdfs:range xsd:string .
+
+mo:nombreServicio a owl:DatatypeProperty ;
+    rdfs:domain mo:ServicioDeMovilidad ;
+    rdfs:range xsd:string .
+
+mo:nombreTarifa a owl:DatatypeProperty ;
+    rdfs:domain mo:Tarifa ;
+    rdfs:range xsd:string .
+
+mo:ofreceServicio a owl:ObjectProperty ;
+    rdfs:domain mo:Agentes ;
+    rdfs:range mo:ServicioDeMovilidad .
+
+mo:ofrecidoEn a owl:ObjectProperty ;
+    rdfs:domain mo:ServicioDeMovilidad ;
+    rdfs:range mo:PuntoDeServicio .
+
+mo:pagadoCon a owl:ObjectProperty ;
+    rdfs:comment "Los valores son conceptos del esquema segittur:PaymentMethod de SEGITTUR."@es ;
+    rdfs:domain mo:Tarifa ;
+    rdfs:range skos:Concept ;
+    rdfs:seeAlso segittur:PaymentMethod .
+
+mo:pendientePago a owl:DatatypeProperty ;
+    rdfs:domain mo:Factura ;
+    rdfs:range xsd:boolean .
+
+mo:permisoConducir a owl:DatatypeProperty ;
+    rdfs:domain mo:Persona ;
+    rdfs:range xsd:boolean .
+
+mo:precio a owl:DatatypeProperty ;
+    rdfs:domain mo:Tarifa ;
+    rdfs:range xsd:decimal .
+
+mo:precioKm a owl:DatatypeProperty ;
+    rdfs:domain mo:TarifaPagoUso ;
+    rdfs:range xsd:decimal .
+
+mo:precioMinuto a owl:DatatypeProperty ;
+    rdfs:domain mo:TarifaPagoUso ;
+    rdfs:range xsd:decimal .
+
+mo:puntoDevolucion a owl:ObjectProperty ;
+    rdfs:domain mo:ServicioDeMovilidad ;
+    rdfs:range mo:PuntoDeServicio .
+
+mo:puntoRecogida a owl:ObjectProperty ;
+    rdfs:domain mo:ServicioDeMovilidad ;
+    rdfs:range mo:PuntoDeServicio .
+
+mo:realizadoPor a owl:ObjectProperty ;
+    rdfs:domain mo:Pago ;
+    rdfs:range mo:Agentes .
+
+mo:registradoEnPlataforma a owl:DatatypeProperty ;
+    rdfs:domain mo:Persona ;
+    rdfs:range xsd:boolean .
+
+mo:reservaEn a owl:ObjectProperty ;
+    rdfs:domain mo:Reserva ;
+    rdfs:range mo:PuntoDeServicio .
+
+mo:reservaServicio a owl:ObjectProperty ;
+    rdfs:domain mo:Reserva ;
+    rdfs:range mo:ServicioDeMovilidad .
+
+mo:reservaVehiculo a owl:ObjectProperty ;
+    rdfs:domain mo:Reserva ;
+    rdfs:range mo:VehiculoCompartido .
+
+mo:tieneEstado a owl:ObjectProperty ;
+    rdfs:comment "Los valores son conceptos del esquema mo:EstadoVehiculoScheme."@es ;
+    rdfs:domain mo:VehiculoCompartido ;
+    rdfs:range skos:Concept ;
+    rdfs:seeAlso mo:EstadoVehiculoScheme .
+
+mo:tieneMetodoPago a owl:ObjectProperty ;
+    rdfs:comment "Los valores son conceptos del esquema segittur:PaymentMethod de SEGITTUR."@es ;
+    rdfs:domain mo:Pago ;
+    rdfs:range skos:Concept ;
+    rdfs:seeAlso segittur:PaymentMethod .
+
+mo:tienePago a owl:ObjectProperty ;
+    rdfs:domain mo:Factura ;
+    rdfs:range mo:Pago .
+
+mo:tieneRol a owl:ObjectProperty ;
+    rdfs:domain mo:Organizacion,
+        mo:Persona ;
+    rdfs:range mo:Rol .
+
+mo:tieneTarifa a owl:ObjectProperty ;
+    rdfs:domain mo:ServicioDeMovilidad ;
+    rdfs:range mo:Tarifa .
+
+mo:tieneTrayecto a owl:ObjectProperty ;
+    rdfs:domain mo:ServicioDeMovilidad ;
+    rdfs:range mo:RelacionTrayecto .
+
+mo:tipo a owl:DatatypeProperty ;
+    rdfs:domain mo:Organizacion ;
+    rdfs:range xsd:string .
+
+mo:tipoEstacion a owl:ObjectProperty ;
+    rdfs:comment "Los valores son conceptos del esquema segittur:StationType de SEGITTUR."@es ;
+    rdfs:domain mo:PuntoDeServicio ;
+    rdfs:range skos:Concept ;
+    rdfs:seeAlso segittur:StationType .
+
+mo:tipoVehiculo a owl:ObjectProperty ;
+    rdfs:comment "Los valores son conceptos del esquema segittur:VehicleType de SEGITTUR."@es ;
+    rdfs:domain mo:VehiculoCompartido ;
+    rdfs:range skos:Concept ;
+    rdfs:seeAlso segittur:VehicleType .
+
+mo:validez a owl:DatatypeProperty ;
+    rdfs:domain mo:TarifaBonoPrepago ;
+    rdfs:range xsd:date .
+
+<http://purl.org/goodrelations/v1#offers> a owl:ObjectProperty .
+
+mo:ReservaInmediata a owl:Class ;
+    rdfs:subClassOf mo:Reserva .
+
+mo:TarifaBonoPrepago a owl:Class ;
+    rdfs:subClassOf mo:Tarifa .
+
+mo:TarifaPagoUso a owl:Class ;
+    rdfs:subClassOf mo:Tarifa .
+
+mo:EstacionFisica a owl:Class ;
+    rdfs:subClassOf mo:PuntoDeServicio .
+
+mo:Organizacion a owl:Class ;
+    rdfs:subClassOf mo:Agentes ;
+    owl:equivalentClass <http://purl.org/goodrelations/v1#BusinessEntity> .
+
+mo:ReservaAnticipada a owl:Class ;
+    rdfs:subClassOf mo:Reserva .
+
+mo:Rol a owl:Class .
+
+mo:TarifaSuscripcion a owl:Class ;
+    rdfs:subClassOf mo:Tarifa .
+
+mo:Trayecto a owl:Class .
+
+mo:MultiStopRelation a owl:Class .
+
+mo:tienePropulsion a owl:ObjectProperty ;
+    rdfs:comment "Los valores son conceptos del esquema mo:TipoPropulsionScheme."@es ;
+    rdfs:domain mo:VehiculoCompartido ;
+    rdfs:range skos:Concept ;
+    rdfs:seeAlso mo:TipoPropulsionScheme .
+
+mo:Pago a owl:Class .
+
+mo:Persona a owl:Class ;
+    rdfs:subClassOf mo:Agentes ;
+    owl:equivalentClass foaf:Person .
+
+mo:RelacionTrayecto a owl:Class .
+
+mo:Tarifa a owl:Class .
+
+mo:Agentes a owl:Class .
+
+mo:Factura a owl:Class .
+
+mo:Reserva a owl:Class .
+
+mo:ServicioDeMovilidad a owl:Class .
+
+mo:PuntoDeServicio a owl:Class ;
+    rdfs:subClassOf sg:TransportInfrastructure .
+
+mo:VehiculoCompartido a owl:Class .
+
+# Bloque de infraestructura y horarios SEGITTUR (IRIs oficiales de las capturas).
+# Declaraciones locales parciales, no owl:imports. Se mantiene GeoSPARQL sin cambios.
+sg:Place a owl:Class .
+sg:TransportInfrastructure a owl:Class ;
+    rdfs:subClassOf sg:Place .
+sg:OpeningHours a owl:Class .
+sg:DayOfTheWeek a owl:Class .
+
+sg:dayOfTheWeek a owl:ObjectProperty ;
+    rdfs:domain sg:OpeningHours ;
+    rdfs:range sg:DayOfTheWeek .
+sg:Localizacion a owl:Class .
+geo:Feature a owl:Class .
+geo:Geometry a owl:Class .
+
+sg:hasOpeningHours a owl:ObjectProperty ;
+    rdfs:domain sg:Place ;
+    rdfs:range sg:OpeningHours .
+sg:tieneLocalizacion a owl:ObjectProperty ;
+    rdfs:domain sg:Place ;
+    rdfs:range sg:Localizacion .
+sg:hasFeature a owl:ObjectProperty ;
+    rdfs:domain sg:Localizacion ;
+    rdfs:range geo:Feature .
+sg:hasGeometry a owl:ObjectProperty ;
+    rdfs:domain geo:Feature ;
+    rdfs:range geo:Geometry .
+
+sg:comarca a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:comunidadAutonoma a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:codigoPostal a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:direccion a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:localidad a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:pais a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:provincia a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+
+# Etiquetas geoLat y geoLong del diagrama: nombres provisionales hasta contrastar IRIs.
+geo:geoLat a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd:string .
+geo:geoLong a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd:string .
+geo:asWKT a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd:string .
+geo:asGeoJSON a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd:string .
+
+# === Fuente: skos/edint/propulsionsystemtype.ttl ===
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintvehcom: <https://edint.es/def/vehiculos-compartidos#> .
+@prefix edint: <https://edint.es/kos/> .
+@prefix edintpropulsionsystemtype: <https://edint.es/kos/PropulsionSystemType/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+edint:PropulsionSystemType a skos:ConceptScheme ;
+  dct:issued "2026-05-21"^^xsd:date ;
+  dct:modified "2026-05-21"^^xsd:date ;
+  rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+  rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+  rdfs:label "Propulsion system type"@en ;
+  rdfs:label "Tipo de sistema de propulsión"@es ;
+  dct:title "Concept scheme grouping propulsion system types"@en ;
+  dct:title "Esquema de conceptos agrupando tipos de sistema de propulsión"@es .
+
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+edintpropulsionsystemtype:Electric a skos:Concept ;
+  skos:inScheme edint:PropulsionSystemType ;
+  skos:prefLabel "Electric"@en ;
+  skos:prefLabel "Eléctrico"@es .
+
+edintpropulsionsystemtype:Diesel a skos:Concept ;
+  skos:inScheme edint:PropulsionSystemType ;
+  skos:prefLabel "Diesel"@en ;
+  skos:prefLabel "Diesel"@es .
+
+edintpropulsionsystemtype:Gasoline a skos:Concept ;
+  skos:inScheme edint:PropulsionSystemType ;
+  skos:prefLabel "Gasoline"@en ;
+  skos:prefLabel "Gasolina"@es .
+
+edintpropulsionsystemtype:Hybrid a skos:Concept ;
+  skos:inScheme edint:PropulsionSystemType ;
+  skos:prefLabel "Hybrid"@en ;
+  skos:prefLabel "Híbrido"@es .
+
+# === Fuente: skos/edint/vehiclestate.ttl ===
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintvehcom: <https://edint.es/def/vehiculos-compartidos#> .
+@prefix edint: <https://edint.es/kos/> .
+@prefix edintvehiclestate: <https://edint.es/kos/VehicleState/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+edint:VehicleState a skos:ConceptScheme ;
+  dct:issued "2026-05-21"^^xsd:date ;
+  dct:modified "2026-05-21"^^xsd:date ;
+  rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+  rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+  rdfs:label "Vehicle state"@en ;
+  rdfs:label "Estado del vehículo"@es ;
+  dct:title "Concept scheme grouping vehicle states"@en ;
+  dct:title "Esquema de conceptos agrupando estados de vehículo"@es .
+
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+edintvehiclestate:Active a skos:Concept ;
+  skos:inScheme edint:VehicleState ;
+  skos:prefLabel "Active"@en ;
+  skos:prefLabel "Activo"@es .
+
+edintvehiclestate:Inactive a skos:Concept ;
+  skos:inScheme edint:VehicleState ;
+  skos:prefLabel "Inactive"@en ;
+  skos:prefLabel "Inactivo"@es .
+
+edintvehiclestate:UnderRepair a skos:Concept ;
+  skos:inScheme edint:VehicleState ;
+  skos:prefLabel "Under repair"@en ;
+  skos:prefLabel "En reparación"@es .
+
+edintvehiclestate:Abandoned a skos:Concept ;
+  skos:inScheme edint:VehicleState ;
+  skos:prefLabel "Abandoned"@en ;
+  skos:prefLabel "Abandonado"@es .
+
+# === Fuente: skos/propios/estado_vehiculo.ttl ===
+@prefix edint-estado: <https://edint.es/kos/VehicleState/> .
+@prefix mo: <http://movilidad.es/def/compartida#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+mo:Disponible a skos:Concept ;
+    skos:inScheme mo:EstadoVehiculoScheme ;
+    skos:prefLabel "Available"@en,
+        "Disponible"@es ;
+    skos:topConceptOf mo:EstadoVehiculoScheme .
+
+mo:Mantenimiento a skos:Concept ;
+    skos:closeMatch edint-estado:UnderRepair ;
+    skos:inScheme mo:EstadoVehiculoScheme ;
+    skos:prefLabel "Under maintenance"@en,
+        "Mantenimiento"@es ;
+    skos:topConceptOf mo:EstadoVehiculoScheme .
+
+mo:Ocupado a skos:Concept ;
+    skos:inScheme mo:EstadoVehiculoScheme ;
+    skos:prefLabel "Occupied"@en,
+        "Ocupado"@es ;
+    skos:topConceptOf mo:EstadoVehiculoScheme .
+
+mo:EstadoVehiculoScheme a skos:ConceptScheme ;
+    skos:hasTopConcept mo:Disponible,
+        mo:Mantenimiento,
+        mo:Ocupado ;
+    skos:prefLabel "Vehicle status"@en,
+        "Estado del vehículo"@es .
+
+# === Fuente: skos/propios/tipo_propulsion.ttl ===
+@prefix edint-prop: <https://edint.es/kos/PropulsionSystemType/> .
+@prefix mo: <http://movilidad.es/def/compartida#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+mo:Combustion a skos:Concept ;
+    skos:inScheme mo:TipoPropulsionScheme ;
+    skos:narrowMatch edint-prop:Diesel,
+        edint-prop:Gasoline ;
+    skos:prefLabel "Combustion"@en,
+        "Combustión"@es ;
+    skos:topConceptOf mo:TipoPropulsionScheme .
+
+mo:Electrica a skos:Concept ;
+    skos:exactMatch edint-prop:Electric ;
+    skos:inScheme mo:TipoPropulsionScheme ;
+    skos:prefLabel "Electric"@en,
+        "Eléctrica"@es ;
+    skos:topConceptOf mo:TipoPropulsionScheme .
+
+mo:Hibrida a skos:Concept ;
+    skos:exactMatch edint-prop:Hybrid ;
+    skos:inScheme mo:TipoPropulsionScheme ;
+    skos:prefLabel "Hybrid"@en,
+        "Híbrida"@es ;
+    skos:topConceptOf mo:TipoPropulsionScheme .
+
+mo:Humana a skos:Concept ;
+    skos:inScheme mo:TipoPropulsionScheme ;
+    skos:prefLabel "Human-powered"@en,
+        "Humana"@es ;
+    skos:topConceptOf mo:TipoPropulsionScheme .
+
+mo:TipoPropulsionScheme a skos:ConceptScheme ;
+    skos:hasTopConcept mo:Combustion,
+        mo:Electrica,
+        mo:Hibrida,
+        mo:Humana ;
+    skos:prefLabel "Propulsion types"@en,
+        "Tipos de propulsión"@es .
+
+# === Fuente: skos/segittur/paymentmethod.ttl ===
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix estur-core: <https://ontologia.segittur.es/turismo/def/core#> .
+@prefix segittur: <https://ontologia.segittur.es/turismo/kos/> .
+
+@prefix estur-paymentmethod: <https://ontologia.segittur.es/turismo/kos/paymentmethod/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+segittur:PaymentMethod a skos:ConceptScheme ; 
+    dct:issued "2025-07-16"^^xsd:date ;
+    dct:modified "2025-07-16"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the SEGITTUR tourism ontology."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por la ontología de turismo de SEGITTUR."@es ;
+    rdfs:label "Payment method"@en ;
+    rdfs:label "Formas de pago"@es ;
+    dct:title "Concept scheme grouping payment methods"@en ;
+    dct:title "Esquema de conceptos agrupando formas de pago"@es .
+
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+estur-paymentmethod:BankCard a skos:Concept;
+  skos:inScheme segittur:PaymentMethod;
+  skos:prefLabel "Bank Card"@en ;
+  skos:prefLabel "Tarjeta bancaria"@es .
+
+estur-paymentmethod:BankTransfer a skos:Concept;
+  skos:inScheme segittur:PaymentMethod;
+  skos:prefLabel "Bank Transfer"@en ;
+  skos:prefLabel "Transferencia bancaria"@es .
+
+estur-paymentmethod:Bizum a skos:Concept;
+  skos:inScheme segittur:PaymentMethod;
+  skos:prefLabel "Bizum"@en ;
+  skos:prefLabel "Bizum"@es .
+
+estur-paymentmethod:Cash a skos:Concept;
+  skos:inScheme segittur:PaymentMethod;
+  skos:prefLabel "Cash"@en ;
+  skos:prefLabel "Metálico"@es .
+
+estur-paymentmethod:CheckAndPromissoryNote a skos:Concept;
+  skos:inScheme segittur:PaymentMethod;
+  skos:prefLabel "Check and Promissory Note"@en ;
+  skos:prefLabel "Cheque"@es .
+
+estur-paymentmethod:Cryptocurrency a skos:Concept;
+  skos:inScheme segittur:PaymentMethod;
+  skos:prefLabel "Cryptocurrency"@en ;
+  skos:prefLabel "Criptomoneda"@es .
+
+estur-paymentmethod:DirectBill a skos:Concept;
+  skos:inScheme segittur:PaymentMethod;
+  skos:prefLabel "Direct Bill"@en ;
+  skos:prefLabel "Domiciliación bancaria"@es .
+
+estur-paymentmethod:NFC a skos:Concept;
+  skos:inScheme segittur:PaymentMethod;
+  skos:prefLabel "NFC"@en ;
+  skos:prefLabel "NFC"@es .
+
+estur-paymentmethod:Paypal a skos:Concept;
+  skos:inScheme segittur:PaymentMethod;
+  skos:prefLabel "Paypal"@en ;
+  skos:prefLabel "Paypal"@es .
+
+# === Fuente: skos/segittur/stationtype.ttl ===
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix estur-core: <https://ontologia.segittur.es/turismo/def/core#> .
+@prefix segittur: <https://ontologia.segittur.es/turismo/kos/> .
+
+@prefix estur-stationtype: <https://ontologia.segittur.es/turismo/kos/stationtype/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+segittur:StationType a skos:ConceptScheme ; 
+    dct:issued "2024-10-29"^^xsd:date ;
+    dct:modified "2024-10-29"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the SEGITTUR tourism ontology."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por la ontología de turismo de SEGITTUR."@es ;
+    rdfs:label "Station type"@en ;
+    rdfs:label "Tipo de estación"@es ;
+    dct:title "Concept scheme grouping station types"@en ;
+    dct:title "Esquema de conceptos agrupando tipos de estación"@es .
+
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+estur-stationtype:BusStop a skos:Concept;
+  skos:inScheme segittur:StationType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Bus stop"@en ;
+  skos:prefLabel "Parada de autobús"@es .
+
+estur-stationtype:CableCarStop a skos:Concept;
+  skos:inScheme segittur:StationType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Cable car stop"@en ;
+  skos:prefLabel "Parada de cable car"@es .
+
+estur-stationtype:CableWayStop a skos:Concept;
+  skos:inScheme segittur:StationType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Cable way stop"@en ;
+  skos:prefLabel "Parada de cable way"@es .
+
+estur-stationtype:SubwayStation a skos:Concept;
+  skos:inScheme segittur:StationType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Subway station"@en ;
+  skos:prefLabel "Estación de suburbano"@es .
+
+estur-stationtype:TramStop a skos:Concept;
+  skos:inScheme segittur:StationType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Tram stop"@en ;
+  skos:prefLabel "Parada de tranvía"@es .
+
+# === Fuente: skos/segittur/vehicletype.ttl ===
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix estur-core: <https://ontologia.segittur.es/turismo/def/core#> .
+@prefix segittur: <https://ontologia.segittur.es/turismo/kos/> .
+
+@prefix estur-vehicletype: <https://ontologia.segittur.es/turismo/kos/vehicletype/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+segittur:VehicleType a skos:ConceptScheme ; 
+    dct:issued "2024-10-29"^^xsd:date ;
+    dct:modified "2024-10-29"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the SEGITTUR tourism ontology."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por la ontología de turismo de SEGITTUR."@es ;
+    rdfs:label "Vehicle type"@en ;
+    rdfs:label "Tipo de vehículo"@es ;
+    dct:title "Concept scheme grouping vehicle types"@en ;
+    dct:title "Esquema de conceptos agrupando tipos de vehículos"@es .
+
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+estur-vehicletype:AllTerrain a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Allterrain"@en ;
+  skos:prefLabel "Todoterreno"@es .
+
+estur-vehicletype:Bycicle a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Bycicle"@en ;
+  skos:prefLabel "Bicicleta"@es .
+
+estur-vehicletype:Boat a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Boat"@en ;
+  skos:prefLabel "Bote"@es .
+
+estur-vehicletype:CarSedan a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Car sedan"@en ;
+  skos:prefLabel "Sedán"@es .
+
+estur-vehicletype:CoachBus a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Coach bus"@en ;
+  skos:prefLabel "Autocar"@es .
+
+estur-vehicletype:CommercialVanTruck a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Commercial van truck"@en ;
+  skos:prefLabel "Furgoneta comercial"@es .
+
+estur-vehicletype:Convertible a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Convertible"@en ;
+  skos:prefLabel "Descapotable"@es .
+
+estur-vehicletype:Coupe a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Coupe"@en ;
+  skos:prefLabel "Coupé"@es .
+
+estur-vehicletype:Crossover a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Crossover"@en ;
+  skos:prefLabel "Crossover"@es .
+
+estur-vehicletype:ElectricMoped a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Electric Moped"@en ;
+  skos:prefLabel "Patinete eléctrico"@es .
+
+estur-vehicletype:ElectricScooter a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Electric Scooter"@en ;
+  skos:prefLabel "Ciclomotor eléctrico"@es .
+
+estur-vehicletype:ExtendedCabPickup a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Extended cab pickup"@en ;
+  skos:prefLabel "Recogida en taxi"@es .
+
+estur-vehicletype:Limo a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Limo"@en ;
+  skos:prefLabel "Limusina"@es .
+
+estur-vehicletype:Monospace a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Monospace"@en ;
+  skos:prefLabel "Monovolumen"@es .
+
+estur-vehicletype:Moped a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Moped"@en ;
+  skos:prefLabel "Patinete"@es .
+
+estur-vehicletype:Motorcycle a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Motorcycle"@en ;
+  skos:prefLabel "Motocicleta"@es .
+
+estur-vehicletype:Motorhome a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Motorhome"@en ;
+  skos:prefLabel "Casa sobre ruedas"@es .
+
+estur-vehicletype:Pickup a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Pickup"@en ;
+  skos:prefLabel "Pickup"@es .
+
+estur-vehicletype:Recreational a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Recreational"@en ;
+  skos:prefLabel "Recreativo"@es .
+
+estur-vehicletype:RegularCabPickup a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Regular cab pickup"@en ;
+  skos:prefLabel "Recogida en taxi normal"@es .
+
+estur-vehicletype:Roadster a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Roadster"@en ;
+  skos:prefLabel "Roadster"@es .
+
+estur-vehicletype:Scooter a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Scooter"@en ;
+  skos:prefLabel "Ciclomotor"@es .
+
+estur-vehicletype:Shuttle a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Shuttle"@en ;
+  skos:prefLabel "Shuttle"@es .
+
+estur-vehicletype:Sport a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Sport"@en ;
+  skos:prefLabel "Deportivo"@es .
+
+estur-vehicletype:StationWagon a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Station wagon"@en ;
+  skos:prefLabel "Station wagon"@es .
+
+estur-vehicletype:SUV a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "SUV"@en ;
+  skos:prefLabel "SUV"@es .
+
+estur-vehicletype:Truck a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Truck"@en ;
+  skos:prefLabel "Camión"@es .
+
+estur-vehicletype:TwoWheelVehicle a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Two wheel vehicle"@en ;
+  skos:prefLabel "Vehículo de dos ruedas"@es .
+
+estur-vehicletype:Van a skos:Concept;
+  skos:inScheme segittur:VehicleType;
+  skos:note "Value generated from the original SEGITTUR ontology"@en;
+  skos:note "Valor generado a partir de la ontología de SEGITTUR original"@es;
+  skos:prefLabel "Van"@en ;
+  skos:prefLabel "Furgoneta"@es .
