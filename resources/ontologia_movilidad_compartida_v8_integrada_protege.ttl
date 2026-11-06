@@ -67,6 +67,11 @@ mo:NIF a owl:DatatypeProperty ;
     rdfs:domain mo:Organizacion ;
     rdfs:range xsd:string .
 
+mo:OficinaDeAlquiler a owl:Class ;
+    rdfs:subClassOf mo:PuntoDeServicio ;
+    rdfs:label "Oficina de alquiler"@es ;
+    rdfs:comment "Punto de servicio destinado a la atención y gestión del alquiler de vehículos de movilidad compartida."@es .
+
 mo:ParkingPrivadoConcertadoPublico a owl:Class ;
     rdfs:subClassOf mo:PuntoDeServicio,
         <http://schema.mobivoc.org/#ParkingFacility> .
