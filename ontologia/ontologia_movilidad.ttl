@@ -855,6 +855,15 @@ mo:realizaPago a owl:ObjectProperty ;
 mo:tieneRol owl:inverseOf mo:rolDeAgente .
 mo:rolDeAgente a owl:ObjectProperty ;
     rdfs:domain mo:Rol ;
+    rdfs:range mo:Agente ;
     rdfs:label "rol de agente"@es ;
     rdfs:comment "Relación inversa de mo:tieneRol."@es .
 
+
+# Declaraciones explícitas de clases reutilizadas (OOPS! P34).
+skos:Concept a owl:Class .
+foaf:Person a owl:Class .
+<http://schema.mobivoc.org/#ParkingFacility> a owl:Class .
+<http://schema.mobivoc.org/#BatteryElectricVehicle> a owl:Class .
+<http://schema.mobivoc.org/#Plug-inHybridElectricVehicle> a owl:Class .
+<http://purl.org/goodrelations/v1#BusinessEntity> a owl:Class .
