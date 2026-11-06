@@ -321,6 +321,7 @@ mo:minutosCortesia a owl:DatatypeProperty ;
     rdfs:range xsd:integer .
 
 mo:moneda a owl:DatatypeProperty ;
+    rdfs:domain mo:Tarifa ;
     rdfs:range xsd:string .
 
 mo:nUsos a owl:DatatypeProperty ;
@@ -453,8 +454,6 @@ mo:tipoVehiculo a owl:ObjectProperty ;
 mo:validez a owl:DatatypeProperty ;
     rdfs:domain mo:TarifaBonoPrepago ;
     rdfs:range xsd:date .
-
-<http://purl.org/goodrelations/v1#offers> a owl:ObjectProperty .
 
 mo:ReservaInmediata a owl:Class ;
     rdfs:subClassOf mo:Reserva .
