@@ -163,7 +163,7 @@ mo:descripcion a owl:DatatypeProperty ;
     rdfs:domain mo:ServicioDeMovilidad ;
     rdfs:range xsd:string .
 
-mo:direccion a owl:DatatypeProperty ;
+mo:direccionPunto a owl:DatatypeProperty ;
     rdfs:domain mo:PuntoDeServicio ;
     rdfs:range xsd:string .
 
@@ -531,7 +531,7 @@ sg:hasGeometry a owl:ObjectProperty ;
 sg:comarca a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
 sg:comunidadAutonoma a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
 sg:codigoPostal a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
-sg:direccion a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:direccionLocalizacion a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
 sg:localidad a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
 sg:pais a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
 sg:provincia a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
@@ -567,7 +567,7 @@ mo:capacidad rdfs:label "Capacidad"@es .
 mo:contrataServicio rdfs:label "Contrata servicio"@es .
 mo:costeTrayecto rdfs:label "Coste del trayecto"@es .
 mo:descripcion rdfs:label "Descripción"@es .
-mo:direccion rdfs:label "Dirección"@es .
+mo:direccionPunto rdfs:label "Dirección"@es .
 mo:disponeDe rdfs:label "Dispone de"@es .
 mo:distanciaKm rdfs:label "Distancia en kilómetros"@es .
 mo:duracionMinutos rdfs:label "Duración en minutos"@es .
@@ -684,7 +684,7 @@ mo:capacidad rdfs:comment "Relación «capacidad» cuyo sujeto pertenece a Vehic
 mo:contrataServicio rdfs:comment "Relación «contrata servicio» cuyo sujeto pertenece a Agentes y cuyo objeto pertenece a ServicioDeMovilidad en el modelo de movilidad compartida."@es .
 mo:costeTrayecto rdfs:comment "Atributo «coste del trayecto» asociado a RelacionTrayecto, con valores de tipo decimal en el modelo de movilidad compartida."@es .
 mo:descripcion rdfs:comment "Relación «descripción» cuyo sujeto pertenece a ServicioDeMovilidad en el modelo de movilidad compartida."@es .
-mo:direccion rdfs:comment "Relación «dirección» cuyo sujeto pertenece a PuntoDeServicio en el modelo de movilidad compartida."@es .
+mo:direccionPunto rdfs:comment "Relación «dirección» cuyo sujeto pertenece a PuntoDeServicio en el modelo de movilidad compartida."@es .
 mo:disponeDe rdfs:comment "Relación «dispone de» cuyo sujeto pertenece a ServicioDeMovilidad y cuyo objeto pertenece a VehiculoCompartido en el modelo de movilidad compartida."@es .
 mo:distanciaKm rdfs:comment "Atributo «distancia en kilómetros» asociado a RelacionTrayecto, con valores de tipo decimal en el modelo de movilidad compartida."@es .
 mo:duracionMinutos rdfs:comment "Relación «duración en minutos» cuyo sujeto pertenece a RelacionTrayecto en el modelo de movilidad compartida."@es .
