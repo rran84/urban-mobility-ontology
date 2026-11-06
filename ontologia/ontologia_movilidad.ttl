@@ -494,3 +494,40 @@ mo:PuntoDeServicio a owl:Class ;
     rdfs:subClassOf sg:InfraestructuraDeTransporte .
 
 mo:VehiculoCompartido a owl:Class .
+
+# Bloque de infraestructura representado en el diagrama.
+# Son declaraciones locales de terminos externos, no owl:imports de SEGITTUR/GeoSPARQL.
+sg:Lugar a owl:Class .
+sg:InfraestructuraDeTransporte a owl:Class ;
+    rdfs:subClassOf sg:Lugar .
+sg:HorarioDeApertura a owl:Class .
+sg:Localizacion a owl:Class .
+geo:Feature a owl:Class .
+geo:Geometry a owl:Class .
+
+sg:tieneHorarioDeApertura a owl:ObjectProperty ;
+    rdfs:domain sg:Lugar ;
+    rdfs:range sg:HorarioDeApertura .
+sg:tieneLocalizacion a owl:ObjectProperty ;
+    rdfs:domain sg:Lugar ;
+    rdfs:range sg:Localizacion .
+sg:hasFeature a owl:ObjectProperty ;
+    rdfs:domain sg:Localizacion ;
+    rdfs:range geo:Feature .
+sg:hasGeometry a owl:ObjectProperty ;
+    rdfs:domain geo:Feature ;
+    rdfs:range geo:Geometry .
+
+sg:comarca a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:comunidadAutonoma a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:codigoPostal a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:direccion a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:localidad a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:pais a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+sg:provincia a owl:DatatypeProperty ; rdfs:domain sg:Localizacion ; rdfs:range xsd:string .
+
+# Etiquetas geoLat y geoLong del diagrama: nombres provisionales hasta contrastar IRIs.
+geo:geoLat a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd:string .
+geo:geoLong a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd:string .
+geo:asWKT a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd:string .
+geo:asGeoJSON a owl:DatatypeProperty ; rdfs:domain geo:Geometry ; rdfs:range xsd:string .
