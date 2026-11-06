@@ -40,10 +40,10 @@
         geo:Geometry,
         <https://edint.es/kos/PropulsionSystemType>,
         <https://edint.es/kos/VehicleState>,
-        sg:HorarioDeApertura,
-        sg:InfraestructuraDeTransporte,
+        sg:OpeningHours,
+        sg:TransportInfrastructure,
         sg:Localizacion,
-        sg:Lugar,
+        sg:Place,
         segittur:PaymentMethod,
         segittur:StationType,
         segittur:VehicleType,
@@ -491,25 +491,30 @@ mo:Reserva a owl:Class .
 mo:ServicioDeMovilidad a owl:Class .
 
 mo:PuntoDeServicio a owl:Class ;
-    rdfs:subClassOf sg:InfraestructuraDeTransporte .
+    rdfs:subClassOf sg:TransportInfrastructure .
 
 mo:VehiculoCompartido a owl:Class .
 
-# Bloque de infraestructura representado en el diagrama.
-# Son declaraciones locales de terminos externos, no owl:imports de SEGITTUR/GeoSPARQL.
-sg:Lugar a owl:Class .
-sg:InfraestructuraDeTransporte a owl:Class ;
-    rdfs:subClassOf sg:Lugar .
-sg:HorarioDeApertura a owl:Class .
+# Bloque de infraestructura y horarios SEGITTUR (IRIs oficiales de las capturas).
+# Declaraciones locales parciales, no owl:imports. Se mantiene GeoSPARQL sin cambios.
+sg:Place a owl:Class .
+sg:TransportInfrastructure a owl:Class ;
+    rdfs:subClassOf sg:Place .
+sg:OpeningHours a owl:Class .
+sg:DayOfTheWeek a owl:Class .
+
+sg:dayOfTheWeek a owl:ObjectProperty ;
+    rdfs:domain sg:OpeningHours ;
+    rdfs:range sg:DayOfTheWeek .
 sg:Localizacion a owl:Class .
 geo:Feature a owl:Class .
 geo:Geometry a owl:Class .
 
-sg:tieneHorarioDeApertura a owl:ObjectProperty ;
-    rdfs:domain sg:Lugar ;
-    rdfs:range sg:HorarioDeApertura .
+sg:hasOpeningHours a owl:ObjectProperty ;
+    rdfs:domain sg:Place ;
+    rdfs:range sg:OpeningHours .
 sg:tieneLocalizacion a owl:ObjectProperty ;
-    rdfs:domain sg:Lugar ;
+    rdfs:domain sg:Place ;
     rdfs:range sg:Localizacion .
 sg:hasFeature a owl:ObjectProperty ;
     rdfs:domain sg:Localizacion ;
