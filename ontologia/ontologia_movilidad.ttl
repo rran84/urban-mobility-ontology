@@ -762,7 +762,6 @@ mo:VehiculoCompartido rdfs:comment "Vehículo destinado a servicios de movilidad
 # Particiones OWL del modelo: disyunción y cobertura cuando son exhaustivas.
 mo:Reserva owl:equivalentClass [ a owl:Class ; owl:unionOf ( mo:ReservaInmediata mo:ReservaAnticipada ) ] .
 mo:ReservaInmediata owl:disjointWith mo:ReservaAnticipada .
-mo:PuntoDeServicio owl:equivalentClass [ a owl:Class ; owl:unionOf ( mo:EstacionFisica mo:OficinaDeAlquiler mo:Aparcamiento ) ] .
 [] a owl:AllDisjointClasses ; owl:members ( mo:EstacionFisica mo:OficinaDeAlquiler mo:Aparcamiento ) .
 # Clasificación exhaustiva y disjunta de los vehículos según su propulsión.
 mo:VehiculoCompartido rdfs:subClassOf [ a owl:Class ; owl:unionOf ( mo:VehiculoPropulsionElectrica mo:VehiculoPropulsionHibrida mo:VehiculoPropulsionCombustible mo:VehiculoPropulsionHumana ) ] .
