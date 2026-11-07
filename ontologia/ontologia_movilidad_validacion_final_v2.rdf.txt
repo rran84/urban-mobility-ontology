@@ -1,0 +1,1249 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:vann="http://purl.org/vocab/vann/">
+  <rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#TransportInfrastructure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:subClassOf rdf:resource="https://ontologia.segittur.es/turismo/def/core#Place" />
+  <rdfs:label xml:lang="es">Infraestructura de transporte</rdfs:label><rdfs:label xml:lang="en">Transport infrastructure</rdfs:label><rdfs:comment xml:lang="es">Instalaciones físicas que permiten el movimiento de personas de un lugar a otro. Proporcionan las vías, conexiones y recursos necesarios para el transporte terrestre, aéreo, marítimo y ferroviario, facilitando la movilidad tanto a nivel local como global.</rdfs:comment><rdfs:comment xml:lang="en">Physical facilities that allow the movement of people from one place to another. They provide the roads, connections and resources necessary for land, air, sea and rail transportation, facilitating mobility both locally and globally.</rdfs:comment></rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#latitud">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Latitud</rdfs:label>
+    <rdfs:comment xml:lang="es">Coordenada de latitud del punto de servicio.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#importe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Importe</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «importe» para pago.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Pago" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#contrataServicio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Contrata servicio</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona agentes con servicio de movilidad mediante la relación «contrata servicio».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#matricula">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Matrícula</rdfs:label>
+    <rdfs:comment xml:lang="es">Matrícula identificativa de un vehículo compartido.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#Factura">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Factura</rdfs:label>
+    <rdfs:comment xml:lang="es">Documento que recoge los importes facturados por servicios o trayectos.</rdfs:comment>
+  </rdf:Description>
+  <owl:Ontology rdf:about="http://movilidad.es/def/compartida">
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-26</dcterms:created>
+    <dcterms:description xml:lang="es">Ontología para la representación de servicios de movilidad compartida, agentes, vehículos, reservas y tarifas.</dcterms:description>
+    <dcterms:title xml:lang="es">Ontología de Movilidad Compartida (myOntology)</dcterms:title>
+    <vann:preferredNamespacePrefix>mo</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>http://movilidad.es/def/compartida#</vann:preferredNamespaceUri>
+    <rdfs:comment xml:lang="es">Los esquemas SKOS propios usan el espacio de nombres mo: conforme a la notacion del diagrama V8. Los vocabularios SEGITTUR se mantienen con sus IRIs oficiales; las referencias oficiales a sus esquemas son segittur:PaymentMethod, segittur:VehicleType y segittur:StationType.</rdfs:comment>
+    <rdfs:comment xml:lang="es">Versión 8 alineada con el diagrama. Los módulos externos MobiVoc, SEGITTUR y GeoSPARQL se referencian sin reproducir sus axiomas. Las equivalencias de propulsión externa requieren verificación semántica.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://movilidad.es/def/compartida#EstadoVehiculoScheme" />
+    <rdfs:seeAlso rdf:resource="http://movilidad.es/def/compartida#TipoPropulsionScheme" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#AccessCondition" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#ArrangementPattern" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#Capacity" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#Charger" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#CivicStructureStatus" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#ParkingFacility" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#ParkingFacilityConnection" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#ParkingFacilityEntrance" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#ParkingFacilityExit" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#ParkingFacilityFeature" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#ParkingSpace" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#Plug" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#PlugType" />
+    <rdfs:seeAlso rdf:resource="http://schema.mobivoc.org/#RealTimeCapacity" />
+    <rdfs:seeAlso rdf:resource="http://www.opengis.net/ont/geosparql#Feature" />
+    <rdfs:seeAlso rdf:resource="http://www.opengis.net/ont/geosparql#Geometry" />
+    <rdfs:seeAlso rdf:resource="https://edint.es/kos/PropulsionSystemType" />
+    <rdfs:seeAlso rdf:resource="https://edint.es/kos/VehicleState" />
+    <rdfs:seeAlso rdf:resource="https://ontologia.segittur.es/turismo/def/core#Location" />
+    <rdfs:seeAlso rdf:resource="https://ontologia.segittur.es/turismo/def/core#OpeningHours" />
+    <rdfs:seeAlso rdf:resource="https://ontologia.segittur.es/turismo/def/core#Place" />
+    <rdfs:seeAlso rdf:resource="https://ontologia.segittur.es/turismo/def/core#TransportInfrastructure" />
+    <rdfs:seeAlso rdf:resource="https://ontologia.segittur.es/turismo/kos/PaymentMethod" />
+    <rdfs:seeAlso rdf:resource="https://ontologia.segittur.es/turismo/kos/StationType" />
+    <rdfs:seeAlso rdf:resource="https://ontologia.segittur.es/turismo/kos/VehicleType" />
+    <rdfs:seeAlso rdf:resource="https://schema.org/CivicStructure" />
+    <owl:versionInfo>1.0.0-v8</owl:versionInfo>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/" />
+  </owl:Ontology>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#inicioUso">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Inicio de uso</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «inicio de uso» para reserva inmediata.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ReservaInmediata" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#rolDeAgente">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">rol de agente</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación inversa de mo:tieneRol.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Rol" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Agente" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b33">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#EstacionFisica" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b34" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#pagadoCon">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Pagado con</rdfs:label>
+    <rdfs:comment xml:lang="es">Los valores son conceptos del esquema segittur:PaymentMethod de SEGITTUR.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Tarifa" />
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <rdfs:seeAlso rdf:resource="https://ontologia.segittur.es/turismo/kos/PaymentMethod" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#tieneEstado">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Tiene estado</rdfs:label>
+    <rdfs:comment xml:lang="es">Los valores son conceptos del esquema mo:EstadoVehiculoScheme.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <rdfs:seeAlso rdf:resource="http://movilidad.es/def/compartida#EstadoVehiculoScheme" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#vehiculoReservadoEn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">vehiculo reservado en</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación inversa de mo:reservaVehiculo.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b41">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses" />
+    <owl:members rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b42" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#RelacionTrayecto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Relación de trayecto</rdfs:label>
+    <rdfs:comment xml:lang="es">Entidad que vincula un trayecto con sus datos de uso y coste.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#importeTotal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Importe total</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «importe total» para factura.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Factura" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#puntoDevolucion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Punto de devolución</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona servicio de movilidad con punto de servicio mediante la relación «punto de devolución».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#vehiculoDisponibleEnServicio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">vehiculo disponible en servicio</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación inversa de mo:disponeDe.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#EstacionBus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Estación de autobús</rdfs:label>
+    <rdfs:comment xml:lang="es">Estación física asociada a servicios de autobús.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#EstacionFisica" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#capacidad">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Capacidad</rdfs:label>
+    <rdfs:comment xml:lang="es">Número de plazas o capacidad del vehículo compartido.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#puntoRecogida">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Punto de recogida</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona servicio de movilidad con punto de servicio mediante la relación «punto de recogida».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b47">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#TarifaSuscripcionMensual" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b48" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#VehiculoPropulsionElectrica">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Vehículo de propulsión eléctrica</rdfs:label>
+    <rdfs:comment xml:lang="es">Vehículo compartido cuyo sistema de propulsión es eléctrico.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <owl:equivalentClass rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b5" />
+    <owl:equivalentClass rdf:resource="http://schema.mobivoc.org/#BatteryElectricVehicle" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#tienePropulsion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Tiene propulsión</rdfs:label>
+    <rdfs:comment xml:lang="es">Los valores son conceptos del esquema mo:TipoPropulsionScheme.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <rdfs:seeAlso rdf:resource="http://movilidad.es/def/compartida#TipoPropulsionScheme" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#EstacionBicicletas">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Estación de bicicletas</rdfs:label>
+    <rdfs:comment xml:lang="es">Estación física destinada al acceso o estacionamiento de bicicletas compartidas.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#EstacionFisica" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#activa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Activa</rdfs:label>
+    <rdfs:comment xml:lang="es">Indica si una reserva se encuentra activa.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#localidad">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:domain rdf:resource="https://ontologia.segittur.es/turismo/def/core#Location" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#hasGeometry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature" />
+    <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#tienePago">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Tiene pago</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona factura con pago mediante la relación «tiene pago».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Factura" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Pago" />
+    <owl:inverseOf rdf:resource="http://movilidad.es/def/compartida#pagoDeFactura" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#activo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Activo</rdfs:label>
+    <rdfs:comment xml:lang="es">Indica si un servicio de movilidad se encuentra activo.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#idTarifa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Identificador de tarifa</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «identificador de tarifa» para tarifa.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Tarifa" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#kilometraje">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Kilometraje</rdfs:label>
+    <rdfs:comment xml:lang="es">Kilometraje acumulado del vehículo compartido.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#tipoEstacion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Tipo de estación</rdfs:label>
+    <rdfs:comment xml:lang="es">Los valores son conceptos del esquema segittur:StationType de SEGITTUR.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <rdfs:seeAlso rdf:resource="https://ontologia.segittur.es/turismo/kos/StationType" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b43">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#TarifaBonoPrepago" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b44" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b3">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b4" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#precio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Precio</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «precio» para tarifa.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Tarifa" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#VehiculoCompartido">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Vehículo compartido</rdfs:label>
+    <rdfs:comment xml:lang="es">Vehículo disponible para su utilización mediante un servicio de movilidad compartida.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b24" />
+    <rdfs:subClassOf rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b29" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#tieneTarifa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Tiene tarifa</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona servicio de movilidad con tarifa mediante la relación «tiene tarifa».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Tarifa" />
+    <owl:inverseOf rdf:resource="http://movilidad.es/def/compartida#tarifaDeServicio" />
+  </rdf:Description>
+<rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#postalCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="https://ontologia.segittur.es/turismo/def/core#Location" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdfs:label xml:lang="es">código postal</rdfs:label>
+    <rdfs:label xml:lang="en">postal code</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#MultiStopRelation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Relación de paradas múltiples</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación que representa una secuencia de paradas de un trayecto.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#minutosCortesia">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Minutos de cortesía</rdfs:label>
+    <rdfs:comment xml:lang="es">Minutos de cortesía asociados a una reserva.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#pagoDeFactura">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">pago de factura</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación inversa de mo:tienePago.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Pago" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Factura" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Feature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:label xml:lang="en">Feature</rdfs:label><rdfs:comment xml:lang="en">A discrete spatial phenomenon in a universe of discourse.</rdfs:comment></rdf:Description>
+  <rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#hasOpeningHours">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="https://ontologia.segittur.es/turismo/def/core#Place" />
+    <rdfs:range rdf:resource="https://ontologia.segittur.es/turismo/def/core#OpeningHours" />
+  <rdfs:label xml:lang="es">tiene horario de apertura</rdfs:label><rdfs:label xml:lang="en">has opening hours</rdfs:label></rdf:Description>
+<rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#country">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="https://ontologia.segittur.es/turismo/def/core#Location" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdfs:label xml:lang="es">país</rdfs:label>
+    <rdfs:label xml:lang="en">country</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#cancelable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Cancelable</rdfs:label>
+    <rdfs:comment xml:lang="es">Indica si una reserva anticipada admite cancelación.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ReservaAnticipada" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+    <owl:hasValue rdf:resource="http://movilidad.es/def/compartida#Electrica" />
+    <owl:onProperty rdf:resource="http://movilidad.es/def/compartida#tienePropulsion" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#TarifaSuscripcionDiaria">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Tarifa de suscripción diaria</rdfs:label>
+    <rdfs:comment xml:lang="es">Tarifa de suscripción con periodo de vigencia diario.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#TarifaSuscripcion" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#VehiculoPropulsionHumana">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Vehículo de propulsión humana</rdfs:label>
+    <rdfs:comment xml:lang="es">Vehículo compartido impulsado mediante esfuerzo humano.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <owl:equivalentClass rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b13" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#VehiculoColectivo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Vehículo colectivo</rdfs:label>
+    <rdfs:comment xml:lang="es">Vehículo compartido destinado al transporte de varias personas.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#TarifaSuscripcionMensual">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Tarifa de suscripción mensual</rdfs:label>
+    <rdfs:comment xml:lang="es">Tarifa de suscripción con periodo de vigencia mensual.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#TarifaSuscripcion" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#servicioOfrecidoPor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">servicio ofrecido por</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación inversa de mo:ofreceServicio.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Agente" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#fechaInicio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Fecha de inicio</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «fecha de inicio» para reserva anticipada.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ReservaAnticipada" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b45">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses" />
+    <owl:members rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b46" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#fechaEmision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Fecha de emisión</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «fecha de emisión» para factura.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Factura" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#PuntoDeServicio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Punto de servicio</rdfs:label>
+    <rdfs:comment xml:lang="es">Infraestructura o ubicación donde se presta o facilita un servicio de movilidad compartida.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://ontologia.segittur.es/turismo/def/core#TransportInfrastructure" />
+    <owl:equivalentClass rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b20" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b26">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoPropulsionHibrida" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b27" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#facturaTrayecto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Factura trayecto</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona factura con relacion trayecto mediante la relación «factura trayecto».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Factura" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#RelacionTrayecto" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b4">
+    <rdf:first rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b2" />
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#longitud">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Longitud</rdfs:label>
+    <rdfs:comment xml:lang="es">Coordenada de longitud del punto de servicio.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#idVehiculo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Identificador de vehículo</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «identificador de vehículo» para vehiculo compartido.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#Trayecto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Trayecto</rdfs:label>
+    <rdfs:comment xml:lang="es">Desplazamiento realizado o previsto dentro de un servicio de movilidad.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#hasMultiStop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Tiene parada múltiple</rdfs:label>
+    <rdfs:comment xml:lang="es">Relaciona un trayecto con una secuencia de paradas.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Trayecto" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#MultiStopRelation" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#asignaTrayecto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Asigna trayecto</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona relacion trayecto con trayecto mediante la relación «asigna trayecto».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#RelacionTrayecto" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Trayecto" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#reservaServicio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Reserva servicio</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona reserva con servicio de movilidad mediante la relación «reserva servicio».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <owl:inverseOf rdf:resource="http://movilidad.es/def/compartida#servicioReservadoEn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#reservaEn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Reserva en</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona reserva con punto de servicio mediante la relación «reserva en».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#ServicioDeMovilidad">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Servicio de movilidad</rdfs:label>
+    <rdfs:comment xml:lang="es">Servicio que facilita el acceso y uso compartido de vehículos.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#disponeDe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Dispone de</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona servicio de movilidad con vehiculo compartido mediante la relación «dispone de».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <owl:inverseOf rdf:resource="http://movilidad.es/def/compartida#vehiculoDisponibleEnServicio" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#nombreAgente">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Nombre del agente</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «nombre del agente» para agentes.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#Place">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:label xml:lang="es">Lugar</rdfs:label><rdfs:label xml:lang="en">Place</rdfs:label><rdfs:comment xml:lang="es">Representa un lugar, que puede tener o no localización asociada</rdfs:comment><rdfs:comment xml:lang="en">It represents a place, that may have an associated location</rdfs:comment></rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#TarifaSuscripcionAnual">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Tarifa de suscripción anual</rdfs:label>
+    <rdfs:comment xml:lang="es">Tarifa de suscripción con periodo de vigencia anual.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#TarifaSuscripcion" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#precioMinuto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Precio Minuto</rdfs:label>
+    <rdfs:comment xml:lang="es">Importe de la tarifa por minuto de uso.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#TarifaPagoUso" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#Pago">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Pago</rdfs:label>
+    <rdfs:comment xml:lang="es">Registro de una operación económica asociada al servicio de movilidad compartida.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b48">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#TarifaSuscripcionAnual" />
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b27">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoPropulsionCombustible" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b28" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#Agente">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Agentes</rdfs:label>
+    <rdfs:comment xml:lang="es">Entidad que participa en el ecosistema de movilidad compartida, como persona u organización.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b40">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoPropulsionHumana" />
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#reservaRealizadaPor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">reserva realizada por</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación inversa de mo:haceReserva.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Persona" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#nombreTarifa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Nombre de la tarifa</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «nombre de la tarifa» para tarifa.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Tarifa" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+<rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#province">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="https://ontologia.segittur.es/turismo/def/core#Location" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdfs:label xml:lang="es">provincia</rdfs:label>
+    <rdfs:label xml:lang="en">province</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#Reserva">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Reserva</rdfs:label>
+    <rdfs:comment xml:lang="es">Solicitud para utilizar un vehículo o servicio de movilidad compartida.</rdfs:comment>
+    <owl:equivalentClass rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b17" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#asGeoJSON">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  <rdfs:label xml:lang="en">as GeoJSON</rdfs:label><rdfs:comment xml:lang="en">The GeoJSON serialization of a Geometry</rdfs:comment></rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#idTrayecto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Identificador de trayecto</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «identificador de trayecto» para trayecto.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Trayecto" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#registradoEnPlataforma">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Registrado en plataforma</rdfs:label>
+    <rdfs:comment xml:lang="es">Indica si la persona está registrada en la plataforma.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Persona" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#tieneMetodoPago">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Tiene método de pago</rdfs:label>
+    <rdfs:comment xml:lang="es">Los valores son conceptos del esquema segittur:PaymentMethod de SEGITTUR.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Pago" />
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <rdfs:seeAlso rdf:resource="https://ontologia.segittur.es/turismo/kos/PaymentMethod" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#VehiculoMovilidadPersonal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Vehículo de movilidad personal</rdfs:label>
+    <rdfs:comment xml:lang="es">Vehículo compartido destinado a desplazamientos de movilidad personal.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <owl:disjointWith rdf:resource="http://movilidad.es/def/compartida#VehiculoColectivo" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#servicioReservadoEn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">servicio reservado en</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación inversa de mo:reservaServicio.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#VehiculoPropulsionHibrida">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Vehículo de propulsión híbrida</rdfs:label>
+    <rdfs:comment xml:lang="es">Vehículo compartido que combina propulsión eléctrica y de combustión.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <owl:equivalentClass rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b9" />
+    <owl:equivalentClass rdf:resource="http://schema.mobivoc.org/#Plug-inHybridElectricVehicle" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#realizadoPor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Realizado por</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona pago con agentes mediante la relación «realizado por».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Pago" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <owl:inverseOf rdf:resource="http://movilidad.es/def/compartida#realizaPago" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#ReservaInmediata">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Reserva inmediata</rdfs:label>
+    <rdfs:comment xml:lang="es">Reserva que permite iniciar el uso del servicio de forma inmediata.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+    <owl:disjointWith rdf:resource="http://movilidad.es/def/compartida#ReservaAnticipada" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#Aparcamiento">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Aparcamiento</rdfs:label>
+    <rdfs:comment xml:lang="es">Instalación destinada al estacionamiento de vehículos, integrada como punto de servicio de movilidad compartida.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+    <owl:equivalentClass rdf:resource="http://schema.mobivoc.org/#ParkingFacility" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#direccionPunto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Dirección</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «dirección» para punto de servicio.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#comarca">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:domain rdf:resource="https://ontologia.segittur.es/turismo/def/core#Location" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#moneda">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Moneda</rdfs:label>
+    <rdfs:comment xml:lang="es">Código o denominación de la moneda utilizada para expresar importes.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Tarifa" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#permisoConducir">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Permiso de conducir</rdfs:label>
+    <rdfs:comment xml:lang="es">Indica si la persona dispone de permiso de conducir.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Persona" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#TarifaPagoUso">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Tarifa de pago por uso</rdfs:label>
+    <rdfs:comment xml:lang="es">Tarifa cuyo coste depende del uso efectivo del servicio.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#Tarifa" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#fechaNacimiento">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Fecha de nacimiento</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «fecha de nacimiento» para persona.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Persona" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#reservaVehiculo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Reserva vehículo</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona reserva con vehiculo compartido mediante la relación «reserva vehículo».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <owl:inverseOf rdf:resource="http://movilidad.es/def/compartida#vehiculoReservadoEn" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#validez">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Validez</rdfs:label>
+    <rdfs:comment xml:lang="es">Fecha de validez de un bono prepago.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#TarifaBonoPrepago" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#ReservaAnticipada">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Reserva anticipada</rdfs:label>
+    <rdfs:comment xml:lang="es">Reserva realizada con anterioridad al inicio previsto del uso.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#nombrePunto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Nombre del punto de servicio</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «nombre del punto de servicio» para punto de servicio.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b13">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <owl:intersectionOf rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b15" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#idFactura">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Identificador de factura</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «identificador de factura» para factura.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Factura" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b35">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#Aparcamiento" />
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#hasDestination">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Tiene destino</rdfs:label>
+    <rdfs:comment xml:lang="es">Relaciona una parada de una secuencia con su punto de destino.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#MultiStopRelation" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#ofreceServicio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Ofrece servicio</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona agentes con servicio de movilidad mediante la relación «ofrece servicio».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <owl:inverseOf rdf:resource="http://movilidad.es/def/compartida#servicioOfrecidoPor" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#RolProveedor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Rol de proveedor</rdfs:label>
+    <rdfs:comment xml:lang="es">Rol desempeñada por quien ofrece servicios de movilidad compartida.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#Rol" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#emitidaA">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Emitida a</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona factura con agentes mediante la relación «emitida a».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Factura" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <owl:inverseOf rdf:resource="http://movilidad.es/def/compartida#recibeFactura" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#NIF">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">NIF</rdfs:label>
+    <rdfs:comment xml:lang="es">Número de identificación fiscal de una organización.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Organizacion" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#estacionaVehiculo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">estaciona vehiculo</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación inversa de mo:estacionadoEn.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#emiteFactura">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">emite factura</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación inversa de mo:emitidaPor.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Factura" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b14">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+    <owl:hasValue rdf:resource="http://movilidad.es/def/compartida#Humana" />
+    <owl:onProperty rdf:resource="http://movilidad.es/def/compartida#tienePropulsion" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#emitidaPor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Emitida por</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona factura con agentes mediante la relación «emitida por».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Factura" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <owl:inverseOf rdf:resource="http://movilidad.es/def/compartida#emiteFactura" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#hasNextStop">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Tiene siguiente parada</rdfs:label>
+    <rdfs:comment xml:lang="es">Relaciona una parada de una secuencia con la siguiente.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#MultiStopRelation" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#MultiStopRelation" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#nombreServicio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Nombre del servicio</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «nombre del servicio» para servicio de movilidad.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#geoLat">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#nUsos">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Número de usos</rdfs:label>
+    <rdfs:comment xml:lang="es">Número de usos incluidos en un bono prepago.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#TarifaBonoPrepago" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b37">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoPropulsionElectrica" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b38" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#distanciaKm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Distancia en kilómetros</rdfs:label>
+    <rdfs:comment xml:lang="es">Distancia del trayecto expresada en kilómetros.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#RelacionTrayecto" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#ofrecidoEn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Ofrecido en</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona servicio de movilidad con punto de servicio mediante la relación «ofrecido en».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#baseRecarga">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Base de recarga</rdfs:label>
+    <rdfs:comment xml:lang="es">Indica si el punto de servicio dispone de base de recarga.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#OficinaDeAlquiler">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Oficina de alquiler</rdfs:label>
+    <rdfs:comment xml:lang="es">Punto de servicio destinado a la atención y gestión del alquiler de vehículos de movilidad compartida.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#EstacionFerroviaria">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Estación ferroviaria</rdfs:label>
+    <rdfs:comment xml:lang="es">Estación física asociada a servicios de transporte ferroviario.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#EstacionFisica" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#idReserva">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Identificador de reserva</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «identificador de reserva» para reserva.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#VehiculoPropulsionCombustible">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Vehículo de propulsión por combustión</rdfs:label>
+    <rdfs:comment xml:lang="es">Vehículo compartido cuyo sistema de propulsión utiliza combustible.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <owl:equivalentClass rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b1" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#fechaFin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Fecha de fin</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «fecha de fin» para reserva anticipada.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ReservaAnticipada" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#estacionadoEn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Estacionado en</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona vehiculo compartido con punto de servicio mediante la relación «estacionado en».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+    <owl:inverseOf rdf:resource="http://movilidad.es/def/compartida#estacionaVehiculo" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#RolUsuario">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Rol de usuario</rdfs:label>
+    <rdfs:comment xml:lang="es">Rol desempeñada por quien utiliza o contrata servicios de movilidad compartida.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#Rol" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#tipoVehiculo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Tipo de vehículo</rdfs:label>
+    <rdfs:comment xml:lang="es">Los valores son conceptos del esquema segittur:VehicleType de SEGITTUR.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <rdfs:seeAlso rdf:resource="https://ontologia.segittur.es/turismo/kos/VehicleType" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#TarifaBonoPrepago">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Tarifa de bono prepago</rdfs:label>
+    <rdfs:comment xml:lang="es">Tarifa basada en un bono adquirido antes de utilizar el servicio.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#Tarifa" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#hasFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="https://ontologia.segittur.es/turismo/def/core#Location" />
+    <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b15">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b16" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#precioKm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Precio por kilómetro</rdfs:label>
+    <rdfs:comment xml:lang="es">Importe de la tarifa por kilómetro recorrido.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#TarifaPagoUso" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#tarifaDeServicio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">tarifa de servicio</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación inversa de mo:tieneTarifa.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Tarifa" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b31">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoColectivo" />
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b46">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#TarifaSuscripcionDiaria" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b47" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b44">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#TarifaPagoUso" />
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#fechaPago">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Fecha de pago</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «fecha de pago» para pago.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Pago" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#duracionMinutos">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Duración en minutos</rdfs:label>
+    <rdfs:comment xml:lang="es">Duración del trayecto expresada en minutos.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#RelacionTrayecto" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b25">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoPropulsionElectrica" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b26" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b11">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b12" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#asWKT">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  <rdfs:label xml:lang="en">as WKT</rdfs:label><rdfs:comment xml:lang="en">The WKT serialization of a Geometry</rdfs:comment></rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b38">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoPropulsionHibrida" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b39" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#TarifaSuscripcion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Tarifa de suscripción</rdfs:label>
+    <rdfs:comment xml:lang="es">Tarifa que permite utilizar el servicio mediante una suscripción.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#Tarifa" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#Organizacion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Organización</rdfs:label>
+    <rdfs:comment xml:lang="es">Entidad jurídica que interviene en la provisión o gestión de servicios de movilidad compartida.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <owl:equivalentClass rdf:resource="http://purl.org/goodrelations/v1#BusinessEntity" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#tieneTrayecto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Tiene trayecto</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona servicio de movilidad con relacion trayecto mediante la relación «tiene trayecto».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#RelacionTrayecto" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#idPago">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Identificador de pago</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «identificador de pago» para pago.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Pago" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b10">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+    <owl:hasValue rdf:resource="http://movilidad.es/def/compartida#Hibrida" />
+    <owl:onProperty rdf:resource="http://movilidad.es/def/compartida#tienePropulsion" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#Persona">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Persona</rdfs:label>
+    <rdfs:comment xml:lang="es">Persona física que participa en los servicios de movilidad compartida.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b16">
+    <rdf:first rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b14" />
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#pendientePago">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Pendiente de pago</rdfs:label>
+    <rdfs:comment xml:lang="es">Indica si la factura tiene un pago pendiente.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Factura" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#haceReserva">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Hace reserva</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona persona con reserva mediante la relación «hace reserva».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Persona" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+    <owl:inverseOf rdf:resource="http://movilidad.es/def/compartida#reservaRealizadaPor" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b7">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoCompartido" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b8" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#recibeFactura">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">recibe factura</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación inversa de mo:emitidaA.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Factura" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.mobivoc.org/#Plug-inHybridElectricVehicle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:label xml:lang="de">Plug-in-Hybrid</rdfs:label><rdfs:label xml:lang="en">Plug-in hybrid electric vehicle</rdfs:label><rdfs:comment xml:lang="en">Hybrid electric vehicle that can be recharged by plugging it in to an external source of electric power as well by its on-board engine and generator.</rdfs:comment></rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#tipo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Tipo</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «tipo» para organizacion.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Organizacion" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#tieneRol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Tiene rol</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona organizacion con rol mediante la relación «tiene rol».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Rol" />
+    <owl:inverseOf rdf:resource="http://movilidad.es/def/compartida#rolDeAgente" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b18">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#ReservaInmediata" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b19" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#hasLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="https://ontologia.segittur.es/turismo/def/core#Place" />
+    <rdfs:range rdf:resource="https://ontologia.segittur.es/turismo/def/core#Location" />
+  <rdfs:label xml:lang="es">tiene localización</rdfs:label><rdfs:label xml:lang="en">has location</rdfs:label></rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#costeTrayecto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Coste del trayecto</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «coste del trayecto» para relacion trayecto.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#RelacionTrayecto" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#realizaPago">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">realiza pago</rdfs:label>
+    <rdfs:comment xml:lang="es">Relación inversa de mo:realizadoPor.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#Pago" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b34">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#OficinaDeAlquiler" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b35" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#DayOfTheWeek">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:label xml:lang="es">Día de la semana</rdfs:label><rdfs:label xml:lang="en">Day of the week</rdfs:label></rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b39">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoPropulsionCombustible" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b40" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#dayOfTheWeek">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:domain rdf:resource="https://ontologia.segittur.es/turismo/def/core#OpeningHours" />
+    <rdfs:range rdf:resource="https://ontologia.segittur.es/turismo/def/core#DayOfTheWeek" />
+  <rdfs:label xml:lang="es">día de la semana</rdfs:label><rdfs:label xml:lang="en">day of the week</rdfs:label></rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b42">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#TarifaSuscripcion" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b43" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#EstacionFisica">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Estación física</rdfs:label>
+    <rdfs:comment xml:lang="es">Punto de servicio que constituye una estación física de movilidad.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#Rol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Rol</rdfs:label>
+    <rdfs:comment xml:lang="es">Función que desempeña un agente dentro del sistema de movilidad compartida.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#facturaServicio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty" />
+    <rdfs:label xml:lang="es">Factura servicio</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que relaciona factura con servicio de movilidad mediante la relación «factura servicio».</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Factura" />
+    <rdfs:range rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#descripcion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Descripción</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «descripción» para servicio de movilidad.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#Tarifa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Tarifa</rdfs:label>
+    <rdfs:comment xml:lang="es">Conjunto de condiciones económicas aplicables a un servicio de movilidad compartida.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b36">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses" />
+    <owl:members rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b37" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#apellidos">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Apellidos</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «apellidos» para persona.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Persona" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b32">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses" />
+    <owl:members rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b33" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b24">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <owl:unionOf rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b25" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:label xml:lang="en">Person</rdfs:label><rdfs:comment xml:lang="en">A person.</rdfs:comment></rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b29">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <owl:unionOf rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b30" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <owl:intersectionOf rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b3" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#OpeningHours">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#idPunto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Identificador de punto de servicio</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «identificador de punto de servicio» para punto de servicio.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#PuntoDeServicio" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b8">
+    <rdf:first rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b6" />
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b12">
+    <rdf:first rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b10" />
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#idServicio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Identificador de servicio</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «identificador de servicio» para servicio de movilidad.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#ServicioDeMovilidad" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <owl:intersectionOf rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b7" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b20">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <owl:unionOf rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b21" />
+  </rdf:Description>
+<rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#autonomousCommunity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty" />
+    <rdfs:domain rdf:resource="https://ontologia.segittur.es/turismo/def/core#Location" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdfs:label xml:lang="es">comunidad autónoma</rdfs:label>
+    <rdfs:label xml:lang="en">autonomous community</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#fechaReserva">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Fecha de reserva</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «fecha de reserva» para reserva.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Reserva" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b19">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#ReservaAnticipada" />
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b28">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoPropulsionHumana" />
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#direccion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:domain rdf:resource="https://ontologia.segittur.es/turismo/def/core#Location" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#geoLong">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction" />
+    <owl:hasValue rdf:resource="http://movilidad.es/def/compartida#Combustion" />
+    <owl:onProperty rdf:resource="http://movilidad.es/def/compartida#tienePropulsion" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b30">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#VehiculoMovilidadPersonal" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b31" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b17">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <owl:unionOf rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b18" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://movilidad.es/def/compartida#idAgente">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty" />
+    <rdfs:label xml:lang="es">Identificador de agente</rdfs:label>
+    <rdfs:comment xml:lang="es">Propiedad que registra «identificador de agente» para agentes.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://movilidad.es/def/compartida#Agente" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+  </rdf:Description>
+<rdf:Description rdf:about="https://ontologia.segittur.es/turismo/def/core#Location">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <rdfs:label xml:lang="es">Localización</rdfs:label>
+    <rdfs:label xml:lang="en">Location</rdfs:label>
+    <rdfs:comment xml:lang="es">Proporciona información sobre la ubicación física de un negocio, establecimiento u organización.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Provides information about the physical location of a business, establishment or organization.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.mobivoc.org/#ParkingFacility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:label xml:lang="en">ParkingFacility</rdfs:label><rdfs:comment xml:lang="en">A parking lot or other parking facility.</rdfs:comment></rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/goodrelations/v1#BusinessEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:label xml:lang="en">Business entity</rdfs:label><rdfs:comment xml:lang="en">An instance of this class represents the legal agent making (or seeking) a particular offering. This can be a legal body or a person. A business entity has at least a primary mailing address and contact details. For this, typical address standards (vCard) and location data (geo, WGS84) can be attached. Note that the location of the business entity is not necessarily the location from which the product or service is being available (e.g. the branch or store). Use gr:Location for stores and branches.</rdfs:comment></rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b23">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#Aparcamiento" />
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b22">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#OficinaDeAlquiler" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b23" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b21">
+    <rdf:first rdf:resource="http://movilidad.es/def/compartida#EstacionFisica" />
+    <rdf:rest rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b22" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#Geometry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:label xml:lang="en">Geometry</rdfs:label><rdfs:comment xml:lang="en">A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS).</rdfs:comment></rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b9">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+    <owl:intersectionOf rdf:nodeID="ne9719a0e18904fea8ecf00f9de6f9259b11" />
+  </rdf:Description>
+  <rdf:Description rdf:about="http://schema.mobivoc.org/#BatteryElectricVehicle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class" />
+  <rdfs:label xml:lang="en">Battery Electric Vehicle</rdfs:label><rdfs:label xml:lang="de">Batteriebetriebenes Fahrzeug</rdfs:label><rdfs:comment xml:lang="en">Electric vehicle that uses chemical energy stored in rechargeable battery packs. Battery electric vehicles use electric motors and motor controllers instead of internal combustion engines for propulsion. They derive all power from battery packs and thus have no internal combustion engine, fuel cell, or fuel tank.</rdfs:comment></rdf:Description>
+</rdf:RDF>
