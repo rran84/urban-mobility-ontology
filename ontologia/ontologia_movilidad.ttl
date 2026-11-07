@@ -868,3 +868,99 @@ foaf:Person a owl:Class .
 <http://schema.mobivoc.org/#BatteryElectricVehicle> a owl:Class .
 <http://schema.mobivoc.org/#Plug-inHybridElectricVehicle> a owl:Class .
 <http://purl.org/goodrelations/v1#BusinessEntity> a owl:Class .
+
+# Documentacion rdfs:comment incorporada desde RDF/XML de la ontologia
+<http://movilidad.es/def/compartida#latitud> <http://www.w3.org/2000/01/rdf-schema#comment> "Coordenada de latitud del punto de servicio."@es .
+<http://movilidad.es/def/compartida#importe> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «importe» para pago."@es .
+<http://movilidad.es/def/compartida#contrataServicio> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona agentes con servicio de movilidad mediante la relación «contrata servicio»."@es .
+<http://movilidad.es/def/compartida#matricula> <http://www.w3.org/2000/01/rdf-schema#comment> "Matrícula identificativa de un vehículo compartido."@es .
+<http://movilidad.es/def/compartida#Factura> <http://www.w3.org/2000/01/rdf-schema#comment> "Documento que recoge los importes facturados por servicios o trayectos."@es .
+<http://movilidad.es/def/compartida#inicioUso> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «inicio de uso» para reserva inmediata."@es .
+<http://movilidad.es/def/compartida#RelacionTrayecto> <http://www.w3.org/2000/01/rdf-schema#comment> "Entidad que vincula un trayecto con sus datos de uso y coste."@es .
+<http://movilidad.es/def/compartida#importeTotal> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «importe total» para factura."@es .
+<http://movilidad.es/def/compartida#puntoDevolucion> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona servicio de movilidad con punto de servicio mediante la relación «punto de devolución»."@es .
+<http://movilidad.es/def/compartida#EstacionBus> <http://www.w3.org/2000/01/rdf-schema#comment> "Estación física asociada a servicios de autobús."@es .
+<http://movilidad.es/def/compartida#capacidad> <http://www.w3.org/2000/01/rdf-schema#comment> "Número de plazas o capacidad del vehículo compartido."@es .
+<http://movilidad.es/def/compartida#puntoRecogida> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona servicio de movilidad con punto de servicio mediante la relación «punto de recogida»."@es .
+<http://movilidad.es/def/compartida#VehiculoPropulsionElectrica> <http://www.w3.org/2000/01/rdf-schema#comment> "Vehículo compartido cuyo sistema de propulsión es eléctrico."@es .
+<http://movilidad.es/def/compartida#EstacionBicicletas> <http://www.w3.org/2000/01/rdf-schema#comment> "Estación física destinada al acceso o estacionamiento de bicicletas compartidas."@es .
+<http://movilidad.es/def/compartida#activa> <http://www.w3.org/2000/01/rdf-schema#comment> "Indica si una reserva se encuentra activa."@es .
+<http://movilidad.es/def/compartida#tienePago> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona factura con pago mediante la relación «tiene pago»."@es .
+<http://movilidad.es/def/compartida#activo> <http://www.w3.org/2000/01/rdf-schema#comment> "Indica si un servicio de movilidad se encuentra activo."@es .
+<http://movilidad.es/def/compartida#idTarifa> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «identificador de tarifa» para tarifa."@es .
+<http://movilidad.es/def/compartida#kilometraje> <http://www.w3.org/2000/01/rdf-schema#comment> "Kilometraje acumulado del vehículo compartido."@es .
+<http://movilidad.es/def/compartida#precio> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «precio» para tarifa."@es .
+<http://movilidad.es/def/compartida#VehiculoCompartido> <http://www.w3.org/2000/01/rdf-schema#comment> "Vehículo disponible para su utilización mediante un servicio de movilidad compartida."@es .
+<http://movilidad.es/def/compartida#tieneTarifa> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona servicio de movilidad con tarifa mediante la relación «tiene tarifa»."@es .
+<http://movilidad.es/def/compartida#MultiStopRelation> <http://www.w3.org/2000/01/rdf-schema#comment> "Relación que representa una secuencia de paradas de un trayecto."@es .
+<http://movilidad.es/def/compartida#minutosCortesia> <http://www.w3.org/2000/01/rdf-schema#comment> "Minutos de cortesía asociados a una reserva."@es .
+<http://movilidad.es/def/compartida#cancelable> <http://www.w3.org/2000/01/rdf-schema#comment> "Indica si una reserva anticipada admite cancelación."@es .
+<http://movilidad.es/def/compartida#TarifaSuscripcionDiaria> <http://www.w3.org/2000/01/rdf-schema#comment> "Tarifa de suscripción con periodo de vigencia diario."@es .
+<http://movilidad.es/def/compartida#VehiculoPropulsionHumana> <http://www.w3.org/2000/01/rdf-schema#comment> "Vehículo compartido impulsado mediante esfuerzo humano."@es .
+<http://movilidad.es/def/compartida#VehiculoColectivo> <http://www.w3.org/2000/01/rdf-schema#comment> "Vehículo compartido destinado al transporte de varias personas."@es .
+<http://movilidad.es/def/compartida#TarifaSuscripcionMensual> <http://www.w3.org/2000/01/rdf-schema#comment> "Tarifa de suscripción con periodo de vigencia mensual."@es .
+<http://movilidad.es/def/compartida#fechaInicio> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «fecha de inicio» para reserva anticipada."@es .
+<http://movilidad.es/def/compartida#fechaEmision> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «fecha de emisión» para factura."@es .
+<http://movilidad.es/def/compartida#PuntoDeServicio> <http://www.w3.org/2000/01/rdf-schema#comment> "Infraestructura o ubicación donde se presta o facilita un servicio de movilidad compartida."@es .
+<http://movilidad.es/def/compartida#facturaTrayecto> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona factura con relacion trayecto mediante la relación «factura trayecto»."@es .
+<http://movilidad.es/def/compartida#longitud> <http://www.w3.org/2000/01/rdf-schema#comment> "Coordenada de longitud del punto de servicio."@es .
+<http://movilidad.es/def/compartida#idVehiculo> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «identificador de vehículo» para vehiculo compartido."@es .
+<http://movilidad.es/def/compartida#Trayecto> <http://www.w3.org/2000/01/rdf-schema#comment> "Desplazamiento realizado o previsto dentro de un servicio de movilidad."@es .
+<http://movilidad.es/def/compartida#hasMultiStop> <http://www.w3.org/2000/01/rdf-schema#comment> "Relaciona un trayecto con una secuencia de paradas."@es .
+<http://movilidad.es/def/compartida#asignaTrayecto> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona relacion trayecto con trayecto mediante la relación «asigna trayecto»."@es .
+<http://movilidad.es/def/compartida#reservaServicio> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona reserva con servicio de movilidad mediante la relación «reserva servicio»."@es .
+<http://movilidad.es/def/compartida#reservaEn> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona reserva con punto de servicio mediante la relación «reserva en»."@es .
+<http://movilidad.es/def/compartida#ServicioDeMovilidad> <http://www.w3.org/2000/01/rdf-schema#comment> "Servicio que facilita el acceso y uso compartido de vehículos."@es .
+<http://movilidad.es/def/compartida#disponeDe> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona servicio de movilidad con vehiculo compartido mediante la relación «dispone de»."@es .
+<http://movilidad.es/def/compartida#nombreAgente> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «nombre del agente» para agentes."@es .
+<http://movilidad.es/def/compartida#TarifaSuscripcionAnual> <http://www.w3.org/2000/01/rdf-schema#comment> "Tarifa de suscripción con periodo de vigencia anual."@es .
+<http://movilidad.es/def/compartida#precioMinuto> <http://www.w3.org/2000/01/rdf-schema#comment> "Importe de la tarifa por minuto de uso."@es .
+<http://movilidad.es/def/compartida#Pago> <http://www.w3.org/2000/01/rdf-schema#comment> "Registro de una operación económica asociada al servicio de movilidad compartida."@es .
+<http://movilidad.es/def/compartida#Agente> <http://www.w3.org/2000/01/rdf-schema#comment> "Entidad que participa en el ecosistema de movilidad compartida, como persona u organización."@es .
+<http://movilidad.es/def/compartida#nombreTarifa> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «nombre de la tarifa» para tarifa."@es .
+<http://movilidad.es/def/compartida#Reserva> <http://www.w3.org/2000/01/rdf-schema#comment> "Solicitud para utilizar un vehículo o servicio de movilidad compartida."@es .
+<http://movilidad.es/def/compartida#idTrayecto> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «identificador de trayecto» para trayecto."@es .
+<http://movilidad.es/def/compartida#registradoEnPlataforma> <http://www.w3.org/2000/01/rdf-schema#comment> "Indica si la persona está registrada en la plataforma."@es .
+<http://movilidad.es/def/compartida#VehiculoMovilidadPersonal> <http://www.w3.org/2000/01/rdf-schema#comment> "Vehículo compartido destinado a desplazamientos de movilidad personal."@es .
+<http://movilidad.es/def/compartida#VehiculoPropulsionHibrida> <http://www.w3.org/2000/01/rdf-schema#comment> "Vehículo compartido que combina propulsión eléctrica y de combustión."@es .
+<http://movilidad.es/def/compartida#realizadoPor> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona pago con agentes mediante la relación «realizado por»."@es .
+<http://movilidad.es/def/compartida#ReservaInmediata> <http://www.w3.org/2000/01/rdf-schema#comment> "Reserva que permite iniciar el uso del servicio de forma inmediata."@es .
+<http://movilidad.es/def/compartida#direccionPunto> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «dirección» para punto de servicio."@es .
+<http://movilidad.es/def/compartida#moneda> <http://www.w3.org/2000/01/rdf-schema#comment> "Código o denominación de la moneda utilizada para expresar importes."@es .
+<http://movilidad.es/def/compartida#permisoConducir> <http://www.w3.org/2000/01/rdf-schema#comment> "Indica si la persona dispone de permiso de conducir."@es .
+<http://movilidad.es/def/compartida#TarifaPagoUso> <http://www.w3.org/2000/01/rdf-schema#comment> "Tarifa cuyo coste depende del uso efectivo del servicio."@es .
+<http://movilidad.es/def/compartida#fechaNacimiento> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «fecha de nacimiento» para persona."@es .
+<http://movilidad.es/def/compartida#reservaVehiculo> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona reserva con vehiculo compartido mediante la relación «reserva vehículo»."@es .
+<http://movilidad.es/def/compartida#validez> <http://www.w3.org/2000/01/rdf-schema#comment> "Fecha de validez de un bono prepago."@es .
+<http://movilidad.es/def/compartida#ReservaAnticipada> <http://www.w3.org/2000/01/rdf-schema#comment> "Reserva realizada con anterioridad al inicio previsto del uso."@es .
+<http://movilidad.es/def/compartida#nombrePunto> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «nombre del punto de servicio» para punto de servicio."@es .
+<http://movilidad.es/def/compartida#idFactura> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «identificador de factura» para factura."@es .
+<http://movilidad.es/def/compartida#hasDestination> <http://www.w3.org/2000/01/rdf-schema#comment> "Relaciona una parada de una secuencia con su punto de destino."@es .
+<http://movilidad.es/def/compartida#ofreceServicio> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona agentes con servicio de movilidad mediante la relación «ofrece servicio»."@es .
+<http://movilidad.es/def/compartida#RolProveedor> <http://www.w3.org/2000/01/rdf-schema#comment> "Rol desempeñada por quien ofrece servicios de movilidad compartida."@es .
+<http://movilidad.es/def/compartida#emitidaA> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona factura con agentes mediante la relación «emitida a»."@es .
+<http://movilidad.es/def/compartida#NIF> <http://www.w3.org/2000/01/rdf-schema#comment> "Número de identificación fiscal de una organización."@es .
+<http://movilidad.es/def/compartida#emitidaPor> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona factura con agentes mediante la relación «emitida por»."@es .
+<http://movilidad.es/def/compartida#hasNextStop> <http://www.w3.org/2000/01/rdf-schema#comment> "Relaciona una parada de una secuencia con la siguiente."@es .
+<http://movilidad.es/def/compartida#nombreServicio> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «nombre del servicio» para servicio de movilidad."@es .
+<http://movilidad.es/def/compartida#nUsos> <http://www.w3.org/2000/01/rdf-schema#comment> "Número de usos incluidos en un bono prepago."@es .
+<http://movilidad.es/def/compartida#distanciaKm> <http://www.w3.org/2000/01/rdf-schema#comment> "Distancia del trayecto expresada en kilómetros."@es .
+<http://movilidad.es/def/compartida#ofrecidoEn> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona servicio de movilidad con punto de servicio mediante la relación «ofrecido en»."@es .
+<http://movilidad.es/def/compartida#baseRecarga> <http://www.w3.org/2000/01/rdf-schema#comment> "Indica si el punto de servicio dispone de base de recarga."@es .
+<http://movilidad.es/def/compartida#EstacionFerroviaria> <http://www.w3.org/2000/01/rdf-schema#comment> "Estación física asociada a servicios de transporte ferroviario."@es .
+<http://movilidad.es/def/compartida#idReserva> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «identificador de reserva» para reserva."@es .
+<http://movilidad.es/def/compartida#VehiculoPropulsionCombustible> <http://www.w3.org/2000/01/rdf-schema#comment> "Vehículo compartido cuyo sistema de propulsión utiliza combustible."@es .
+<http://movilidad.es/def/compartida#fechaFin> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «fecha de fin» para reserva anticipada."@es .
+<http://movilidad.es/def/compartida#estacionadoEn> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona vehiculo compartido con punto de servicio mediante la relación «estacionado en»."@es .
+<http://movilidad.es/def/compartida#RolUsuario> <http://www.w3.org/2000/01/rdf-schema#comment> "Rol desempeñada por quien utiliza o contrata servicios de movilidad compartida."@es .
+<http://movilidad.es/def/compartida#TarifaBonoPrepago> <http://www.w3.org/2000/01/rdf-schema#comment> "Tarifa basada en un bono adquirido antes de utilizar el servicio."@es .
+<http://movilidad.es/def/compartida#precioKm> <http://www.w3.org/2000/01/rdf-schema#comment> "Importe de la tarifa por kilómetro recorrido."@es .
+<http://movilidad.es/def/compartida#fechaPago> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «fecha de pago» para pago."@es .
+<http://movilidad.es/def/compartida#duracionMinutos> <http://www.w3.org/2000/01/rdf-schema#comment> "Duración del trayecto expresada en minutos."@es .
+<http://movilidad.es/def/compartida#TarifaSuscripcion> <http://www.w3.org/2000/01/rdf-schema#comment> "Tarifa que permite utilizar el servicio mediante una suscripción."@es .
+<http://movilidad.es/def/compartida#Organizacion> <http://www.w3.org/2000/01/rdf-schema#comment> "Entidad jurídica que interviene en la provisión o gestión de servicios de movilidad compartida."@es .
+<http://movilidad.es/def/compartida#tieneTrayecto> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona servicio de movilidad con relacion trayecto mediante la relación «tiene trayecto»."@es .
+<http://movilidad.es/def/compartida#idPago> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que registra «identificador de pago» para pago."@es .
+<http://movilidad.es/def/compartida#Persona> <http://www.w3.org/2000/01/rdf-schema#comment> "Persona física que participa en los servicios de movilidad compartida."@es .
+<http://movilidad.es/def/compartida#pendientePago> <http://www.w3.org/2000/01/rdf-schema#comment> "Indica si la factura tiene un pago pendiente."@es .
+<http://movilidad.es/def/compartida#haceReserva> <http://www.w3.org/2000/01/rdf-schema#comment> "Propiedad que relaciona persona con reserva mediante la relación «hace reserva»."@es .
